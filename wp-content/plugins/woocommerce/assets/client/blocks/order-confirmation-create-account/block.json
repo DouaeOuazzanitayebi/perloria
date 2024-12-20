@@ -27,6 +27,7 @@
 		"hasDarkControls": {
 			"type": "boolean",
 			"default": false
+<<<<<<< HEAD
 		},
 		"lock": {
 			"type": "object",
@@ -44,11 +45,25 @@
 			"wide",
 			"full"
 		],
+=======
+		}
+	},
+	"supports": {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		"color": {
 			"background": true,
 			"text": true,
 			"button": true
 		},
+<<<<<<< HEAD
+=======
+		"multiple": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		"spacing": {
 			"padding": true,
 			"margin": true,

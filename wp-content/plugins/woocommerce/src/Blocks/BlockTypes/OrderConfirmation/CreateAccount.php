@@ -4,12 +4,19 @@ declare( strict_types = 1 );
 namespace Automattic\WooCommerce\Blocks\BlockTypes\OrderConfirmation;
 
 use Automattic\WooCommerce\StoreApi\Utilities\OrderController;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Admin\Features\Features;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * CreateAccount class.
  */
 class CreateAccount extends AbstractOrderConfirmationBlock {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	/**
 	 * Block name.
 	 *
@@ -18,6 +25,7 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 	protected $block_name = 'order-confirmation-create-account';
 
 	/**
+<<<<<<< HEAD
 	 * Initialize this block type.
 	 */
 	protected function initialize() {
@@ -88,6 +96,8 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Get the frontend script handle for this block type.
 	 *
 	 * @see $this->register_block_type()
@@ -104,6 +114,7 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns if delayed account creation is enabled.
 	 *
 	 * @return bool
@@ -113,13 +124,19 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Process posted account form.
 	 *
 	 * @param \WC_Order $order Order object.
 	 * @return \WP_Error|int
 	 */
 	protected function process_form_post( $order ) {
+<<<<<<< HEAD
 		if ( ! isset( $_POST['create-account'], $_POST['email'], $_POST['_wpnonce'] ) ) {
+=======
+		if ( ! isset( $_POST['create-account'], $_POST['email'], $_POST['password'], $_POST['_wpnonce'] ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			return 0;
 		}
 
@@ -128,6 +145,10 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 		}
 
 		$user_email = sanitize_email( wp_unslash( $_POST['email'] ) );
+<<<<<<< HEAD
+=======
+		$password   = wp_unslash( $_POST['password'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		// Does order already have user?
 		if ( $order->get_customer_id() ) {
@@ -139,6 +160,7 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 			return new \WP_Error( 'email_mismatch', __( 'The email address provided does not match the email address on this order.', 'woocommerce' ) );
 		}
 
+<<<<<<< HEAD
 		$generate_password = filter_var( get_option( 'woocommerce_registration_generate_password', 'no' ), FILTER_VALIDATE_BOOLEAN );
 
 		if ( $generate_password ) {
@@ -149,6 +171,10 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 			if ( empty( $password ) || strlen( $password ) < 8 ) {
 				return new \WP_Error( 'password_too_short', __( 'Password must be at least 8 characters.', 'woocommerce' ) );
 			}
+=======
+		if ( empty( $password ) || strlen( $password ) < 8 ) {
+			return new \WP_Error( 'password_too_short', __( 'Password must be at least 8 characters.', 'woocommerce' ) );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		$customer_id = wc_create_new_customer(
@@ -190,7 +216,11 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 	 * @return string
 	 */
 	protected function render_content( $order, $permission = false, $attributes = [], $content = '' ) {
+<<<<<<< HEAD
 		if ( ! $permission || ! $this->is_feature_enabled() ) {
+=======
+		if ( ! $permission ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			return '';
 		}
 
@@ -200,7 +230,10 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 		}
 
 		$result = $this->process_form_post( $order );
+<<<<<<< HEAD
 		$notice = '';
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		if ( is_wp_error( $result ) ) {
 			$notice = wc_print_notice( $result->get_error_message(), 'error', [], true );
@@ -210,9 +243,15 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 
 		$processor = new \WP_HTML_Tag_Processor(
 			$content .
+<<<<<<< HEAD
 			'<div class="wc-block-order-confirmation-create-account-form-wrapper">' .
 				$notice .
 				'<div class="wc-block-order-confirmation-create-account-form"></div>' .
+=======
+			'<div class="woocommerce-order-confirmation-create-account-form-wrapper">' .
+				$notice .
+				'<div class="woocommerce-order-confirmation-create-account-form"></div>' .
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'</div>'
 		);
 
@@ -222,9 +261,15 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 
 		$processor->set_attribute( 'class', '' );
 		$processor->set_attribute( 'style', '' );
+<<<<<<< HEAD
 		$processor->add_class( 'wc-block-order-confirmation-create-account-content' );
 
 		if ( ! $processor->next_tag( array( 'class_name' => 'wc-block-order-confirmation-create-account-form' ) ) ) {
+=======
+		$processor->add_class( 'woocommerce-order-confirmation-create-account-content' );
+
+		if ( ! $processor->next_tag( array( 'class_name' => 'woocommerce-order-confirmation-create-account-form' ) ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			return $content;
 		}
 
@@ -244,7 +289,11 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 	 * @return string
 	 */
 	protected function render_confirmation() {
+<<<<<<< HEAD
 		$content  = '<div class="wc-block-order-confirmation-create-account-success" id="create-account">';
+=======
+		$content  = '<div class="woocommerce-order-confirmation-create-account-success" id="create-account">';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$content .= '<h3>' . esc_html__( 'Your account has been successfully created', 'woocommerce' ) . '</h3>';
 		$content .= '<p>' . sprintf(
 			/* translators: 1: link to my account page, 2: link to shipping and billing addresses, 3: link to account details, 4: closing tag */
@@ -258,6 +307,7 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 
 		return $content;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Extra data passed through from server to client for block.
@@ -272,4 +322,6 @@ class CreateAccount extends AbstractOrderConfirmationBlock {
 		$this->asset_data_registry->add( 'delayedAccountCreationEnabled', $this->is_feature_enabled() );
 		$this->asset_data_registry->add( 'registrationGeneratePassword', filter_var( get_option( 'woocommerce_registration_generate_password' ), FILTER_VALIDATE_BOOLEAN ) );
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

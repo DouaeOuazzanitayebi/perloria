@@ -249,7 +249,11 @@ final class Utils
         }
 
         $val = (int) $match['val'];
+<<<<<<< HEAD
         switch (strtolower($match['unit'])) {
+=======
+        switch (strtolower($match['unit'] ?? '')) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             case 'g':
                 $val *= 1024;
             case 'm':

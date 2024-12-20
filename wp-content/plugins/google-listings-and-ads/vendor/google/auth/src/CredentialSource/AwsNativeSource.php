@@ -50,9 +50,15 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
     public function __construct(
         string $audience,
         string $regionalCredVerificationUrl,
+<<<<<<< HEAD
         ?string $regionUrl = null,
         ?string $securityCredentialsUrl = null,
         ?string $imdsv2SessionTokenUrl = null
+=======
+        string $regionUrl = null,
+        string $securityCredentialsUrl = null,
+        string $imdsv2SessionTokenUrl = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $this->audience = $audience;
         $this->regionalCredVerificationUrl = $regionalCredVerificationUrl;
@@ -61,7 +67,11 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
         $this->imdsv2SessionTokenUrl = $imdsv2SessionTokenUrl;
     }
 
+<<<<<<< HEAD
     public function fetchSubjectToken(?callable $httpHandler = null): string
+=======
+    public function fetchSubjectToken(callable $httpHandler = null): string
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (is_null($httpHandler)) {
             $httpHandler = HttpHandlerFactory::build(HttpClientCache::getHttpClient());

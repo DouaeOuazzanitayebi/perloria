@@ -41,22 +41,34 @@ class StreamHandler extends AbstractProcessingHandler
     protected $filePermission;
     /** @var bool */
     protected $useLocking;
+<<<<<<< HEAD
 	/** @var string */
     protected $fileOpenMode;
     /** @var true|null */
     private $dirCreated = null;
     /** @var bool */
     private $retrying = false;
+=======
+    /** @var true|null */
+    private $dirCreated = null;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     /**
      * @param resource|string $stream         If a missing path can't be created, an UnexpectedValueException will be thrown on first write
      * @param int|null        $filePermission Optional file permissions (default (0644) are only for owner read/write)
      * @param bool            $useLocking     Try to lock log file before doing any writes
+<<<<<<< HEAD
      * @param string          $fileOpenMode   The fopen() mode used when opening a file, if $stream is a file path
      *
      * @throws \InvalidArgumentException If stream is not a resource or string
      */
     public function __construct($stream, $level = Logger::DEBUG, bool $bubble = true, ?int $filePermission = null, bool $useLocking = false, $fileOpenMode = 'a')
+=======
+     *
+     * @throws \InvalidArgumentException If stream is not a resource or string
+     */
+    public function __construct($stream, $level = Logger::DEBUG, bool $bubble = true, ?int $filePermission = null, bool $useLocking = false)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         parent::__construct($level, $bubble);
 
@@ -83,7 +95,10 @@ class StreamHandler extends AbstractProcessingHandler
             throw new \InvalidArgumentException('A stream must either be a resource or a string.');
         }
 
+<<<<<<< HEAD
         $this->fileOpenMode = $fileOpenMode;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $this->filePermission = $filePermission;
         $this->useLocking = $useLocking;
     }
@@ -140,11 +155,17 @@ class StreamHandler extends AbstractProcessingHandler
             }
             $this->createDir($url);
             $this->errorMessage = null;
+<<<<<<< HEAD
             set_error_handler(function (...$args) {
                 return $this->customErrorHandler(...$args);
             });
             try {
                 $stream = fopen($url, $this->fileOpenMode);
+=======
+            set_error_handler([$this, 'customErrorHandler']);
+            try {
+                $stream = fopen($url, 'a');
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                 if ($this->filePermission !== null) {
                     @chmod($url, $this->filePermission);
                 }
@@ -170,6 +191,7 @@ class StreamHandler extends AbstractProcessingHandler
             flock($stream, LOCK_EX);
         }
 
+<<<<<<< HEAD
         $this->errorMessage = null;
         set_error_handler(function (...$args) {
             return $this->customErrorHandler(...$args);
@@ -194,6 +216,10 @@ class StreamHandler extends AbstractProcessingHandler
         }
 
         $this->retrying = false;
+=======
+        $this->streamWrite($stream, $record);
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         if ($this->useLocking) {
             flock($stream, LOCK_UN);
         }
@@ -213,7 +239,11 @@ class StreamHandler extends AbstractProcessingHandler
 
     private function customErrorHandler(int $code, string $msg): bool
     {
+<<<<<<< HEAD
         $this->errorMessage = preg_replace('{^(fopen|mkdir|fwrite)\(.*?\): }', '', $msg);
+=======
+        $this->errorMessage = preg_replace('{^(fopen|mkdir)\(.*?\): }', '', $msg);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
         return true;
     }
@@ -242,9 +272,13 @@ class StreamHandler extends AbstractProcessingHandler
         $dir = $this->getDirFromStream($url);
         if (null !== $dir && !is_dir($dir)) {
             $this->errorMessage = null;
+<<<<<<< HEAD
             set_error_handler(function (...$args) {
                 return $this->customErrorHandler(...$args);
             });
+=======
+            set_error_handler([$this, 'customErrorHandler']);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             $status = mkdir($dir, 0777, true);
             restore_error_handler();
             if (false === $status && !is_dir($dir) && strpos((string) $this->errorMessage, 'File exists') === false) {

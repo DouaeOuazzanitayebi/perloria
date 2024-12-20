@@ -359,7 +359,11 @@ class ProductQuery {
 				$skus[] = $wp_query->get( 'sku' );
 			}
 			$args['join']   = $this->append_product_sorting_table_join( $args['join'] );
+<<<<<<< HEAD
 			$args['where'] .= ' AND wc_product_meta_lookup.sku IN (\'' . implode( '\',\'', array_map( 'esc_sql', $skus ) ) . '\')';
+=======
+			$args['where'] .= ' AND wc_product_meta_lookup.sku IN ("' . implode( '","', array_map( 'esc_sql', $skus ) ) . '")';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		if ( $wp_query->get( 'slug' ) ) {
@@ -375,10 +379,17 @@ class ProductQuery {
 
 		if ( $wp_query->get( 'stock_status' ) ) {
 			$args['join']   = $this->append_product_sorting_table_join( $args['join'] );
+<<<<<<< HEAD
 			$args['where'] .= ' AND wc_product_meta_lookup.stock_status IN (\'' . implode( '\',\'', array_map( 'esc_sql', $wp_query->get( 'stock_status' ) ) ) . '\')';
 		} elseif ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
 			$args['join']   = $this->append_product_sorting_table_join( $args['join'] );
 			$args['where'] .= ' AND wc_product_meta_lookup.stock_status NOT IN (\'outofstock\')';
+=======
+			$args['where'] .= ' AND wc_product_meta_lookup.stock_status IN ("' . implode( '","', array_map( 'esc_sql', $wp_query->get( 'stock_status' ) ) ) . '")';
+		} elseif ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+			$args['join']   = $this->append_product_sorting_table_join( $args['join'] );
+			$args['where'] .= ' AND wc_product_meta_lookup.stock_status NOT IN ("outofstock")';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		if ( $wp_query->get( 'min_price' ) || $wp_query->get( 'max_price' ) ) {

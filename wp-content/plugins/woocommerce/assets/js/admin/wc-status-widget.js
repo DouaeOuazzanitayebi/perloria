@@ -33,6 +33,7 @@
 	$( '.out-of-stock a' ).on( 'click', function() {
 		recordEvent( 'out-of-stock' );
 	});
+<<<<<<< HEAD
 
 	$( '.wc_sparkline.bars' ).each( function () {
 		const chartData = $( this ).data( 'sparkline' );
@@ -91,4 +92,6 @@
 		// draw the sparkline
 		$.plot( $( this ), series, options );
 	} );
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 })( jQuery );

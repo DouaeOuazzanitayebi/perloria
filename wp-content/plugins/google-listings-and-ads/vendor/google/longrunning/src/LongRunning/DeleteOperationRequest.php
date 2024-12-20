@@ -9,8 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+<<<<<<< HEAD
  * The request message for
  * [Operations.DeleteOperation][google.longrunning.Operations.DeleteOperation].
+=======
+ * The request message for [Operations.DeleteOperation][google.longrunning.Operations.DeleteOperation].
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  *
  * Generated from protobuf message <code>google.longrunning.DeleteOperationRequest</code>
  */

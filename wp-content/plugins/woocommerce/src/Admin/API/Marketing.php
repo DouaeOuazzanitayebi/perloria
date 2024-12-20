@@ -79,6 +79,7 @@ class Marketing extends \WC_REST_Data_Controller {
 				'schema' => array( $this, 'get_public_item_schema' ),
 			)
 		);
+<<<<<<< HEAD
 
 		register_rest_route(
 			$this->namespace,
@@ -92,6 +93,8 @@ class Marketing extends \WC_REST_Data_Controller {
 				'schema' => array( $this, 'get_public_item_schema' ),
 			)
 		);
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -154,6 +157,7 @@ class Marketing extends \WC_REST_Data_Controller {
 		$category = $request->get_param( 'category' );
 		return rest_ensure_response( $marketing_specs->get_knowledge_base_posts( $category ) );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Return misc recommendations.
@@ -169,4 +173,6 @@ class Marketing extends \WC_REST_Data_Controller {
 
 		return rest_ensure_response( $misc_recommendations );
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

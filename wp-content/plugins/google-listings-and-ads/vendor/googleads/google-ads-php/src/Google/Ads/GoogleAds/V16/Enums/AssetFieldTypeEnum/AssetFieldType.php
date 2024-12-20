@@ -189,12 +189,15 @@ class AssetFieldType
      * Generated from protobuf enum <code>HOTEL_PROPERTY = 28;</code>
      */
     const HOTEL_PROPERTY = 28;
+<<<<<<< HEAD
     /**
      * The asset is linked for use as a discovery carousel card.
      *
      * Generated from protobuf enum <code>DISCOVERY_CAROUSEL_CARD = 29;</code>
      */
     const DISCOVERY_CAROUSEL_CARD = 29;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -226,7 +229,10 @@ class AssetFieldType
         self::AD_IMAGE => 'AD_IMAGE',
         self::BUSINESS_LOGO => 'BUSINESS_LOGO',
         self::HOTEL_PROPERTY => 'HOTEL_PROPERTY',
+<<<<<<< HEAD
         self::DISCOVERY_CAROUSEL_CARD => 'DISCOVERY_CAROUSEL_CARD',
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ];
 
     public static function name($value)

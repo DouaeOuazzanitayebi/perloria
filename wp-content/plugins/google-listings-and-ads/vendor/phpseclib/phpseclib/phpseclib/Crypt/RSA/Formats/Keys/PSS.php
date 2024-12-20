@@ -154,9 +154,15 @@ abstract class PSS extends Progenitor
     /**
      * Convert a private key to the appropriate format.
      *
+<<<<<<< HEAD
      * @param BigInteger $n
      * @param BigInteger $e
      * @param BigInteger $d
+=======
+     * @param \phpseclib3\Math\BigInteger $n
+     * @param \phpseclib3\Math\BigInteger $e
+     * @param \phpseclib3\Math\BigInteger $d
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param array $primes
      * @param array $exponents
      * @param array $coefficients
@@ -177,8 +183,13 @@ abstract class PSS extends Progenitor
     /**
      * Convert a public key to the appropriate format
      *
+<<<<<<< HEAD
      * @param BigInteger $n
      * @param BigInteger $e
+=======
+     * @param \phpseclib3\Math\BigInteger $n
+     * @param \phpseclib3\Math\BigInteger $e
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param array $options optional
      * @return string
      */

@@ -12,7 +12,11 @@
  *
  * @see         https://woocommerce.com/document/template-structure/
  * @package     WooCommerce\Templates
+<<<<<<< HEAD
  * @version     9.5.0
+=======
+ * @version     3.5.1
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -27,6 +31,7 @@ global $product;
 $attachment_ids = $product->get_gallery_image_ids();
 
 if ( $attachment_ids && $product->get_image_id() ) {
+<<<<<<< HEAD
 	foreach ( $attachment_ids as $key => $attachment_id ) {
 		/**
 		 * Filter product image thumbnail HTML string.
@@ -37,5 +42,9 @@ if ( $attachment_ids && $product->get_image_id() ) {
 		 * @param int    $attachment_id Attachment ID.
 		 */
 		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $attachment_id, false, $key ), $attachment_id ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+=======
+	foreach ( $attachment_ids as $attachment_id ) {
+		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $attachment_id ), $attachment_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 }

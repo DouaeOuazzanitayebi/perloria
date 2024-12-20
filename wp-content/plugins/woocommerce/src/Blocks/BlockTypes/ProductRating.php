@@ -202,6 +202,7 @@ class ProductRating extends AbstractBlock {
 				10
 			);
 
+<<<<<<< HEAD
 			$classes = implode(
 				' ',
 				array_filter(
@@ -225,6 +226,15 @@ class ProductRating extends AbstractBlock {
 					%2$s
 				</div>',
 				$wrapper_attributes,
+=======
+			return sprintf(
+				'<div class="wc-block-components-product-rating wc-block-grid__product-rating %1$s %2$s" style="%3$s">
+					%4$s
+				</div>',
+				esc_attr( $text_align_styles_and_classes['class'] ?? '' ),
+				esc_attr( $styles_and_classes['classes'] ),
+				esc_attr( $styles_and_classes['styles'] ?? '' ),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				$rating_html
 			);
 		}

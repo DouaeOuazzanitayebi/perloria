@@ -30,7 +30,11 @@ class Types {
 	 *
 	 * @return mixed
 	 */
+<<<<<<< HEAD
 	public static function ensure_instance_of( $thing, string $desired_type, ?callable $on_failure = null ) {
+=======
+	public static function ensure_instance_of( $thing, string $desired_type, callable $on_failure = null ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		// If everything looks good, return early.
 		if ( $thing instanceof $desired_type ) {
 			return $thing;

@@ -188,6 +188,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v16.resources.LocalServicesSettings local_services_settings = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $local_services_settings = null;
+<<<<<<< HEAD
     /**
      * Output only. Brand Safety setting at the account level. Allows for
      * selecting an inventory type to show your ads on content that is the right
@@ -197,6 +198,8 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v16.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $video_brand_safety_suitability = 0;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     /**
      * Constructor.
@@ -281,11 +284,14 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           Output only. Customer Agreement Setting for a customer.
      *     @type \Google\Ads\GoogleAds\V16\Resources\LocalServicesSettings $local_services_settings
      *           Output only. Settings for Local Services customer.
+<<<<<<< HEAD
      *     @type int $video_brand_safety_suitability
      *           Output only. Brand Safety setting at the account level. Allows for
      *           selecting an inventory type to show your ads on content that is the right
      *           fit for your brand. See
      *           https://support.google.com/google-ads/answer/7515513.
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * }
      */
     public function __construct($data = NULL) {
@@ -1175,6 +1181,7 @@ class Customer extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * Output only. Brand Safety setting at the account level. Allows for
      * selecting an inventory type to show your ads on content that is the right
@@ -1207,5 +1214,7 @@ class Customer extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 

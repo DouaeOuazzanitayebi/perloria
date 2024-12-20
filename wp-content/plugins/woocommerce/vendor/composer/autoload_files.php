@@ -11,5 +11,8 @@ return array(
     '44e8414cd27982ecf86403af6e48f123' => $baseDir . '/src/StoreApi/deprecated.php',
     '9ce98895d0a470c71998c4b530020d26' => $baseDir . '/src/StoreApi/functions.php',
     'c379ea42c3f5964a973a7106b08c5ef0' => $baseDir . '/src/Blocks/Domain/Services/functions.php',
+<<<<<<< HEAD
     'cd726a73edeabe4da44e314a8eebc9bb' => $baseDir . '/src/Deprecated.php',
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 );

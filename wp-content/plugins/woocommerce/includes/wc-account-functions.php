@@ -298,6 +298,7 @@ function wc_get_account_orders_actions( $order ) {
 
 	$actions = array(
 		'pay'    => array(
+<<<<<<< HEAD
 			'url'        => $order->get_checkout_payment_url(),
 			'name'       => __( 'Pay', 'woocommerce' ),
 			/* translators: %s: order number */
@@ -314,6 +315,18 @@ function wc_get_account_orders_actions( $order ) {
 			'name'       => __( 'Cancel', 'woocommerce' ),
 			/* translators: %s: order number */
 			'aria-label' => sprintf( __( 'Cancel order %s', 'woocommerce' ), $order->get_order_number() ),
+=======
+			'url'  => $order->get_checkout_payment_url(),
+			'name' => __( 'Pay', 'woocommerce' ),
+		),
+		'view'   => array(
+			'url'  => $order->get_view_order_url(),
+			'name' => __( 'View', 'woocommerce' ),
+		),
+		'cancel' => array(
+			'url'  => $order->get_cancel_order_url( wc_get_page_permalink( 'myaccount' ) ),
+			'name' => __( 'Cancel', 'woocommerce' ),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		),
 	);
 

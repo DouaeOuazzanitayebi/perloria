@@ -9,7 +9,10 @@ defined( 'ABSPATH' ) || exit;
 
 use Automattic\WooCommerce\Admin\RemoteSpecs\DataSourcePoller;
 use Automattic\WooCommerce\Admin\RemoteSpecs\RuleProcessors\GetRuleProcessor;
+<<<<<<< HEAD
 use WC_Helper;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * Specs data source poller class.
@@ -17,6 +20,7 @@ use WC_Helper;
  * stores the specs in to the database as an option.
  */
 class RemoteInboxNotificationsDataSourcePoller extends DataSourcePoller {
+<<<<<<< HEAD
 	const ID = 'remote_inbox_notifications';
 
 	/**
@@ -30,6 +34,16 @@ class RemoteInboxNotificationsDataSourcePoller extends DataSourcePoller {
 	 * Class instance.
 	 *
 	 * @var RemoteInboxNotificationsDataSourcePoller instance
+=======
+	const ID           = 'remote_inbox_notifications';
+	const DATA_SOURCES = array(
+		'https://woocommerce.com/wp-json/wccom/inbox-notifications/2.0/notifications.json',
+	);
+	/**
+	 * Class instance.
+	 *
+	 * @var Analytics instance
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 */
 	protected static $instance = null;
 
@@ -40,7 +54,11 @@ class RemoteInboxNotificationsDataSourcePoller extends DataSourcePoller {
 		if ( ! self::$instance ) {
 			self::$instance = new self(
 				self::ID,
+<<<<<<< HEAD
 				self::get_data_sources(),
+=======
+				self::DATA_SOURCES,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				array(
 					'spec_key' => 'slug',
 				)
@@ -224,6 +242,7 @@ class RemoteInboxNotificationsDataSourcePoller extends DataSourcePoller {
 
 		return true;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Get data sources.
@@ -235,4 +254,6 @@ class RemoteInboxNotificationsDataSourcePoller extends DataSourcePoller {
 			WC_Helper::get_woocommerce_com_base_url() . 'wp-json/wccom/inbox-notifications/2.0/notifications.json',
 		);
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

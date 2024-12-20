@@ -283,6 +283,7 @@ function wc_product_post_type_link( $permalink, $post ) {
 add_filter( 'post_type_link', 'wc_product_post_type_link', 10, 2 );
 
 /**
+<<<<<<< HEAD
  * Ensure that the product_cat value determined in `wc_product_post_type_link` is the canonical value.
  *
  * If other values are used in this part of the permalink, it will be redirected.
@@ -324,6 +325,8 @@ function wc_product_canonical_redirect(): void {
 add_action( 'template_redirect', 'wc_product_canonical_redirect', 5 );
 
 /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  * Get the placeholder image URL either from media, or use the fallback image.
  *
  * @param string $size Thumbnail size to use.

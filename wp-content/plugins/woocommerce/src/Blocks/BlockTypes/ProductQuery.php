@@ -189,7 +189,11 @@ class ProductQuery extends AbstractBlock {
 				'query_loop_block_query_vars',
 				array( $this, 'build_query' ),
 				10,
+<<<<<<< HEAD
 				2
+=======
+				1
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			);
 		}
 
@@ -239,6 +243,7 @@ class ProductQuery extends AbstractBlock {
 	 * Return a custom query based on attributes, filters and global WP_Query.
 	 *
 	 * @param WP_Query $query The WordPress Query.
+<<<<<<< HEAD
 	 * @param WP_Block $block The block being rendered.
 	 * @return array
 	 */
@@ -246,6 +251,13 @@ class ProductQuery extends AbstractBlock {
 		$parsed_block                = $this->parsed_block;
 		$is_product_collection_block = $block->context['query']['isProductCollectionBlock'] ?? false;
 		if ( ! $this->is_woocommerce_variation( $parsed_block ) || $is_product_collection_block ) {
+=======
+	 * @return array
+	 */
+	public function build_query( $query ) {
+		$parsed_block = $this->parsed_block;
+		if ( ! $this->is_woocommerce_variation( $parsed_block ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			return $query;
 		}
 
@@ -516,6 +528,10 @@ class ProductQuery extends AbstractBlock {
 			'attributes_filter_query_args' => $attributes_filter_query_args,
 			'rating_filter_query_args'     => array( RatingFilter::RATING_QUERY_VAR ),
 		);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**

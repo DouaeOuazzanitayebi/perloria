@@ -358,21 +358,31 @@ class WC_Shortcode_My_Account {
 	/**
 	 * Handles resetting the user's password.
 	 *
+<<<<<<< HEAD
 	 * @since 9.4.0 This will log the user in after resetting the password/session.
 	 *
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * @param object $user     The user.
 	 * @param string $new_pass New password for the user in plaintext.
 	 */
 	public static function reset_password( $user, $new_pass ) {
+<<<<<<< HEAD
 		// phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		do_action( 'password_reset', $user, $new_pass );
 
 		wp_set_password( $new_pass, $user->ID );
 		update_user_meta( $user->ID, 'default_password_nag', false );
 		self::set_reset_password_cookie();
+<<<<<<< HEAD
 		wc_set_customer_auth_cookie( $user->ID );
 
 		// phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment
+=======
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		if ( ! apply_filters( 'woocommerce_disable_password_change_notification', false ) ) {
 			wp_password_change_notification( $user );
 		}

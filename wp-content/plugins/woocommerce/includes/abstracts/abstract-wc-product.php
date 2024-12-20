@@ -9,8 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
 use Automattic\WooCommerce\Internal\ProductAttributesLookup\LookupDataStore as ProductAttributesLookupDataStore;
+=======
+use Automattic\WooCommerce\Internal\ProductAttributesLookup\LookupDataStore as ProductAttributesLookupDataStore;
+use Automattic\WooCommerce\Internal\ProductDownloads\ApprovedDirectories\Register as Download_Directories;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * Legacy product contains all deprecated methods for this class and can be
@@ -27,7 +32,10 @@ require_once WC_ABSPATH . 'includes/legacy/abstract-wc-legacy-product.php';
  * @package WooCommerce\Abstracts
  */
 class WC_Product extends WC_Abstract_Legacy_Product {
+<<<<<<< HEAD
 	use CogsAwareTrait;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	/**
 	 * This is the name of this object type.
@@ -107,7 +115,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		'rating_counts'      => array(),
 		'average_rating'     => 0,
 		'review_count'       => 0,
+<<<<<<< HEAD
 		'cogs_value'         => 0,
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	);
 
 	/**
@@ -2200,6 +2211,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		}
 		return apply_filters( 'woocommerce_get_availability_class', $class, $this );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Set the defined value of the Cost of Goods Sold for this product.
@@ -2287,4 +2299,6 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	protected function get_cogs_total_value_core(): float {
 		return $this->get_cogs_effective_value();
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

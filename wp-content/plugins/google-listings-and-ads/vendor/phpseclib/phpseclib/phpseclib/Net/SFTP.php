@@ -391,8 +391,12 @@ class SFTP extends SSH2
                 104 => 'NET_SFTP_NAME',
                 105 => 'NET_SFTP_ATTRS',
 
+<<<<<<< HEAD
                 200 => 'NET_SFTP_EXTENDED',
                 201 => 'NET_SFTP_EXTENDED_REPLY'
+=======
+                200 => 'NET_SFTP_EXTENDED'
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             ];
             self::$status_codes = [
                 0 => 'NET_SFTP_STATUS_OK',
@@ -706,8 +710,12 @@ class SFTP extends SSH2
                 throw $e;
             }
             $this->canonicalize_paths = false;
+<<<<<<< HEAD
             $this->reset_sftp();
             return $this->init_sftp_connection();
+=======
+            $this->reset_connection(NET_SSH2_DISCONNECT_CONNECTION_LOST);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         }
 
         $this->update_stat_cache($this->pwd, []);
@@ -2102,7 +2110,11 @@ class SFTP extends SSH2
      * @param callable|null $progressCallback
      * @throws \UnexpectedValueException on receipt of unexpected packets
      * @throws \BadFunctionCallException if you're uploading via a callback and the callback function is invalid
+<<<<<<< HEAD
      * @throws FileNotFoundException if you're uploading via a file and the file doesn't exist
+=======
+     * @throws \phpseclib3\Exception\FileNotFoundException if you're uploading via a file and the file doesn't exist
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @return bool
      */
     public function put($remote_file, $data, $mode = self::SOURCE_STRING, $start = -1, $local_start = -1, $progressCallback = null)
@@ -3043,8 +3055,11 @@ class SFTP extends SSH2
      */
     protected function parseAttributes(&$response)
     {
+<<<<<<< HEAD
         $attr = [];
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         if ($this->version >= 4) {
             list($flags, $attr['type']) = Strings::unpackSSH2('NC', $response);
         } else {
@@ -3272,7 +3287,10 @@ class SFTP extends SSH2
         // in SSH2.php the timeout is cumulative per function call. eg. exec() will
         // timeout after 10s. but for SFTP.php it's cumulative per packet
         $this->curTimeout = $this->timeout;
+<<<<<<< HEAD
         $this->is_timeout = false;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
         $packet = $this->use_request_id ?
             pack('NCNa*', strlen($data) + 5, $type, $request_id, $data) :
@@ -3290,10 +3308,20 @@ class SFTP extends SSH2
     }
 
     /**
+<<<<<<< HEAD
      * Resets the SFTP channel for re-use
      */
     private function reset_sftp()
     {
+=======
+     * Resets a connection for re-use
+     *
+     * @param int $reason
+     */
+    protected function reset_connection($reason)
+    {
+        parent::reset_connection($reason);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $this->use_request_id = false;
         $this->pwd = false;
         $this->requestBuffer = [];
@@ -3301,6 +3329,7 @@ class SFTP extends SSH2
     }
 
     /**
+<<<<<<< HEAD
      * Resets a connection for re-use
      */
     protected function reset_connection()
@@ -3310,6 +3339,8 @@ class SFTP extends SSH2
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Receives SFTP Packets
      *
      * See '6. General Packet Format' of draft-ietf-secsh-filexfer-13 for more info.
@@ -3335,7 +3366,10 @@ class SFTP extends SSH2
         // in SSH2.php the timeout is cumulative per function call. eg. exec() will
         // timeout after 10s. but for SFTP.php it's cumulative per packet
         $this->curTimeout = $this->timeout;
+<<<<<<< HEAD
         $this->is_timeout = false;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
         $start = microtime(true);
 
@@ -3500,6 +3534,7 @@ class SFTP extends SSH2
     }
 
     /**
+<<<<<<< HEAD
      * Get supported SFTP extensions
      *
      * @return array
@@ -3518,6 +3553,8 @@ class SFTP extends SSH2
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Get supported SFTP versions
      *
      * @return int|false
@@ -3574,6 +3611,7 @@ class SFTP extends SSH2
     {
         $this->preserveTime = false;
     }
+<<<<<<< HEAD
 
     /**
      * POSIX Rename
@@ -3694,4 +3732,6 @@ class SFTP extends SSH2
             Strings::unpackSSH2('QQQQQQQQQQQ', $response)
         );
     }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

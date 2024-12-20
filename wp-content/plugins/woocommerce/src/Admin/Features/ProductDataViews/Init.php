@@ -28,7 +28,11 @@ class Init {
 				add_filter(
 					'admin_body_class',
 					static function ( $classes ) {
+<<<<<<< HEAD
 						return "$classes";
+=======
+						return "$classes is-fullscreen-mode";
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					}
 				);
 			}
@@ -109,9 +113,15 @@ class Init {
 		}
 		$ptype_obj = get_post_type_object( 'product' );
 		add_submenu_page(
+<<<<<<< HEAD
 			'edit.php?post_type=product',
 			$ptype_obj->labels->name,
 			esc_html__( 'All Products ( new )', 'woocommerce' ),
+=======
+			'woocommerce',
+			$ptype_obj->labels->name,
+			esc_html__( 'All Products', 'woocommerce' ),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'manage_woocommerce',
 			'woocommerce-products-dashboard',
 			array( $this, 'woocommerce_products_dashboard' ),

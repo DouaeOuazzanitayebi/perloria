@@ -112,11 +112,16 @@ class RotatingFileHandler extends StreamHandler
      */
     protected function write(array $record): void
     {
+<<<<<<< HEAD
         // on the first record written, if the log is new, we rotate (once per day) after the log has been written so that the new file exists
+=======
+        // on the first record written, if the log is new, we should rotate (once per day)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         if (null === $this->mustRotate) {
             $this->mustRotate = null === $this->url || !file_exists($this->url);
         }
 
+<<<<<<< HEAD
         // if the next rotation is expired, then we rotate immediately
         if ($this->nextRotation <= $record['datetime']) {
             $this->mustRotate = true;
@@ -128,6 +133,14 @@ class RotatingFileHandler extends StreamHandler
         if ($this->mustRotate) {
             $this->close(); // triggers rotation
         }
+=======
+        if ($this->nextRotation <= $record['datetime']) {
+            $this->mustRotate = true;
+            $this->close();
+        }
+
+        parent::write($record);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 
     /**
@@ -139,8 +152,11 @@ class RotatingFileHandler extends StreamHandler
         $this->url = $this->getTimedFilename();
         $this->nextRotation = new \DateTimeImmutable('tomorrow');
 
+<<<<<<< HEAD
         $this->mustRotate = false;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         // skip GC of old logs if files are unlimited
         if (0 === $this->maxFiles) {
             return;
@@ -173,6 +189,11 @@ class RotatingFileHandler extends StreamHandler
                 restore_error_handler();
             }
         }
+<<<<<<< HEAD
+=======
+
+        $this->mustRotate = false;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 
     protected function getTimedFilename(): string

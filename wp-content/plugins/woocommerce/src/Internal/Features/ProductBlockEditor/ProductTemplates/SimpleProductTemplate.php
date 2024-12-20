@@ -239,9 +239,12 @@ class SimpleProductTemplate extends AbstractProductFormTemplate implements Produ
 					array(
 						'expression' => 'editedProduct.type === "variable"',
 					),
+<<<<<<< HEAD
 					array(
 						'expression' => 'editedProduct.type === "grouped"',
 					),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				),
 			)
 		);
@@ -267,9 +270,12 @@ class SimpleProductTemplate extends AbstractProductFormTemplate implements Produ
 					array(
 						'expression' => 'editedProduct.type === "variable"',
 					),
+<<<<<<< HEAD
 					array(
 						'expression' => 'editedProduct.type === "grouped"',
 					),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				),
 			)
 		);

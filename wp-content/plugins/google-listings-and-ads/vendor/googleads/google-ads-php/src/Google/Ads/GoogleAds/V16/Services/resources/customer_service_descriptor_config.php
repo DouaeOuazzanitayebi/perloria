@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /*
  * Copyright 2024 Google LLC
  *
@@ -19,6 +20,8 @@
  * GENERATED CODE WARNING
  * This file was automatically generated - do not edit!
  */
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 return [
     'interfaces' => [

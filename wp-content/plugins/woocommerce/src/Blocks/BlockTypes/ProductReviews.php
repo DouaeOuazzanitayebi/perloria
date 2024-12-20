@@ -2,8 +2,11 @@
 
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Blocks\Utils\StyleAttributesUtils;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 /**
  * ProductReviews class.
  */
@@ -42,11 +45,20 @@ class ProductReviews extends AbstractBlock {
 
 		$reviews = ob_get_clean();
 
+<<<<<<< HEAD
+=======
+		$classname = $attributes['className'] ?? '';
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return sprintf(
 			'<div class="wp-block-woocommerce-product-reviews %1$s">
 				%2$s
 			</div>',
+<<<<<<< HEAD
 			StyleAttributesUtils::get_classes_by_attributes( $attributes, array( 'extra_classes' ) ),
+=======
+			esc_attr( $classname ),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			$reviews
 		);
 	}

@@ -39,7 +39,11 @@ class Revoke
      * Instantiates the class, but does not initiate the login flow, leaving it
      * to the discretion of the caller.
      */
+<<<<<<< HEAD
     public function __construct(?ClientInterface $http = null)
+=======
+    public function __construct(ClientInterface $http = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $this->http = $http;
     }

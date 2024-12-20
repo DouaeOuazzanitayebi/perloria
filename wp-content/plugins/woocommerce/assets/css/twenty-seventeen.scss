@@ -169,10 +169,13 @@ ul.products {
 	li.product {
 		list-style: none;
 
+<<<<<<< HEAD
 		.woocommerce-loop-product__link {
 			display: block;
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		.price,
 		.star-rating {
 			display: block;
@@ -435,7 +438,14 @@ table.variations {
 }
 
 .woocommerce-product-gallery__trigger {
+<<<<<<< HEAD
 	@include woocommerce-product-gallery__trigger;
+=======
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	z-index: 99;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 
 .woocommerce-tabs {
@@ -1277,6 +1287,7 @@ form.checkout_coupon {
 		border-color: var(--wc-red);
 	}
 }
+<<<<<<< HEAD
 
 /**
  * Checkout error message
@@ -1290,3 +1301,5 @@ form.checkout_coupon {
 		@include checkout-inline-error-message();
 	}
 }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

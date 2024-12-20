@@ -39,7 +39,11 @@ class Exception extends GoogleException
     public function __construct(
         $message,
         $code = 0,
+<<<<<<< HEAD
         ?Exception $previous = null,
+=======
+        Exception $previous = null,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $errors = []
     ) {
         if (version_compare(PHP_VERSION, '5.3.0') >= 0) {

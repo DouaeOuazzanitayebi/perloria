@@ -11,7 +11,10 @@
 		self.$singleVariation     = $form.find( '.single_variation' );
 		self.$singleVariationWrap = $form.find( '.single_variation_wrap' );
 		self.$resetVariations     = $form.find( '.reset_variations' );
+<<<<<<< HEAD
 		self.$resetAlert          = $form.find( '.reset_variations_alert' );
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		self.$product             = $form.closest( '.product' );
 		self.variationData        = $form.data( 'product_variations' );
 		self.useAjax              = false === self.variationData;
@@ -36,9 +39,12 @@
 		$form.on( 'show_variation', { variationForm: self }, self.onShow );
 		$form.on( 'click', '.single_add_to_cart_button', { variationForm: self }, self.onAddToCart );
 		$form.on( 'reset_data', { variationForm: self }, self.onResetDisplayedVariation );
+<<<<<<< HEAD
 		$form.on( 'reset_focus', { variationForm: self }, self.onResetVariationFocus );
 		$form.on( 'announce_reset', { variationForm: self }, self.onAnnounceReset );
 		$form.on( 'clear_reset_announcement', { variationForm: self }, self.onClearResetAnnouncement );
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$form.on( 'reset_image', { variationForm: self }, self.onResetImage );
 		$form.on( 'change.wc-variation-form', '.variations select', { variationForm: self }, self.onChange );
 		$form.on( 'found_variation.wc-variation-form', { variationForm: self }, self.onFoundVariation );
@@ -59,9 +65,13 @@
 	VariationForm.prototype.onReset = function( event ) {
 		event.preventDefault();
 		event.data.variationForm.$attributeFields.val( '' ).trigger( 'change' );
+<<<<<<< HEAD
 		event.data.variationForm.$form.trigger( 'announce_reset' );
 		event.data.variationForm.$form.trigger( 'reset_data' );
 		event.data.variationForm.$form.trigger( 'reset_focus' );
+=======
+		event.data.variationForm.$form.trigger( 'reset_data' );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	};
 
 	/**
@@ -158,6 +168,7 @@
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Announce reset to screen readers.
 	 */
 	VariationForm.prototype.onAnnounceReset = function( event ) {
@@ -177,6 +188,8 @@
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * When the product image is reset.
 	 */
 	VariationForm.prototype.onResetImage = function( event ) {
@@ -340,7 +353,10 @@
 		var form = event.data.variationForm;
 
 		form.$form.find( 'input[name="variation_id"], input.variation_id' ).val( '' ).trigger( 'change' );
+<<<<<<< HEAD
 		form.$form.trigger( 'clear_reset_announcement' );
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		form.$form.find( '.wc-no-matching-variations' ).parent().remove();
 
 		if ( form.useAjax ) {
@@ -570,6 +586,7 @@
 	};
 
 	/**
+<<<<<<< HEAD
 	 * Show or hide the reset button.
 	 */
 	VariationForm.prototype.toggleResetLink = function( on ) {
@@ -582,6 +599,17 @@
 		} else {
 			this.$resetVariations.css( 'visibility', 'hidden' );
 			this.$resetVariations.css( 'display', 'none' );
+=======
+	 * Show or hide the reset link.
+	 */
+	VariationForm.prototype.toggleResetLink = function( on ) {
+		if ( on ) {
+			if ( this.$resetVariations.css( 'visibility' ) === 'hidden' ) {
+				this.$resetVariations.css( 'visibility', 'visible' ).hide().fadeIn();
+			}
+		} else {
+			this.$resetVariations.css( 'visibility', 'hidden' );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 	};
 

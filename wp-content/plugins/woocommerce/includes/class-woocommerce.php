@@ -45,7 +45,11 @@ final class WooCommerce {
 	 *
 	 * @var string
 	 */
+<<<<<<< HEAD
 	public $version = '9.5.1';
+=======
+	public $version = '9.4.3';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	/**
 	 * WooCommerce Schema version.
@@ -335,6 +339,7 @@ final class WooCommerce {
 
 		/**
 		 * These classes have a register method for attaching hooks.
+<<<<<<< HEAD
 		 */
 		$container->get( Automattic\WooCommerce\Internal\Utilities\PluginInstaller::class )->register();
 		$container->get( Automattic\WooCommerce\Internal\TransientFiles\TransientFilesEngine::class )->register();
@@ -347,6 +352,15 @@ final class WooCommerce {
 
 		$container->get( Automattic\WooCommerce\Internal\ReceiptRendering\ReceiptRenderingRestController::class )->register();
 		$container->get( Automattic\WooCommerce\Internal\Orders\OrderActionsRestController::class )->register();
+=======
+		 *
+		 * @var RegisterHooksInterface[] $hook_register_classes
+		 */
+		$hook_register_classes = $container->get( RegisterHooksInterface::class );
+		foreach ( $hook_register_classes as $hook_register_class ) {
+			$hook_register_class->register();
+		}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -728,9 +742,12 @@ final class WooCommerce {
 
 		if ( $this->is_request( 'admin' ) ) {
 			include_once WC_ABSPATH . 'includes/admin/class-wc-admin.php';
+<<<<<<< HEAD
 			// Simulate loading plugin for the legacy reports.
 			// This will be removed after moving the legacy reports to a separate plugin.
 			include_once WC_ABSPATH . 'includes/admin/woocommerce-legacy-reports.php';
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		// We load frontend includes in the post editor, because they may be invoked via pre-loading of blocks.

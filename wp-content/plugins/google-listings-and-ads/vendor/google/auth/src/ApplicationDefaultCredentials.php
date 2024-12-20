@@ -89,9 +89,15 @@ class ApplicationDefaultCredentials
      */
     public static function getSubscriber(// @phpstan-ignore-line
         $scope = null,
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null
+=======
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $creds = self::getCredentials($scope, $httpHandler, $cacheConfig, $cache);
 
@@ -119,9 +125,15 @@ class ApplicationDefaultCredentials
      */
     public static function getMiddleware(
         $scope = null,
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null,
+=======
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $quotaProject = null
     ) {
         $creds = self::getCredentials($scope, $httpHandler, $cacheConfig, $cache, $quotaProject);
@@ -152,12 +164,21 @@ class ApplicationDefaultCredentials
      */
     public static function getCredentials(
         $scope = null,
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null,
         $quotaProject = null,
         $defaultScope = null,
         ?string $universeDomain = null
+=======
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null,
+        $quotaProject = null,
+        $defaultScope = null,
+        string $universeDomain = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $creds = null;
         $jsonKey = CredentialsLoader::fromEnv()
@@ -224,9 +245,15 @@ class ApplicationDefaultCredentials
      */
     public static function getIdTokenMiddleware(
         $targetAudience,
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null
+=======
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $creds = self::getIdTokenCredentials($targetAudience, $httpHandler, $cacheConfig, $cache);
 
@@ -251,9 +278,15 @@ class ApplicationDefaultCredentials
      */
     public static function getProxyIdTokenMiddleware(
         $targetAudience,
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null
+=======
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $creds = self::getIdTokenCredentials($targetAudience, $httpHandler, $cacheConfig, $cache);
 
@@ -276,9 +309,15 @@ class ApplicationDefaultCredentials
      */
     public static function getIdTokenCredentials(
         $targetAudience,
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null
+=======
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $creds = null;
         $jsonKey = CredentialsLoader::fromEnv()
@@ -340,9 +379,15 @@ class ApplicationDefaultCredentials
      * @return bool
      */
     private static function onGce(
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null
+=======
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $gceCacheConfig = [];
         foreach (['lifetime', 'prefix'] as $key) {

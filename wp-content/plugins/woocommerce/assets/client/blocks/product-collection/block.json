@@ -9,10 +9,14 @@
 	"keywords": [
 		"WooCommerce",
 		"Products (Beta)",
+<<<<<<< HEAD
 		"all products",
 		"by category",
 		"by tag",
 		"by attribute"
+=======
+		"products"
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	],
 	"textdomain": "woocommerce",
 	"attributes": {
@@ -28,9 +32,12 @@
 		"displayLayout": {
 			"type": "object"
 		},
+<<<<<<< HEAD
 		"dimensions": {
 			"type": "object"
 		},
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		"convertedFromProducts": {
 			"type": "boolean",
 			"default": false
@@ -57,17 +64,31 @@
 		"queryId": "queryId",
 		"query": "query",
 		"displayLayout": "displayLayout",
+<<<<<<< HEAD
 		"dimensions": "dimensions",
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		"queryContextIncludes": "queryContextIncludes",
 		"collection": "collection",
 		"__privateProductCollectionPreviewState": "__privatePreviewState"
 	},
 	"usesContext": [ "templateSlug", "postId" ],
 	"supports": {
+<<<<<<< HEAD
 		"align": [ "wide", "full" ],
+=======
+		"align": [
+			"wide",
+			"full"
+		],
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		"anchor": true,
 		"html": false,
 		"__experimentalLayout": true,
 		"interactivity": true
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

@@ -336,7 +336,11 @@ class BCMath extends Engine
      */
     public function bitwise_or(BCMath $x)
     {
+<<<<<<< HEAD
         return $this->bitwiseOrHelper($x);
+=======
+        return $this->bitwiseXorHelper($x);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 
     /**

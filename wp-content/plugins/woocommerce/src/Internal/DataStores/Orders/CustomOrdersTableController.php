@@ -721,7 +721,11 @@ class CustomOrdersTableController {
 			'id'                   => DataSynchronizer::ORDERS_DATA_SYNC_ENABLED_OPTION,
 			'title'                => '',
 			'type'                 => 'checkbox',
+<<<<<<< HEAD
 			'desc'                 => __( 'Enable compatibility mode (Synchronize orders between High-performance order storage and WordPress posts storage).', 'woocommerce' ),
+=======
+			'desc'                 => __( 'Enable compatibility mode (synchronizes orders to the posts table).', 'woocommerce' ),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'value'                => $get_value,
 			'desc_tip'             => $get_sync_message,
 			'description_is_error' => $get_description_is_error,

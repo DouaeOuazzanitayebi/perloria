@@ -209,6 +209,7 @@ class WCAdminHelper {
 			}
 		}
 
+<<<<<<< HEAD
 		$url_path = wp_parse_url( $normalized_path, PHP_URL_PATH );
 
 		// Check if the URL matches any of the WooCommerce permalink structures.
@@ -281,6 +282,40 @@ class WCAdminHelper {
 						}
 					}
 				}
+=======
+		// Check product, category and tag pages.
+		$permalink_structure = wc_get_permalink_structure();
+		$permalink_keys      = array(
+			'category_base',
+			'tag_base',
+			'product_base',
+		);
+
+		foreach ( $permalink_keys as $key ) {
+			if ( ! isset( $permalink_structure[ $key ] ) || ! is_string( $permalink_structure[ $key ] ) ) {
+				continue;
+			}
+
+			// Check if the URL path starts with the matching base.
+			if ( 0 === strpos( $normalized_path, trim( $permalink_structure[ $key ], '/' ) ) ) {
+				return true;
+			}
+
+			// If the permalink structure contains placeholders, we need to check if the URL matches the structure using regex.
+			if ( strpos( $permalink_structure[ $key ], '%' ) !== false ) {
+				global $wp_rewrite;
+				$rules = $wp_rewrite->generate_rewrite_rule( $permalink_structure[ $key ] );
+
+				if ( is_array( $rules ) && ! empty( $rules ) ) {
+					// rule key is the regex pattern.
+					$rule = array_keys( $rules )[0];
+					$rule = '#^' . str_replace( '?$', '', $rule ) . '#';
+
+					if ( preg_match( $rule, $normalized_path ) ) {
+						return true;
+					}
+				}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			}
 		}
 

@@ -322,7 +322,10 @@ class InstalledVersions
         }
 
         $installed = array();
+<<<<<<< HEAD
         $copiedLocalDir = false;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
         if (self::$canGetVendors) {
             foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
@@ -331,11 +334,17 @@ class InstalledVersions
                 } elseif (is_file($vendorDir.'/composer/installed.php')) {
                     /** @var array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>} $required */
                     $required = require $vendorDir.'/composer/installed.php';
+<<<<<<< HEAD
                     self::$installedByVendor[$vendorDir] = $required;
                     $installed[] = $required;
                     if (strtr($vendorDir.'/composer', '\\', '/') === strtr(__DIR__, '\\', '/')) {
                         self::$installed = $required;
                         $copiedLocalDir = true;
+=======
+                    $installed[] = self::$installedByVendor[$vendorDir] = $required;
+                    if (null === self::$installed && strtr($vendorDir.'/composer', '\\', '/') === strtr(__DIR__, '\\', '/')) {
+                        self::$installed = $installed[count($installed) - 1];
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                     }
                 }
             }
@@ -353,7 +362,11 @@ class InstalledVersions
             }
         }
 
+<<<<<<< HEAD
         if (self::$installed !== array() && !$copiedLocalDir) {
+=======
+        if (self::$installed !== array()) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             $installed[] = self::$installed;
         }
 

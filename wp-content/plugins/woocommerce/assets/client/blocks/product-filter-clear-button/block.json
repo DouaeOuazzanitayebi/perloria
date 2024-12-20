@@ -12,6 +12,7 @@
 	"textdomain": "woocommerce",
 	"apiVersion": 3,
 	"ancestor": [
+<<<<<<< HEAD
 		"woocommerce/product-filter",
 		"woocommerce/product-filter-attribute",
 		"woocommerce/product-filter-price",
@@ -25,8 +26,16 @@
 			"default": ""
 		}
 	},
+=======
+		"woocommerce/product-filter"
+	],
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	"supports": {
 		"interactivity": true,
 		"inserter": false
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

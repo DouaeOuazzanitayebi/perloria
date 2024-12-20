@@ -172,8 +172,13 @@ abstract class CredentialsLoader implements
     public static function makeHttpClient(
         FetchAuthTokenInterface $fetcher,
         array $httpClientOptions = [],
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?callable $tokenCallback = null
+=======
+        callable $httpHandler = null,
+        callable $tokenCallback = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $middleware = new Middleware\AuthTokenMiddleware(
             $fetcher,

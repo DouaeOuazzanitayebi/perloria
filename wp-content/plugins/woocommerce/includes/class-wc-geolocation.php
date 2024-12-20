@@ -142,6 +142,7 @@ class WC_Geolocation {
 	 * @return array
 	 */
 	public static function geolocate_ip( $ip_address = '', $fallback = false, $api_fallback = true ) {
+<<<<<<< HEAD
 		/**
 		 * Filter to allow custom geolocation of the IP address.
 		 *
@@ -152,6 +153,9 @@ class WC_Geolocation {
 		 * @param bool $api_fallback If true, uses geolocation APIs if the database file doesn't exist (can be slower).
 		 * @return string
 		 */
+=======
+		// Filter to allow custom geolocation of the IP address.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$country_code = apply_filters( 'woocommerce_geolocate_ip', false, $ip_address, $fallback, $api_fallback );
 
 		if ( false !== $country_code ) {

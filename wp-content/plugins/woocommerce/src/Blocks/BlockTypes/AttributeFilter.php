@@ -24,6 +24,7 @@ class AttributeFilter extends AbstractBlock {
 	protected function enqueue_data( array $attributes = [] ) {
 		parent::enqueue_data( $attributes );
 		$this->asset_data_registry->add( 'attributes', array_values( wc_get_attribute_taxonomies() ) );
+<<<<<<< HEAD
 
 		// Enqueue any `queryState` that the UI will need to be aware of
 		// (Ex: the category id if we're on a category page, the tag id if we're on a tag page/etc).
@@ -37,6 +38,8 @@ class AttributeFilter extends AbstractBlock {
 		}
 
 		$this->asset_data_registry->add( 'queryState', $query_state );
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**

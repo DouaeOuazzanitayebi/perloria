@@ -251,11 +251,14 @@ class Checkout extends AbstractCartRoute {
 		$this->cart_controller->calculate_totals();
 
 		/**
+<<<<<<< HEAD
 		 * Validate that the cart is not empty.
 		 */
 		$this->cart_controller->validate_cart_not_empty();
 
 		/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		 * Validate items and fix violations before the order is processed.
 		 */
 		$this->cart_controller->validate_cart();
@@ -664,7 +667,11 @@ class Checkout extends AbstractCartRoute {
 	 * This validates if the order can be placed regarding settings in WooCommerce > Settings > Accounts & Privacy
 	 * If registration during checkout is disabled, guest checkout is disabled and the user is not logged in, prevent checkout.
 	 *
+<<<<<<< HEAD
 	 * @throws RouteException If user cannot place order.
+=======
+	 * @throws RouteException
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 */
 	private function validate_user_can_place_order() {
 		if (
@@ -677,6 +684,7 @@ class Checkout extends AbstractCartRoute {
 			throw new RouteException(
 				'woocommerce_rest_guest_checkout_disabled',
 				esc_html(
+<<<<<<< HEAD
 					/**
 					 * Filter to customize the checkout message when a user must be logged in.
 					 *
@@ -687,6 +695,12 @@ class Checkout extends AbstractCartRoute {
 					apply_filters(
 						'woocommerce_checkout_must_be_logged_in_message',
 						__( 'You must be logged in to checkout.', 'woocommerce' )
+=======
+					apply_filters(
+						'woocommerce_checkout_must_be_logged_in_message',
+						__( 'You must be logged in to checkout.', 'woocommerce'
+						)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					)
 				),
 				403

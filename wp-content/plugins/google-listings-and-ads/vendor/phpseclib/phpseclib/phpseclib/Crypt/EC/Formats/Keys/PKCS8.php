@@ -130,6 +130,7 @@ abstract class PKCS8 extends Progenitor
 
         if (isset($key['privateKey'])) {
             $components['curve'] = $key['privateKeyAlgorithm']['algorithm'] == 'id-Ed25519' ? new Ed25519() : new Ed448();
+<<<<<<< HEAD
             $expected = chr(ASN1::TYPE_OCTET_STRING) . ASN1::encodeLength($components['curve']::SIZE);
             if (substr($key['privateKey'], 0, 2) != $expected) {
                 throw new \RuntimeException(
@@ -137,6 +138,13 @@ abstract class PKCS8 extends Progenitor
                     $key['privateKeyAlgorithm']['algorithm'] .
                     ' private key field should be 0x' . bin2hex($expected)
                 );
+=======
+
+            // 0x04 == octet string
+            // 0x20 == length (32 bytes)
+            if (substr($key['privateKey'], 0, 2) != "\x04\x20") {
+                throw new \RuntimeException('The first two bytes of the private key field should be 0x0420');
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             }
             $arr = $components['curve']->extractSecret(substr($key['privateKey'], 2));
             $components['dA'] = $arr['dA'];
@@ -161,7 +169,11 @@ abstract class PKCS8 extends Progenitor
     /**
      * Convert an EC public key to the appropriate format
      *
+<<<<<<< HEAD
      * @param BaseCurve $curve
+=======
+     * @param \phpseclib3\Crypt\EC\BaseCurves\Base $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param \phpseclib3\Math\Common\FiniteField\Integer[] $publicKey
      * @param array $options optional
      * @return string
@@ -178,8 +190,12 @@ abstract class PKCS8 extends Progenitor
             return self::wrapPublicKey(
                 $curve->encodePoint($publicKey),
                 null,
+<<<<<<< HEAD
                 $curve instanceof Ed25519 ? 'id-Ed25519' : 'id-Ed448',
                 $options
+=======
+                $curve instanceof Ed25519 ? 'id-Ed25519' : 'id-Ed448'
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             );
         }
 
@@ -187,14 +203,23 @@ abstract class PKCS8 extends Progenitor
 
         $key = "\4" . $publicKey[0]->toBytes() . $publicKey[1]->toBytes();
 
+<<<<<<< HEAD
         return self::wrapPublicKey($key, $params, 'id-ecPublicKey', $options);
+=======
+        return self::wrapPublicKey($key, $params, 'id-ecPublicKey');
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 
     /**
      * Convert a private key to the appropriate format.
      *
+<<<<<<< HEAD
      * @param BigInteger $privateKey
      * @param BaseCurve $curve
+=======
+     * @param \phpseclib3\Math\BigInteger $privateKey
+     * @param \phpseclib3\Crypt\EC\BaseCurves\Base $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param \phpseclib3\Math\Common\FiniteField\Integer[] $publicKey
      * @param string $secret optional
      * @param string $password optional
@@ -211,7 +236,11 @@ abstract class PKCS8 extends Progenitor
 
         if ($curve instanceof TwistedEdwardsCurve) {
             return self::wrapPrivateKey(
+<<<<<<< HEAD
                 chr(ASN1::TYPE_OCTET_STRING) . ASN1::encodeLength($curve::SIZE) . $secret,
+=======
+                "\x04\x20" . $secret,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                 [],
                 null,
                 $password,

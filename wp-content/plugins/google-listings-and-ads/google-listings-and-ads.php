@@ -3,7 +3,11 @@
  * Plugin Name: Google for WooCommerce
  * Plugin URL: https://wordpress.org/plugins/google-listings-and-ads/
  * Description: Native integration with Google that allows merchants to easily display their products across Google’s network.
+<<<<<<< HEAD
  * Version: 2.9.3
+=======
+ * Version: 2.9.2
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  * Author: WooCommerce
  * Author URI: https://woocommerce.com/
  * Text Domain: google-listings-and-ads
@@ -12,8 +16,13 @@
  * Requires PHP: 7.4
  * Requires PHP Architecture: 64 bits
  * Requires Plugins: woocommerce
+<<<<<<< HEAD
  * WC requires at least: 7.9
  * WC tested up to: 9.5
+=======
+ * WC requires at least: 6.9
+ * WC tested up to: 9.4
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  * Woo:
  *
  * @package WooCommerce\Admin
@@ -30,9 +39,15 @@ use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 defined( 'ABSPATH' ) || exit;
 
+<<<<<<< HEAD
 define( 'WC_GLA_VERSION', '2.9.3' ); // WRCS: DEFINED_VERSION.
 define( 'WC_GLA_MIN_PHP_VER', '7.4' );
 define( 'WC_GLA_MIN_WC_VER', '7.9' );
+=======
+define( 'WC_GLA_VERSION', '2.9.2' ); // WRCS: DEFINED_VERSION.
+define( 'WC_GLA_MIN_PHP_VER', '7.4' );
+define( 'WC_GLA_MIN_WC_VER', '6.9' );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 // Load and initialize the autoloader.
 require_once __DIR__ . '/src/Autoloader.php';

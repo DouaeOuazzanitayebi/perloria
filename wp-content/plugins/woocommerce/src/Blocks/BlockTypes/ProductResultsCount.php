@@ -54,6 +54,10 @@ class ProductResultsCount extends AbstractBlock {
 				'wc-block-product-results-count',
 				'wp-block-woocommerce-product-results-count',
 			),
+<<<<<<< HEAD
+=======
+			isset( $attributes['className'] ) ? array( $attributes['className'] ) : array(),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 		$p->set_attribute( 'class', implode( ' ', $classes ) );
 		$p->set_attribute( 'style', $parsed_style_attributes['styles'] );

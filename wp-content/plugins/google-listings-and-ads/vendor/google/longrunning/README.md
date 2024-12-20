@@ -28,11 +28,14 @@ please see our [gRPC installation guide](https://cloud.google.com/php/grpc).
 Please see our [Authentication guide](https://github.com/googleapis/google-cloud-php/blob/main/AUTHENTICATION.md) for more information
 on authenticating your client. Once authenticated, you'll be ready to start making requests.
 
+<<<<<<< HEAD
 ### Debugging
 
 Please see our [Debugging guide](https://github.com/googleapis/google-cloud-php/blob/main/DEBUG.md)
 for more information about the debugging tools.
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 ### Version
 
 This component is considered beta. As such, it should be expected to be mostly

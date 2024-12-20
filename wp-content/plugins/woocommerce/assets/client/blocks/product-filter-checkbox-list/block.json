@@ -11,8 +11,12 @@
 	"textdomain": "woocommerce",
 	"apiVersion": 3,
 	"ancestor": [
+<<<<<<< HEAD
 		"woocommerce/product-filter-attribute",
 		"woocommerce/product-filter-status"
+=======
+		"woocommerce/product-filter-attribute"
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	],
 	"supports": {
 		"color": {

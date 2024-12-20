@@ -68,9 +68,14 @@ class WC_Site_Tracking {
 		$server_details  = WC_Tracks::get_server_details();
 		$blog_details    = WC_Tracks::get_blog_details( $user->ID );
 		$tracks_identity = WC_Tracks_Client::get_identity( $user->ID );
+<<<<<<< HEAD
 		$role_details    = WC_Tracks::get_role_details( $user );
 
 		$client_tracking_properties = array_merge( $server_details, $blog_details, $role_details );
+=======
+
+		$client_tracking_properties = array_merge( $server_details, $blog_details );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		/**
 		 * Add global tracks event properties.
 		 *

@@ -236,7 +236,11 @@ class GlobalSiteTag implements Service, Registerable, Conditional, OptionsAwareI
 	public function activate_global_site_tag( string $ads_conversion_id ) {
 		if ( $this->gtag_js->is_adding_framework() ) {
 			if ( $this->gtag_js->ga4w_v2 ) {
+<<<<<<< HEAD
 				$this->wp->wp_add_inline_script(
+=======
+				wp_add_inline_script(
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					'woocommerce-google-analytics-integration',
 					$this->get_gtag_config( $ads_conversion_id )
 				);
@@ -331,12 +335,20 @@ class GlobalSiteTag implements Service, Registerable, Conditional, OptionsAwareI
 	 */
 	public function add_inline_event_script( string $inline_script ) {
 		if ( class_exists( '\WC_Google_Gtag_JS' ) ) {
+<<<<<<< HEAD
 			$this->wp->wp_add_inline_script(
+=======
+			wp_add_inline_script(
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				'woocommerce-google-analytics-integration',
 				$inline_script
 			);
 		} else {
+<<<<<<< HEAD
 			$this->wp->wp_print_inline_script_tag( $inline_script );
+=======
+			wp_print_inline_script_tag( $inline_script );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 	}
 
@@ -355,7 +367,11 @@ class GlobalSiteTag implements Service, Registerable, Conditional, OptionsAwareI
 
 		$order = wc_get_order( $order_id );
 		// Make sure there is a valid order object and it is not already marked as tracked
+<<<<<<< HEAD
 		if ( ! $order || 1 === (int) $order->get_meta( self::ORDER_CONVERSION_META_KEY, true ) ) {
+=======
+		if ( ! $order || 1 === $order->get_meta( self::ORDER_CONVERSION_META_KEY, true ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			return;
 		}
 

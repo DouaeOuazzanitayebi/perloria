@@ -15,6 +15,7 @@
 	],
 	"supports": {
 		"interactivity": true,
+<<<<<<< HEAD
 		"__experimentalBorder": {
 			"color": true,
 			"radius": true,
@@ -45,6 +46,20 @@
 		"clearButton": {
 			"type": "boolean",
 			"default": false
+=======
+		"color": {
+			"text": true,
+			"background": false
+		}
+	},
+	"usesContext": [
+		"queryId"
+	],
+	"attributes": {
+		"displayStyle": {
+			"type": "string",
+			"default": "chips"
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 	}
 }

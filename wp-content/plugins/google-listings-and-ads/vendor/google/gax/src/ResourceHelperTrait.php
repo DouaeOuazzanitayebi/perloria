@@ -84,7 +84,11 @@ trait ResourceHelperTrait
         return self::$templateMap[$key] ?? null;
     }
 
+<<<<<<< HEAD
     private static function parseFormattedName(string $formattedName, ?string $template = null): array
+=======
+    private static function parseFormattedName(string $formattedName, string $template = null): array
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (is_null(self::$templateMap)) {
             self::registerPathTemplates();

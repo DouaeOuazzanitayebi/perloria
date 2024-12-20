@@ -21,6 +21,7 @@ class Translations {
 	protected static $instance = null;
 
 	/**
+<<<<<<< HEAD
 	 * Plugin domain.
 	 *
 	 * @var string
@@ -28,6 +29,8 @@ class Translations {
 	private static $plugin_domain = 'woocommerce';
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Get class instance.
 	 */
 	public static function get_instance() {
@@ -250,8 +253,14 @@ class Translations {
 	 * and wp_set_script_translations().
 	 */
 	private function generate_translation_strings() {
+<<<<<<< HEAD
 		$locale   = determine_locale();
 		$lang_dir = WP_LANG_DIR . '/plugins/';
+=======
+		$plugin_domain = explode( '/', plugin_basename( __FILE__ ) )[0];
+		$locale        = determine_locale();
+		$lang_dir      = WP_LANG_DIR . '/plugins/';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		// Bail early if not localized.
 		if ( 'en_US' === $locale ) {
@@ -265,7 +274,11 @@ class Translations {
 		$access_type = get_filesystem_method();
 		if ( 'direct' === $access_type ) {
 			\WP_Filesystem();
+<<<<<<< HEAD
 			$this->build_and_save_translations( $lang_dir, self::$plugin_domain, $locale );
+=======
+			$this->build_and_save_translations( $lang_dir, $plugin_domain, $locale );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		} else {
 			// I'm reluctant to add support for other filesystems here as it would require
 			// user's input on activating plugin - which I don't think is common.
@@ -300,8 +313,14 @@ class Translations {
 			return $file;
 		}
 
+<<<<<<< HEAD
 		// Make sure we're handing the correct domain.
 		if ( self::$plugin_domain !== $domain ) {
+=======
+		// Make sure we're handing the correct domain (could be woocommerce or woocommerce-admin).
+		$plugin_domain = explode( '/', plugin_basename( __FILE__ ) )[0];
+		if ( $plugin_domain !== $domain ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			return $file;
 		}
 
@@ -317,10 +336,18 @@ class Translations {
 	 * @param string $filename Activated plugin filename.
 	 */
 	public function potentially_generate_translation_strings( $filename ) {
+<<<<<<< HEAD
 		$activated_plugin_domain = explode( '/', $filename )[0];
 
 		// Ensure we're only running only on activation hook that originates from our plugin.
 		if ( self::$plugin_domain === $activated_plugin_domain ) {
+=======
+		$plugin_domain           = explode( '/', plugin_basename( __FILE__ ) )[0];
+		$activated_plugin_domain = explode( '/', $filename )[0];
+
+		// Ensure we're only running only on activation hook that originates from our plugin.
+		if ( $plugin_domain === $activated_plugin_domain ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			$this->generate_translation_strings();
 		}
 	}
@@ -345,14 +372,25 @@ class Translations {
 			return;
 		}
 
+<<<<<<< HEAD
 		$locales      = array();
 		$language_dir = WP_LANG_DIR . '/plugins/';
+=======
+		// Make sure we're handing the correct domain (could be woocommerce or woocommerce-admin).
+		$plugin_domain = explode( '/', plugin_basename( __FILE__ ) )[0];
+		$locales       = array();
+		$language_dir  = WP_LANG_DIR . '/plugins/';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		// Gather the locales that were updated in this operation.
 		foreach ( $hook_extra['translations'] as $translation ) {
 			if (
 				'plugin' === $translation['type'] &&
+<<<<<<< HEAD
 				self::$plugin_domain === $translation['slug']
+=======
+				$plugin_domain === $translation['slug']
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			) {
 				$locales[] = $translation['language'];
 			}
@@ -362,7 +400,11 @@ class Translations {
 		foreach ( $locales as $locale ) {
 			// So long as this function is hooked to the 'upgrader_process_complete' action,
 			// WP_Filesystem should be hooked up to be able to call build_and_save_translations.
+<<<<<<< HEAD
 			$this->build_and_save_translations( $language_dir, self::$plugin_domain, $locale );
+=======
+			$this->build_and_save_translations( $language_dir, $plugin_domain, $locale );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 	}
 }

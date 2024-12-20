@@ -11,6 +11,7 @@ class CheckoutActionsBlock extends AbstractInnerBlock {
 	 * @var string
 	 */
 	protected $block_name = 'checkout-actions-block';
+<<<<<<< HEAD
 
 	/**
 	 * Initialize this block type.
@@ -46,4 +47,6 @@ class CheckoutActionsBlock extends AbstractInnerBlock {
 			)
 		);
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

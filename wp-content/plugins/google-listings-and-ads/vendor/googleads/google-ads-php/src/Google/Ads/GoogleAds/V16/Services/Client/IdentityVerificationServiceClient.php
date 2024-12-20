@@ -46,7 +46,11 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface getIdentityVerificationAsync(GetIdentityVerificationRequest $request, array $optionalArgs = [])
  * @method PromiseInterface startIdentityVerificationAsync(StartIdentityVerificationRequest $request, array $optionalArgs = [])
  */
+<<<<<<< HEAD
 class IdentityVerificationServiceClient
+=======
+final class IdentityVerificationServiceClient
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

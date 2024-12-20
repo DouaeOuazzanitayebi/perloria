@@ -133,7 +133,11 @@ class TwistedEdwards extends Base
     /**
      * Returns the a coefficient
      *
+<<<<<<< HEAD
      * @return PrimeInteger
+=======
+     * @return \phpseclib3\Math\PrimeField\Integer
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function getA()
     {
@@ -143,7 +147,11 @@ class TwistedEdwards extends Base
     /**
      * Returns the a coefficient
      *
+<<<<<<< HEAD
      * @return PrimeInteger
+=======
+     * @return \phpseclib3\Math\PrimeField\Integer
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function getD()
     {
@@ -171,7 +179,11 @@ class TwistedEdwards extends Base
     /**
      * Returns the affine point
      *
+<<<<<<< HEAD
      * @return PrimeField\Integer[]
+=======
+     * @return \phpseclib3\Math\PrimeField\Integer[]
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function convertToAffine(array $p)
     {
@@ -189,7 +201,11 @@ class TwistedEdwards extends Base
     /**
      * Returns the modulo
      *
+<<<<<<< HEAD
      * @return BigInteger
+=======
+     * @return \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function getModulo()
     {

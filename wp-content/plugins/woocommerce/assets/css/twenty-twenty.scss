@@ -477,7 +477,11 @@ table.variations {
 	}
 }
 
+<<<<<<< HEAD
 button.reset_variations {
+=======
+a.reset_variations {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	margin-left: 0.5em;
 }
 
@@ -574,7 +578,14 @@ button.reset_variations {
 }
 
 .woocommerce-product-gallery__trigger {
+<<<<<<< HEAD
 	@include woocommerce-product-gallery__trigger;
+=======
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 99;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 
 .woocommerce-tabs {
@@ -2333,8 +2344,21 @@ button.reset_variations {
 	overflow: hidden;
 	width: 100%;
 
+<<<<<<< HEAD
 	a.button {
 		background: #000000;
+=======
+	a {
+		color: #fff;
+
+		&:hover {
+			color: #fff;
+		}
+
+		&.button {
+			background: #000000;
+		}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 }
 
@@ -2420,6 +2444,7 @@ form.checkout_coupon {
 		border-color: var(--wc-red);
 	}
 }
+<<<<<<< HEAD
 
 /**
  * Checkout error message
@@ -2429,3 +2454,5 @@ form.checkout_coupon {
 		@include checkout-inline-error-message();
 	}
 }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

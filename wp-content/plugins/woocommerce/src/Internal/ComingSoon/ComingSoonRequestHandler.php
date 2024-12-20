@@ -5,7 +5,10 @@ use Automattic\WooCommerce\Admin\Features\Features;
 use Automattic\WooCommerce\Blocks\BlockTemplatesController;
 use Automattic\WooCommerce\Blocks\BlockTemplatesRegistry;
 use Automattic\WooCommerce\Blocks\Package as BlocksPackage;
+<<<<<<< HEAD
 use Automattic\Jetpack\Constants;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * Handles the template_include hook to determine whether the current page needs
@@ -31,7 +34,10 @@ class ComingSoonRequestHandler {
 		$this->coming_soon_helper = $coming_soon_helper;
 		add_filter( 'template_include', array( $this, 'handle_template_include' ) );
 		add_filter( 'wp_theme_json_data_theme', array( $this, 'experimental_filter_theme_json_theme' ) );
+<<<<<<< HEAD
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 
@@ -41,7 +47,11 @@ class ComingSoonRequestHandler {
 	 * @internal
 	 *
 	 * @param string $template The path to the previously determined template.
+<<<<<<< HEAD
 	 * @return string The path to the 'coming soon' template or any empty string to prevent further template loading in FSE themes.
+=======
+	 * @return string|null The path to the 'coming soon' template or null to prevent further template loading in FSE themes.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 */
 	public function handle_template_include( $template ) {
 		global $wp;
@@ -50,8 +60,13 @@ class ComingSoonRequestHandler {
 			return $template;
 		}
 
+<<<<<<< HEAD
 		// A coming soon page needs to be displayed. Set a short cache duration to prevents ddos attacks.
 		header( 'Cache-Control: max-age=60' );
+=======
+		// A coming soon page needs to be displayed. Don't cache this response.
+		nocache_headers();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		$is_fse_theme         = wc_current_theme_is_fse_theme();
 		$is_store_coming_soon = $this->coming_soon_helper->is_store_coming_soon();
@@ -80,12 +95,16 @@ class ComingSoonRequestHandler {
 		);
 
 		if ( ! empty( $coming_soon_template ) && file_exists( $coming_soon_template ) ) {
+<<<<<<< HEAD
 			if ( ! $is_fse_theme && $is_store_coming_soon && function_exists( 'get_the_block_template_html' ) ) {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo get_the_block_template_html();
 			} else {
 				include $coming_soon_template;
 			}
+=======
+			include $coming_soon_template;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		if ( ! $is_fse_theme && $is_store_coming_soon ) {
@@ -93,8 +112,13 @@ class ComingSoonRequestHandler {
 		}
 
 		if ( $is_fse_theme ) {
+<<<<<<< HEAD
 			// Since we've already rendered a template, return empty string to ensure no other template is rendered.
 			return '';
+=======
+			// Since we've already rendered a template, return null to ensure no other template is rendered.
+			return null;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		} else {
 			// In non-FSE themes, other templates will still be rendered.
 			// We need to exit to prevent further processing.
@@ -229,6 +253,7 @@ class ComingSoonRequestHandler {
 		$theme_json->update_with( $new_data );
 		return $theme_json;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Enqueues the coming soon banner styles.
@@ -255,4 +280,6 @@ class ComingSoonRequestHandler {
 			Constants::get_constant( 'WC_VERSION' )
 		);
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

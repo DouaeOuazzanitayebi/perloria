@@ -4224,6 +4224,10 @@ table.wc_shipping {
 .wc-backbone-modal-add-shipping-method,
 .wc-backbone-modal-shipping-method-settings,
 .wc-shipping-class-modal {
+<<<<<<< HEAD
+=======
+	font-family: $font-sf-pro-text;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 16px;
@@ -5189,6 +5193,7 @@ img.help_tip {
 			float: none;
 		}
 
+<<<<<<< HEAD
 		label:has(input:disabled) {
 			cursor: not-allowed;
 			> input:disabled {
@@ -5221,6 +5226,10 @@ img.help_tip {
 			&[disabled-tooltip]:focus::before {
 				opacity:1
 			}
+=======
+		td.disabled {
+			opacity: 0.5;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		fieldset {

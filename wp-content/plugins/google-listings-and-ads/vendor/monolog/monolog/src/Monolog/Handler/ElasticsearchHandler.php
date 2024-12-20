@@ -187,7 +187,10 @@ class ElasticsearchHandler extends AbstractProcessingHandler
      */
     protected function createExceptionFromResponses($responses): Throwable
     {
+<<<<<<< HEAD
         // @phpstan-ignore offsetAccess.nonOffsetAccessible
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         foreach ($responses['items'] ?? [] as $item) {
             if (isset($item['index']['error'])) {
                 return $this->createExceptionFromError($item['index']['error']);

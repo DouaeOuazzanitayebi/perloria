@@ -1540,6 +1540,7 @@ module.exports.createColors = create;
 /***/ 1443:
 /***/ ((module) => {
 
+<<<<<<< HEAD
 module.exports = function postcssPrefixSelector(options) {
   const prefix = options.prefix;
   const prefixWithSpace = /\s+$/.test(prefix) ? prefix : `${prefix} `;
@@ -1617,6 +1618,85 @@ function excludeSelector(selector, excludeArr) {
     return selector === excludeRule;
   });
 }
+=======
+module.exports = function postcssPrefixSelector(options) {
+  const prefix = options.prefix;
+  const prefixWithSpace = /\s+$/.test(prefix) ? prefix : `${prefix} `;
+  const ignoreFiles = options.ignoreFiles ? [].concat(options.ignoreFiles) : [];
+  const includeFiles = options.includeFiles
+    ? [].concat(options.includeFiles)
+    : [];
+
+  return function (root) {
+    if (
+      ignoreFiles.length &&
+      root.source.input.file &&
+      isFileInArray(root.source.input.file, ignoreFiles)
+    ) {
+      return;
+    }
+    if (
+      includeFiles.length &&
+      root.source.input.file &&
+      !isFileInArray(root.source.input.file, includeFiles)
+    ) {
+      return;
+    }
+
+    root.walkRules((rule) => {
+      const keyframeRules = [
+        'keyframes',
+        '-webkit-keyframes',
+        '-moz-keyframes',
+        '-o-keyframes',
+        '-ms-keyframes',
+      ];
+
+      if (rule.parent && keyframeRules.includes(rule.parent.name)) {
+        return;
+      }
+
+      rule.selectors = rule.selectors.map((selector) => {
+        if (options.exclude && excludeSelector(selector, options.exclude)) {
+          return selector;
+        }
+
+        if (options.transform) {
+          return options.transform(
+            prefix,
+            selector,
+            prefixWithSpace + selector,
+            root.source.input.file,
+            rule
+          );
+        }
+
+        return prefixWithSpace + selector;
+      });
+    });
+  };
+};
+
+function isFileInArray(file, arr) {
+  return arr.some((ruleOrString) => {
+    if (ruleOrString instanceof RegExp) {
+      return ruleOrString.test(file);
+    }
+
+    return file.includes(ruleOrString);
+  });
+}
+
+function excludeSelector(selector, excludeArr) {
+  return excludeArr.some((excludeRule) => {
+    if (excludeRule instanceof RegExp) {
+      return excludeRule.test(selector);
+    }
+
+    return selector === excludeRule;
+  });
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 
 /***/ }),
@@ -64573,9 +64653,15 @@ var normalize_wheel_default = /*#__PURE__*/__webpack_require__.n(normalize_wheel
 
 
 
+<<<<<<< HEAD
 /**
  * Compute the dimension of the crop area based on media size,
  * aspect ratio and optionally rotation
+=======
+/**
+ * Compute the dimension of the crop area based on media size,
+ * aspect ratio and optionally rotation
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function getCropSize(mediaWidth, mediaHeight, containerWidth, containerHeight, aspect, rotation) {
   if (rotation === void 0) {
@@ -64597,16 +64683,27 @@ function getCropSize(mediaWidth, mediaHeight, containerWidth, containerHeight, a
     height: fittingWidth / aspect
   };
 }
+<<<<<<< HEAD
 /**
  * Compute media zoom.
  * We fit the media into the container with "max-width: 100%; max-height: 100%;"
+=======
+/**
+ * Compute media zoom.
+ * We fit the media into the container with "max-width: 100%; max-height: 100%;"
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function getMediaZoom(mediaSize) {
   // Take the axis with more pixels to improve accuracy
   return mediaSize.width > mediaSize.height ? mediaSize.width / mediaSize.naturalWidth : mediaSize.height / mediaSize.naturalHeight;
 }
+<<<<<<< HEAD
 /**
  * Ensure a new media position stays in the crop area.
+=======
+/**
+ * Ensure a new media position stays in the crop area.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function restrictPosition(position, mediaSize, cropSize, zoom, rotation) {
   if (rotation === void 0) {
@@ -64630,9 +64727,15 @@ function getDistanceBetweenPoints(pointA, pointB) {
 function getRotationBetweenPoints(pointA, pointB) {
   return Math.atan2(pointB.y - pointA.y, pointB.x - pointA.x) * 180 / Math.PI;
 }
+<<<<<<< HEAD
 /**
  * Compute the output cropped area of the media in percentages and pixels.
  * x/y are the top-left coordinates on the src media
+=======
+/**
+ * Compute the output cropped area of the media in percentages and pixels.
+ * x/y are the top-left coordinates on the src media
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function computeCroppedArea(crop, mediaSize, cropSize, aspect, zoom, rotation, restrictPosition) {
   if (rotation === void 0) {
@@ -64678,8 +64781,13 @@ function computeCroppedArea(crop, mediaSize, cropSize, aspect, zoom, rotation, r
     croppedAreaPixels: croppedAreaPixels
   };
 }
+<<<<<<< HEAD
 /**
  * Ensure the returned value is between 0 and max
+=======
+/**
+ * Ensure the returned value is between 0 and max
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function limitArea(max, value) {
   return Math.min(max, Math.max(0, value));
@@ -64687,8 +64795,13 @@ function limitArea(max, value) {
 function noOp(_max, value) {
   return value;
 }
+<<<<<<< HEAD
 /**
  * Compute crop and zoom from the croppedAreaPercentages.
+=======
+/**
+ * Compute crop and zoom from the croppedAreaPercentages.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function getInitialCropFromCroppedAreaPercentages(croppedAreaPercentages, mediaSize, rotation, cropSize, minZoom, maxZoom) {
   var mediaBBoxSize = rotateSize(mediaSize.width, mediaSize.height, rotation);
@@ -64703,15 +64816,25 @@ function getInitialCropFromCroppedAreaPercentages(croppedAreaPercentages, mediaS
     zoom: zoom
   };
 }
+<<<<<<< HEAD
 /**
  * Compute zoom from the croppedAreaPixels
+=======
+/**
+ * Compute zoom from the croppedAreaPixels
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function getZoomFromCroppedAreaPixels(croppedAreaPixels, mediaSize, cropSize) {
   var mediaZoom = getMediaZoom(mediaSize);
   return cropSize.height > cropSize.width ? cropSize.height / (croppedAreaPixels.height * mediaZoom) : cropSize.width / (croppedAreaPixels.width * mediaZoom);
 }
+<<<<<<< HEAD
 /**
  * Compute crop and zoom from the croppedAreaPixels
+=======
+/**
+ * Compute crop and zoom from the croppedAreaPixels
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function getInitialCropFromCroppedAreaPixels(croppedAreaPixels, mediaSize, rotation, cropSize, minZoom, maxZoom) {
   if (rotation === void 0) {
@@ -64729,8 +64852,13 @@ function getInitialCropFromCroppedAreaPixels(croppedAreaPixels, mediaSize, rotat
     zoom: zoom
   };
 }
+<<<<<<< HEAD
 /**
  * Return the point that is the center of point a and b
+=======
+/**
+ * Return the point that is the center of point a and b
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function getCenter(a, b) {
   return {
@@ -64741,8 +64869,13 @@ function getCenter(a, b) {
 function getRadianAngle(degreeValue) {
   return degreeValue * Math.PI / 180;
 }
+<<<<<<< HEAD
 /**
  * Returns the new bounding area of a rotated rectangle.
+=======
+/**
+ * Returns the new bounding area of a rotated rectangle.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function rotateSize(width, height, rotation) {
   var rotRad = getRadianAngle(rotation);
@@ -64751,14 +64884,24 @@ function rotateSize(width, height, rotation) {
     height: Math.abs(Math.sin(rotRad) * width) + Math.abs(Math.cos(rotRad) * height)
   };
 }
+<<<<<<< HEAD
 /**
  * Clamp value between min and max
+=======
+/**
+ * Clamp value between min and max
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
+<<<<<<< HEAD
 /**
  * Combine multiple class names into a single string.
+=======
+/**
+ * Combine multiple class names into a single string.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 function classNames() {
   var args = [];

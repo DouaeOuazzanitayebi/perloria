@@ -8,7 +8,10 @@ namespace Automattic\WooCommerce\Internal\DataStores\Orders;
 use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\Caches\OrderCache;
 use Automattic\WooCommerce\Internal\Admin\Orders\EditLock;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Internal\Utilities\DatabaseUtil;
 use Automattic\WooCommerce\Proxies\LegacyProxy;
 use Automattic\WooCommerce\Utilities\ArrayUtil;
@@ -24,8 +27,11 @@ defined( 'ABSPATH' ) || exit;
  */
 class OrdersTableDataStore extends \Abstract_WC_Order_Data_Store_CPT implements \WC_Object_Data_Store_Interface, \WC_Order_Data_Store_Interface {
 
+<<<<<<< HEAD
 	use CogsAwareTrait;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	/**
 	 * Order IDs for which we are checking sync on read in the current request. In WooCommerce, using wc_get_order is a very common pattern, to avoid performance issues, we only sync on read once per request per order. This works because we consider out of sync orders to be an anomaly, so we don't recommend running HPOS with incompatible plugins.
 	 *
@@ -1247,18 +1253,24 @@ WHERE
 		$load_posts_for = array_diff( $order_ids, array_merge( self::$reading_order_ids, self::$backfilling_order_ids ) );
 		$post_orders    = $data_sync_enabled ? $this->get_post_orders_for_ids( array_intersect_key( $orders, array_flip( $load_posts_for ) ) ) : array();
 
+<<<<<<< HEAD
 		$cogs_is_enabled = $this->cogs_is_enabled();
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		foreach ( $data as $order_data ) {
 			$order_id = absint( $order_data->id );
 			$order    = $orders[ $order_id ];
 
 			$this->init_order_record( $order, $order_id, $order_data );
 
+<<<<<<< HEAD
 			if ( $order->has_cogs() && $cogs_is_enabled ) {
 				$this->read_cogs_data( $order );
 			}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			if ( $data_sync_enabled && $this->should_sync_order( $order ) && isset( $post_orders[ $order_id ] ) ) {
 				self::$reading_order_ids[] = $order_id;
 				$this->maybe_sync_order( $order, $post_orders[ $order->get_id() ] );
@@ -1267,6 +1279,7 @@ WHERE
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Read the Cost of Goods Sold value for a given order from the database, if available, and apply it to the order.
 	 *
 	 * @param \WC_Abstract_Order $order The order to get the COGS value for.
@@ -1290,6 +1303,8 @@ WHERE
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Helper method to check whether to sync the order.
 	 *
 	 * @param \WC_Abstract_Order $order Order object.
@@ -1932,6 +1947,7 @@ FROM $order_meta_table
 		$this->update_address_index_meta( $order, $changes );
 		$default_taxonomies = $this->init_default_taxonomies( $order, array() );
 		$this->set_custom_taxonomies( $order, $default_taxonomies );
+<<<<<<< HEAD
 
 		if ( $order->has_cogs() && $this->cogs_is_enabled() ) {
 			$this->save_cogs_data( $order );
@@ -1976,6 +1992,8 @@ FROM $order_meta_table
 			$meta->value = $cogs_value;
 			$this->data_store_meta->add_meta( $order, $meta );
 		}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**

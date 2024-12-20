@@ -169,7 +169,11 @@ class Logger implements LoggerInterface, ResettableInterface
     private $logDepth = 0;
 
     /**
+<<<<<<< HEAD
      * @var \WeakMap<\Fiber<mixed, mixed, mixed, mixed>, int> Keeps track of depth inside fibers to prevent infinite logging loops
+=======
+     * @var \WeakMap<\Fiber, int>|null Keeps track of depth inside fibers to prevent infinite logging loops
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     private $fiberLogDepth;
 
@@ -197,7 +201,11 @@ class Logger implements LoggerInterface, ResettableInterface
 
         if (\PHP_VERSION_ID >= 80100) {
             // Local variable for phpstan, see https://github.com/phpstan/phpstan/issues/6732#issuecomment-1111118412
+<<<<<<< HEAD
             /** @var \WeakMap<\Fiber<mixed, mixed, mixed, mixed>, int> $fiberLogDepth */
+=======
+            /** @var \WeakMap<\Fiber, int> $fiberLogDepth */
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             $fiberLogDepth = new \WeakMap();
             $this->fiberLogDepth = $fiberLogDepth;
         }
@@ -345,7 +353,10 @@ class Logger implements LoggerInterface, ResettableInterface
 
         if ($this->detectCycles) {
             if (\PHP_VERSION_ID >= 80100 && $fiber = \Fiber::getCurrent()) {
+<<<<<<< HEAD
                 // @phpstan-ignore offsetAssign.dimType
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                 $this->fiberLogDepth[$fiber] = $this->fiberLogDepth[$fiber] ?? 0;
                 $logDepth = ++$this->fiberLogDepth[$fiber];
             } else {
@@ -754,7 +765,11 @@ class Logger implements LoggerInterface, ResettableInterface
 
         if (\PHP_VERSION_ID >= 80100) {
             // Local variable for phpstan, see https://github.com/phpstan/phpstan/issues/6732#issuecomment-1111118412
+<<<<<<< HEAD
             /** @var \WeakMap<\Fiber<mixed, mixed, mixed, mixed>, int> $fiberLogDepth */
+=======
+            /** @var \WeakMap<\Fiber, int> $fiberLogDepth */
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             $fiberLogDepth = new \WeakMap();
             $this->fiberLogDepth = $fiberLogDepth;
         }

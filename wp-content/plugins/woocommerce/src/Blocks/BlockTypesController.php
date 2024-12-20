@@ -53,9 +53,14 @@ final class BlockTypesController {
 	/**
 	 * Initialize class features.
 	 */
+<<<<<<< HEAD
 	protected function init() { // phpcs:ignore WooCommerce.Functions.InternalInjectionMethod.MissingPublic
 		add_action( 'init', array( $this, 'register_blocks' ) );
 		add_action( 'wp_loaded', array( $this, 'register_block_patterns' ) );
+=======
+	protected function init() {
+		add_action( 'init', array( $this, 'register_blocks' ) );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		add_filter( 'block_categories_all', array( $this, 'register_block_categories' ), 10, 2 );
 		add_filter( 'render_block', array( $this, 'add_data_attributes' ), 10, 2 );
 		add_action( 'woocommerce_login_form_end', array( $this, 'redirect_to_field' ) );
@@ -156,6 +161,7 @@ final class BlockTypesController {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Register block patterns
 	 */
 	public function register_block_patterns() {
@@ -202,6 +208,8 @@ final class BlockTypesController {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Register block categories
 	 *
 	 * Used in combination with the `block_categories_all` filter, to append
@@ -372,7 +380,10 @@ final class BlockTypesController {
 			'AllReviews',
 			'AttributeFilter',
 			'Breadcrumbs',
+<<<<<<< HEAD
 			'CartLink',
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'CatalogSorting',
 			'ClassicTemplate',
 			'ClassicShortcode',
@@ -440,7 +451,10 @@ final class BlockTypesController {
 			'OrderConfirmation\AdditionalInformation',
 			'OrderConfirmation\AdditionalFieldsWrapper',
 			'OrderConfirmation\AdditionalFields',
+<<<<<<< HEAD
 			'OrderConfirmation\CreateAccount',
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 
 		$block_types = array_merge(
@@ -454,6 +468,7 @@ final class BlockTypesController {
 		// when modifying this list.
 		if ( Features::is_enabled( 'experimental-blocks' ) ) {
 			$block_types[] = 'ProductFilters';
+<<<<<<< HEAD
 			$block_types[] = 'ProductFilterStatus';
 			$block_types[] = 'ProductFilterPrice';
 			$block_types[] = 'ProductFilterPriceSlider';
@@ -464,6 +479,19 @@ final class BlockTypesController {
 			$block_types[] = 'ProductFilterClearButton';
 			$block_types[] = 'ProductFilterCheckboxList';
 			$block_types[] = 'ProductFilterChips';
+=======
+			$block_types[] = 'ProductFiltersOverlay';
+			$block_types[] = 'ProductFiltersOverlayNavigation';
+			$block_types[] = 'ProductFilterStockStatus';
+			$block_types[] = 'ProductFilterPrice';
+			$block_types[] = 'ProductFilterAttribute';
+			$block_types[] = 'ProductFilterRating';
+			$block_types[] = 'ProductFilterActive';
+			$block_types[] = 'ProductFilterClearButton';
+			$block_types[] = 'ProductFilterCheckboxList';
+			$block_types[] = 'ProductFilterChips';
+			$block_types[] = 'OrderConfirmation\CreateAccount';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		/**
@@ -477,8 +505,11 @@ final class BlockTypesController {
 					'Cart',
 					'Checkout',
 					'ProductGallery',
+<<<<<<< HEAD
 					'ProductCollection',
 					'ProductCollectionNoResults',
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				)
 			);
 		}

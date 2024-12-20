@@ -32,13 +32,17 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
     protected $measurement_window_hours = 0;
     /**
      * Output only. Fine grained conversion value mappings.
+<<<<<<< HEAD
      * For SkAdNetwork versions >= 4.0 that support multiple conversion
      * windows, fine grained conversion value mappings are only applicable to
      * the first postback.
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings fine_grained_conversion_value_mappings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $fine_grained_conversion_value_mappings;
+<<<<<<< HEAD
     /**
      * Output only. Per-postback conversion value mappings for postbacks in
      * multiple conversion windows. Only applicable for SkAdNetwork versions
@@ -47,6 +51,8 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping postback_mappings = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $postback_mappings;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     /**
      * Constructor.
@@ -63,6 +69,7 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      *           (https://developer.apple.com/documentation/storekit/skadnetwork/3566697-updateconversionvalue).
      *     @type array<\Google\Ads\GoogleAds\V16\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings>|\Google\Protobuf\Internal\RepeatedField $fine_grained_conversion_value_mappings
      *           Output only. Fine grained conversion value mappings.
+<<<<<<< HEAD
      *           For SkAdNetwork versions >= 4.0 that support multiple conversion
      *           windows, fine grained conversion value mappings are only applicable to
      *           the first postback.
@@ -70,6 +77,8 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
      *           Output only. Per-postback conversion value mappings for postbacks in
      *           multiple conversion windows. Only applicable for SkAdNetwork versions
      *           >= 4.0.
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * }
      */
     public function __construct($data = NULL) {
@@ -137,9 +146,12 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Fine grained conversion value mappings.
+<<<<<<< HEAD
      * For SkAdNetwork versions >= 4.0 that support multiple conversion
      * windows, fine grained conversion value mappings are only applicable to
      * the first postback.
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings fine_grained_conversion_value_mappings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -151,9 +163,12 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Fine grained conversion value mappings.
+<<<<<<< HEAD
      * For SkAdNetwork versions >= 4.0 that support multiple conversion
      * windows, fine grained conversion value mappings are only applicable to
      * the first postback.
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v16.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings fine_grained_conversion_value_mappings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param array<\Google\Ads\GoogleAds\V16\Resources\CustomerSkAdNetworkConversionValueSchema\SkAdNetworkConversionValueSchema\FineGrainedConversionValueMappings>|\Google\Protobuf\Internal\RepeatedField $var
@@ -167,6 +182,7 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * Output only. Per-postback conversion value mappings for postbacks in
      * multiple conversion windows. Only applicable for SkAdNetwork versions
@@ -197,6 +213,8 @@ class SkAdNetworkConversionValueSchema extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

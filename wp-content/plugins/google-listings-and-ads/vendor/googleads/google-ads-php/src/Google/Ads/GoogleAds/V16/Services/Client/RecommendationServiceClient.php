@@ -56,7 +56,11 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface dismissRecommendationAsync(DismissRecommendationRequest $request, array $optionalArgs = [])
  * @method PromiseInterface generateRecommendationsAsync(GenerateRecommendationsRequest $request, array $optionalArgs = [])
  */
+<<<<<<< HEAD
 class RecommendationServiceClient
+=======
+final class RecommendationServiceClient
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

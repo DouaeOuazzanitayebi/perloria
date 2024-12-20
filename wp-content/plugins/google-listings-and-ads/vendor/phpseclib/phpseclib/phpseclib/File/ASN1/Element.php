@@ -34,7 +34,11 @@ class Element
      * Constructor
      *
      * @param string $encoded
+<<<<<<< HEAD
      * @return Element
+=======
+     * @return \phpseclib3\File\ASN1\Element
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function __construct($encoded)
     {

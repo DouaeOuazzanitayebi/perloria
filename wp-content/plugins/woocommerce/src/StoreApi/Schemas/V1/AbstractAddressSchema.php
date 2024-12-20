@@ -232,6 +232,7 @@ abstract class AbstractAddressSchema extends AbstractSchema {
 			);
 		}
 
+<<<<<<< HEAD
 		if ( ! empty( $address['phone'] ) ) {
 			$address['phone'] = wc_sanitize_phone_number( $address['phone'] );
 
@@ -241,6 +242,13 @@ abstract class AbstractAddressSchema extends AbstractSchema {
 					__( 'The provided phone number is not valid', 'woocommerce' )
 				);
 			}
+=======
+		if ( ! empty( $address['phone'] ) && ! \WC_Validation::is_phone( $address['phone'] ) ) {
+			$errors->add(
+				'invalid_phone',
+				__( 'The provided phone number is not valid', 'woocommerce' )
+			);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		// Get additional field keys here as we need to know if they are present in the address for validation.

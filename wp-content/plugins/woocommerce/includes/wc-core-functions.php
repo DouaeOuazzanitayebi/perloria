@@ -416,6 +416,7 @@ function wc_locate_template( $template_name, $template_path = '', $default_path 
 		}
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Filter to customize the path of a given WooCommerce template.
 	 *
@@ -429,6 +430,10 @@ function wc_locate_template( $template_name, $template_path = '', $default_path 
 	 * @since 9.5.0 $default_path argument added.
 	 */
 	return apply_filters( 'woocommerce_locate_template', $template, $template_name, $template_path, $default_path );
+=======
+	// Return what we found.
+	return apply_filters( 'woocommerce_locate_template', $template, $template_name, $template_path );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 
 /**
@@ -1318,6 +1323,7 @@ function wc_get_base_location() {
 }
 
 /**
+<<<<<<< HEAD
  * Uses geolocation to get the customer country and state only if they are valid values.
  *
  * @since 9.5.0
@@ -1362,6 +1368,8 @@ function wc_get_customer_geolocation( $fallback = array(
 }
 
 /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  * Get the customer's default location.
  *
  * Filtered, and set to base location or left blank. If cache-busting,
@@ -1372,6 +1380,7 @@ function wc_get_customer_geolocation( $fallback = array(
  */
 function wc_get_customer_default_location() {
 	$set_default_location_to = get_option( 'woocommerce_default_customer_address', 'base' );
+<<<<<<< HEAD
 
 	// Unless the location should be blank, use the base location as the default.
 	if ( '' !== $set_default_location_to ) {
@@ -1412,6 +1421,34 @@ function wc_get_customer_default_location() {
 	 * @return array
 	 */
 	return apply_filters( 'woocommerce_customer_default_location_array', $default_location );
+=======
+	$default_location        = '' === $set_default_location_to ? '' : get_option( 'woocommerce_default_country', 'US:CA' );
+	$location                = wc_format_country_state_string( apply_filters( 'woocommerce_customer_default_location', $default_location ) );
+
+	// Geolocation takes priority if used and if geolocation is possible.
+	if ( 'geolocation' === $set_default_location_to || 'geolocation_ajax' === $set_default_location_to ) {
+		$ua = wc_get_user_agent();
+
+		// Exclude common bots from geolocation by user agent.
+		if ( ! stristr( $ua, 'bot' ) && ! stristr( $ua, 'spider' ) && ! stristr( $ua, 'crawl' ) ) {
+			$geolocation = WC_Geolocation::geolocate_ip( '', true, false );
+
+			if ( ! empty( $geolocation['country'] ) ) {
+				$location = $geolocation;
+			}
+		}
+	}
+
+	// Once we have a location, ensure it's valid, otherwise fallback to a valid location.
+	$allowed_country_codes = WC()->countries->get_allowed_countries();
+
+	if ( ! empty( $location['country'] ) && ! array_key_exists( $location['country'], $allowed_country_codes ) ) {
+		$location['country'] = current( array_keys( $allowed_country_codes ) );
+		$location['state']   = '';
+	}
+
+	return apply_filters( 'woocommerce_customer_default_location_array', $location );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 
 /**
@@ -1795,6 +1832,7 @@ function wc_get_shipping_method_count( $include_legacy = false, $enabled_only = 
 		return absint( $transient_value['value'] );
 	}
 
+<<<<<<< HEAD
 	// Count activated methods that don't support shipping zones if $include_legacy is true.
 	$methods      = WC()->shipping()->get_shipping_methods();
 	$method_ids   = array();
@@ -1816,6 +1854,25 @@ function wc_get_shipping_method_count( $include_legacy = false, $enabled_only = 
 	}
 	// phpcs:enable WordPress.DB.PreparedSQL.NotPrepared
 
+=======
+	if ( $enabled_only ) {
+		$method_count = absint( $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}woocommerce_shipping_zone_methods WHERE is_enabled=1" ) );
+	} else {
+		$method_count = absint( $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}woocommerce_shipping_zone_methods" ) );
+	}
+
+	if ( $include_legacy ) {
+		// Count activated methods that don't support shipping zones.
+		$methods = WC()->shipping()->get_shipping_methods();
+
+		foreach ( $methods as $method ) {
+			if ( isset( $method->enabled ) && 'yes' === $method->enabled && ! $method->supports( 'shipping-zones' ) ) {
+				++$method_count;
+			}
+		}
+	}
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	$transient_value = array(
 		'version' => $transient_version,
 		'value'   => $method_count,

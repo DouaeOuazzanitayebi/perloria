@@ -417,11 +417,16 @@ class OrderController {
 	 */
 	protected function validate_coupon_email_restriction( \WC_Coupon $coupon, \WC_Order $order ) {
 		$restrictions = $coupon->get_email_restrictions();
+<<<<<<< HEAD
 		// Email is forced lowercase like in validate_coupon_allowed_emails.
 		$billing_email = strtolower( $order->get_billing_email() );
 
 		if ( ! empty( $restrictions ) && $billing_email && ! DiscountsUtil::is_coupon_emails_allowed( array( $billing_email ), $restrictions ) ) {
 			// phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+=======
+
+		if ( ! empty( $restrictions ) && $order->get_billing_email() && ! DiscountsUtil::is_coupon_emails_allowed( array( $order->get_billing_email() ), $restrictions ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			throw new Exception( $coupon->get_coupon_error( \WC_Coupon::E_WC_COUPON_NOT_YOURS_REMOVED ) );
 		}
 	}

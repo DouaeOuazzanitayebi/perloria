@@ -1,6 +1,9 @@
 <?php
+<<<<<<< HEAD
 declare( strict_types = 1 );
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 namespace Automattic\WooCommerce\Blocks;
 
 use Automattic\WooCommerce\Blocks\Assets\Api as AssetApi;
@@ -33,7 +36,11 @@ final class AssetsController {
 	/**
 	 * Initialize class features.
 	 */
+<<<<<<< HEAD
 	protected function init() { // phpcs:ignore WooCommerce.Functions.InternalInjectionMethod.MissingPublic
+=======
+	protected function init() {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		add_action( 'init', array( $this, 'register_assets' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'register_and_enqueue_site_editor_assets' ) );
 		add_filter( 'wp_resource_hints', array( $this, 'add_resource_hints' ), 10, 2 );
@@ -199,6 +206,7 @@ final class AssetsController {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the block asset resource hints in the cache or null if not found.
 	 *
 	 * @return array|null Array of resource hints.
@@ -243,6 +251,8 @@ final class AssetsController {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Get resource hint for a block by name.
 	 *
 	 * @param string $filename Block filename.
@@ -252,6 +262,7 @@ final class AssetsController {
 		if ( ! $filename ) {
 			return array();
 		}
+<<<<<<< HEAD
 
 		$cached = $this->get_block_asset_resource_hints_cache();
 
@@ -259,6 +270,8 @@ final class AssetsController {
 			return $cached[ $filename ];
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$script_data = $this->api->get_script_data(
 			$this->api->get_block_asset_build_path( $filename )
 		);
@@ -266,8 +279,12 @@ final class AssetsController {
 			array( esc_url( add_query_arg( 'ver', $script_data['version'], $script_data['src'] ) ) ),
 			$this->get_script_dependency_src_array( $script_data['dependencies'] )
 		);
+<<<<<<< HEAD
 
 		$data = array_map(
+=======
+		return array_map(
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			function ( $src ) {
 				return array(
 					'href' => $src,
@@ -276,10 +293,13 @@ final class AssetsController {
 			},
 			array_unique( array_filter( $resources ) )
 		);
+<<<<<<< HEAD
 
 		$this->set_block_asset_resource_hints_cache( $filename, $data );
 
 		return $data;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**

@@ -14,14 +14,22 @@
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
+<<<<<<< HEAD
  * @version 9.4.0
+=======
+ * @version 9.3.0
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_mini_cart' ); ?>
 
+<<<<<<< HEAD
 <?php if ( WC()->cart && ! WC()->cart->is_empty() ) : ?>
+=======
+<?php if ( ! WC()->cart->is_empty() ) : ?>
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 		<?php

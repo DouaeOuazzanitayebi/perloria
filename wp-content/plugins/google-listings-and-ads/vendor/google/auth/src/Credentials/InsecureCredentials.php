@@ -39,7 +39,11 @@ class InsecureCredentials implements FetchAuthTokenInterface
      * @param callable $httpHandler
      * @return array{access_token:string} A set of auth related metadata
      */
+<<<<<<< HEAD
     public function fetchAuthToken(?callable $httpHandler = null)
+=======
+    public function fetchAuthToken(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return $this->token;
     }

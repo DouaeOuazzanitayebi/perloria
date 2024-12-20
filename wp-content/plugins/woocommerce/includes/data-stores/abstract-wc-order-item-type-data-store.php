@@ -5,8 +5,11 @@
  * @package WooCommerce\DataStores
  */
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -18,8 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP implements WC_Object_Data_Store_Interface {
 
+<<<<<<< HEAD
 	use CogsAwareTrait;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	/**
 	 * Meta type. This should match up with
 	 * the types available at https://developer.wordpress.org/reference/functions/add_metadata/.
@@ -39,6 +45,7 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	protected $object_id_field_for_meta = 'order_item_id';
 
 	/**
+<<<<<<< HEAD
 	 * Indicates if the Cost of Goods Sold feature is enabled.
 	 *
 	 * @var bool
@@ -67,6 +74,12 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	 *
 	 * @param WC_Order_Item $item Order item object.
 	 * @since 3.0.0
+=======
+	 * Create a new order item in the database.
+	 *
+	 * @since 3.0.0
+	 * @param WC_Order_Item $item Order item object.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 */
 	public function create( &$item ) {
 		global $wpdb;
@@ -82,11 +95,14 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 		$item->set_id( $wpdb->insert_id );
 		$this->save_item_data( $item );
 		$item->save_meta_data();
+<<<<<<< HEAD
 
 		if ( $this->cogs_is_enabled && $item->has_cogs() ) {
 			$this->save_cogs_data( $item );
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$item->apply_changes();
 		$this->clear_cache( $item );
 
@@ -96,8 +112,13 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	/**
 	 * Update a order item in the database.
 	 *
+<<<<<<< HEAD
 	 * @param WC_Order_Item $item Order item object.
 	 * @since 3.0.0
+=======
+	 * @since 3.0.0
+	 * @param WC_Order_Item $item Order item object.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 */
 	public function update( &$item ) {
 		global $wpdb;
@@ -118,9 +139,12 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 
 		$this->save_item_data( $item );
 		$item->save_meta_data();
+<<<<<<< HEAD
 		if ( $this->cogs_is_enabled && $item->has_cogs() ) {
 			$this->save_cogs_data( $item );
 		}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$item->apply_changes();
 		$this->clear_cache( $item );
 
@@ -130,9 +154,15 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	/**
 	 * Remove an order item from the database.
 	 *
+<<<<<<< HEAD
 	 * @param WC_Order_Item $item Order item object.
 	 * @param array         $args Array of args to pass to the delete method.
 	 * @since 3.0.0
+=======
+	 * @since 3.0.0
+	 * @param WC_Order_Item $item Order item object.
+	 * @param array         $args Array of args to pass to the delete method.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 */
 	public function delete( &$item, $args = array() ) {
 		if ( $item->get_id() ) {
@@ -148,10 +178,18 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	/**
 	 * Read a order item from the database.
 	 *
+<<<<<<< HEAD
 	 * @param WC_Order_Item $item Order item object.
 	 *
 	 * @throws Exception If invalid order item.
 	 * @since 3.0.0
+=======
+	 * @since 3.0.0
+	 *
+	 * @param WC_Order_Item $item Order item object.
+	 *
+	 * @throws Exception If invalid order item.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 */
 	public function read( &$item ) {
 		global $wpdb;
@@ -177,6 +215,7 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 			)
 		);
 		$item->read_meta_data();
+<<<<<<< HEAD
 
 		if ( $this->cogs_is_enabled && $item->has_cogs() ) {
 			$cogs_value = (float) $this->order_item_data_store->get_metadata( $item->get_id(), '_cogs_value', true );
@@ -193,17 +232,26 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 
 			$item->set_cogs_value( (float) $cogs_value );
 		}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
 	 * Saves an item's data to the database / item meta.
 	 * Ran after both create and update, so $item->get_id() will be set.
 	 *
+<<<<<<< HEAD
 	 * @param WC_Order_Item $item Order item object.
 	 * @since 3.0.0
 	 */
 	public function save_item_data( &$item ) {
 	}
+=======
+	 * @since 3.0.0
+	 * @param WC_Order_Item $item Order item object.
+	 */
+	public function save_item_data( &$item ) {}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	/**
 	 * Clear meta cache.
@@ -215,6 +263,7 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 		wp_cache_delete( 'order-items-' . $item->get_order_id(), 'orders' );
 		wp_cache_delete( $item->get_id(), $this->meta_type . '_meta' );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Persist the Cost of Goods Sold related data to the database.
@@ -245,4 +294,6 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 			$this->order_item_data_store->update_metadata( $item->get_id(), '_cogs_value', $cogs_value );
 		}
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

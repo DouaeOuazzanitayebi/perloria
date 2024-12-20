@@ -35,6 +35,7 @@ class MiniCartUtils {
 
 		return $attributes;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Get the SVG icon for the mini cart.
@@ -57,4 +58,6 @@ class MiniCartUtils {
 
 		return $icon;
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

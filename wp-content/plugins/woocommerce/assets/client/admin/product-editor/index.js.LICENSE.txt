@@ -10,7 +10,11 @@ object-assign
 	http://jedwatson.github.io/classnames
 */
 
+<<<<<<< HEAD
 /*! @license DOMPurify 2.5.7 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.5.7/LICENSE */
+=======
+/*! @license DOMPurify 2.4.7 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.4.7/LICENSE */
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /** @license React v17.0.2
  * react-jsx-runtime.production.min.js

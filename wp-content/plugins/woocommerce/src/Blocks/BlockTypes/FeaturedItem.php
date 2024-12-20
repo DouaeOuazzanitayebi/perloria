@@ -37,7 +37,10 @@ abstract class FeaturedItem extends AbstractDynamicBlock {
 		'font_size',
 		'padding',
 		'text_color',
+<<<<<<< HEAD
 		'extra_classes',
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	);
 
 	/**
@@ -273,6 +276,13 @@ abstract class FeaturedItem extends AbstractDynamicBlock {
 			$classes[] = "has-{$attributes['contentAlign']}-content";
 		}
 
+<<<<<<< HEAD
+=======
+		if ( isset( $attributes['className'] ) ) {
+			$classes[] = $attributes['className'];
+		}
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$global_style_classes = StyleAttributesUtils::get_classes_by_attributes( $attributes, $this->global_style_wrapper );
 
 		$classes[] = $global_style_classes;

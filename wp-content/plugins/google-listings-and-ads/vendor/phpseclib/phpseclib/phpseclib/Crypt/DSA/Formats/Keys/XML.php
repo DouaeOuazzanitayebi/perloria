@@ -114,10 +114,17 @@ abstract class XML
      *
      * See https://www.w3.org/TR/xmldsig-core/#sec-DSAKeyValue
      *
+<<<<<<< HEAD
      * @param BigInteger $p
      * @param BigInteger $q
      * @param BigInteger $g
      * @param BigInteger $y
+=======
+     * @param \phpseclib3\Math\BigInteger $p
+     * @param \phpseclib3\Math\BigInteger $q
+     * @param \phpseclib3\Math\BigInteger $g
+     * @param \phpseclib3\Math\BigInteger $y
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @return string
      */
     public static function savePublicKey(BigInteger $p, BigInteger $q, BigInteger $g, BigInteger $y)

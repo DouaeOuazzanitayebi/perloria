@@ -21,6 +21,7 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $text = '';
+<<<<<<< HEAD
     /**
      * Output only. URL to the SMS or email attachments. These URLs can be used to
      * download the contents of the attachment by using the developer token.
@@ -28,6 +29,8 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string attachment_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $attachment_urls;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     /**
      * Constructor.
@@ -37,9 +40,12 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
      *
      *     @type string $text
      *           Output only. Textual content of the message.
+<<<<<<< HEAD
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $attachment_urls
      *           Output only. URL to the SMS or email attachments. These URLs can be used to
      *           download the contents of the attachment by using the developer token.
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * }
      */
     public function __construct($data = NULL) {
@@ -73,6 +79,7 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * Output only. URL to the SMS or email attachments. These URLs can be used to
      * download the contents of the attachment by using the developer token.
@@ -101,5 +108,7 @@ class MessageDetails extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 

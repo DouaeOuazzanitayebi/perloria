@@ -505,6 +505,7 @@ class WC_Order_Item_Product extends WC_Order_Item {
 		}
 		return parent::offsetExists( $offset );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Indicates that product line items have an associated Cost of Goods Sold value.
@@ -530,4 +531,6 @@ class WC_Order_Item_Product extends WC_Order_Item {
 		$cogs_per_unit = $product->get_cogs_total_value();
 		return $cogs_per_unit * $this->get_quantity();
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

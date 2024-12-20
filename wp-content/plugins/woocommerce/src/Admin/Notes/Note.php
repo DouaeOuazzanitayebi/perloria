@@ -578,7 +578,15 @@ class Note extends \WC_Data {
 		if ( empty( $layout ) ) {
 			$layout = 'plain';
 		}
+<<<<<<< HEAD
 		$valid_layouts = array( 'plain', 'thumbnail' );
+=======
+		$valid_layouts = array( 'banner', 'plain', 'thumbnail' );
+
+		if ( 'banner' === $layout ) {
+			wc_deprecated_argument( 'Note::set_layout', '9.4.0', 'The "banner" layout is deprecated. Please use "thumbnail" instead to display a image.' );
+		}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		if ( in_array( $layout, $valid_layouts, true ) ) {
 			$this->set_prop( 'layout', $layout );

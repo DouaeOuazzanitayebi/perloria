@@ -153,9 +153,14 @@ class ProductQueryFilters {
 			},
 			$attributes
 		);
+<<<<<<< HEAD
 		$attributes_to_count_sql = 'AND term_taxonomy.taxonomy IN (\'' . implode( '\',\'', $attributes_to_count ) . '\')';
 
 		$attribute_count_sql = "
+=======
+		$attributes_to_count_sql = 'AND term_taxonomy.taxonomy IN ("' . implode( '","', $attributes_to_count ) . '")';
+		$attribute_count_sql     = "
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			SELECT COUNT( DISTINCT posts.ID ) as term_count, terms.term_id as term_count_id
 			FROM {$wpdb->posts} AS posts
 			INNER JOIN {$wpdb->term_relationships} AS term_relationships ON posts.ID = term_relationships.object_id

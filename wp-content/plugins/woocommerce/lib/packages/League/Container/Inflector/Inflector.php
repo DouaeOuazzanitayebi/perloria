@@ -37,7 +37,11 @@ class Inflector implements ArgumentResolverInterface, InflectorInterface
      * @param string        $type
      * @param callable|null $callback
      */
+<<<<<<< HEAD
     public function __construct(string $type, ?callable $callback = null)
+=======
+    public function __construct(string $type, callable $callback = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $this->type     = $type;
         $this->callback = $callback;

@@ -15,8 +15,12 @@
 			"full"
 		],
 		"html": false,
+<<<<<<< HEAD
 		"multiple": false,
 		"inserter": false
+=======
+		"multiple": false
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	},
 	"attributes": {
 		"columns": {
@@ -42,4 +46,8 @@
 			"default": false
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

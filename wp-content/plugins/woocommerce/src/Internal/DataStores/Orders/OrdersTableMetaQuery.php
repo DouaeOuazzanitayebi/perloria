@@ -350,6 +350,10 @@ class OrdersTableMetaQuery {
 		$queries     = $this->queries;
 		$sql_where   = $this->process( $queries );
 		$this->where = $sql_where;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -380,7 +384,11 @@ class OrdersTableMetaQuery {
 			$i               = 1;
 			while ( isset( $this->flattened_clauses[ $unique_flat_key ] ) ) {
 				$unique_flat_key = $flat_clause_key . '-' . $i;
+<<<<<<< HEAD
 				++$i;
+=======
+				$i++;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			}
 
 			$this->flattened_clauses[ $unique_flat_key ] =& $arg;
@@ -656,7 +664,12 @@ class OrdersTableMetaQuery {
 				return "CAST({$clause['alias']}.meta_value AS {$clause['cast']}) {$meta_compare} {$where}";
 			}
 		}
+<<<<<<< HEAD
 
 		return '';
 	}
+=======
+	}
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

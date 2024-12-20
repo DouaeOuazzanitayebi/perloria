@@ -459,7 +459,10 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 		$classes = array(
 			'wc-block-grid',
 			"wp-block-{$this->block_name}",
+<<<<<<< HEAD
 			"wp-block-woocommerce-{$this->block_name}",
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			"wc-block-{$this->block_name}",
 			"has-{$this->attributes['columns']}-columns",
 		);

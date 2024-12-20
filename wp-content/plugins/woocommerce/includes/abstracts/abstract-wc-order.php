@@ -11,8 +11,11 @@
  */
 
 use Automattic\WooCommerce\Caches\OrderCache;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
 use Automattic\WooCommerce\Internal\Orders\PaymentInfo;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Proxies\LegacyProxy;
 use Automattic\WooCommerce\Utilities\ArrayUtil;
 use Automattic\WooCommerce\Utilities\NumberUtil;
@@ -27,7 +30,10 @@ require_once WC_ABSPATH . 'includes/legacy/abstract-wc-legacy-order.php';
  */
 abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	use WC_Item_Totals;
+<<<<<<< HEAD
 	use CogsAwareTrait;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	/**
 	 * Order Data array. This is the core order data exposed in APIs since 3.0.0.
@@ -115,10 +121,13 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	 * @param  int|object|WC_Order $order Order to read.
 	 */
 	public function __construct( $order = 0 ) {
+<<<<<<< HEAD
 		if ( $this->has_cogs() && $this->cogs_is_enabled() ) {
 			$this->data['cogs_total_value'] = 0;
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		parent::__construct( $order );
 
 		if ( is_numeric( $order ) && $order > 0 ) {
@@ -599,6 +608,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 		);
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Get info about the card used for payment in the order.
 	 *
@@ -608,6 +618,8 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 		return PaymentInfo::get_card_info( $this );
 	}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	/*
 	|--------------------------------------------------------------------------
 	| Setters
@@ -868,6 +880,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	protected function type_to_group( $type ) {
 		$type_to_group = apply_filters(
 			'woocommerce_order_type_to_group',
+<<<<<<< HEAD
 			$this->item_types_to_group
 		);
 		return $type_to_group[ $type ] ?? '';
@@ -887,6 +900,20 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	);
 
 	/**
+=======
+			array(
+				'line_item' => 'line_items',
+				'tax'       => 'tax_lines',
+				'shipping'  => 'shipping_lines',
+				'fee'       => 'fee_lines',
+				'coupon'    => 'coupon_lines',
+			)
+		);
+		return isset( $type_to_group[ $type ] ) ? $type_to_group[ $type ] : '';
+	}
+
+	/**
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Return an array of items/products within this order.
 	 *
 	 * @param string|array $types Types of line items to get (array or string).
@@ -1830,7 +1857,11 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	public function get_total_fees() {
 		return array_reduce(
 			$this->get_fees(),
+<<<<<<< HEAD
 			function ( $carry, $item ) {
+=======
+			function( $carry, $item ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				return $carry + (float) $item->get_total();
 			},
 			0.0
@@ -1987,10 +2018,13 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 		$this->set_discount_tax( wc_round_tax_total( $cart_subtotal_tax - $cart_total_tax ) );
 		$this->set_total( NumberUtil::round( $cart_total + $fees_total + (float) $this->get_shipping_total() + (float) $this->get_cart_tax() + (float) $this->get_shipping_tax(), wc_get_price_decimals() ) );
 
+<<<<<<< HEAD
 		if ( $this->has_cogs() && $this->cogs_is_enabled() ) {
 			$this->calculate_cogs_total_value();
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		do_action( 'woocommerce_order_after_calculate_totals', $and_taxes, $this );
 
 		$this->save();
@@ -2447,13 +2481,18 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	 *
 	 * @return string Order title.
 	 */
+<<<<<<< HEAD
 	public function get_title(): string {
+=======
+	public function get_title() : string {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		if ( method_exists( $this->data_store, 'get_title' ) ) {
 			return $this->data_store->get_title( $this );
 		} else {
 			return __( 'Order', 'woocommerce' );
 		}
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Indicates if the current order has an associated Cost of Goods Sold value.
@@ -2547,4 +2586,6 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 			$this->set_prop( 'cogs_total_value', $value );
 		}
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

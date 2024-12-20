@@ -1,23 +1,43 @@
 {
 	"name": "woocommerce/product-filter-rating",
 	"version": "1.0.0",
+<<<<<<< HEAD
 	"title": "Rating (Experimental)",
 	"description": "Enable customers to filter the product collection by rating.",
 	"category": "woocommerce",
 	"keywords": [],
 	"supports": {
 		"interactivity": true,
+=======
+	"title": "Filter Options",
+	"description": "Enable customers to filter the product collection by rating.",
+	"category": "woocommerce",
+	"keywords": [
+		"WooCommerce"
+	],
+	"supports": {
+		"interactivity": true,
+		"inserter": false,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		"color": {
 			"background": false,
 			"text": true
 		}
 	},
 	"ancestor": [
+<<<<<<< HEAD
 		"woocommerce/product-filters"
 	],
 	"usesContext": [
 		"query",
 		"filterParams"
+=======
+		"woocommerce/product-filter"
+	],
+	"usesContext": [
+		"query",
+		"queryId"
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	],
 	"attributes": {
 		"className": {
@@ -28,20 +48,37 @@
 			"type": "boolean",
 			"default": false
 		},
+<<<<<<< HEAD
 		"minRating": {
 			"type": "string",
 			"default": "0"
+=======
+		"displayStyle": {
+			"type": "string",
+			"default": "list"
+		},
+		"selectType": {
+			"type": "string",
+			"default": "multiple"
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		},
 		"isPreview": {
 			"type": "boolean",
 			"default": false
+<<<<<<< HEAD
 		},
 		"clearButton": {
 			"type": "boolean",
 			"default":true
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 	},
 	"textdomain": "woocommerce",
 	"apiVersion": 3,
 	"$schema": "https://schemas.wp.org/trunk/block.json"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

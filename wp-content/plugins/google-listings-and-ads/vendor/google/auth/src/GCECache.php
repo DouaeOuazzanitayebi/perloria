@@ -46,8 +46,13 @@ class GCECache
      * @param CacheItemPoolInterface $cache
      */
     public function __construct(
+<<<<<<< HEAD
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null
+=======
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $this->cache = $cache;
         $this->cacheConfig = array_merge([
@@ -63,7 +68,11 @@ class GCECache
      * @param callable $httpHandler callback which delivers psr7 request
      * @return bool True if this a GCEInstance, false otherwise
      */
+<<<<<<< HEAD
     public function onGce(?callable $httpHandler = null)
+=======
+    public function onGce(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (is_null($this->cache)) {
             return GCECredentials::onGce($httpHandler);

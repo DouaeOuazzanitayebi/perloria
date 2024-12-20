@@ -39,7 +39,11 @@ class Montgomery extends Base
     /**
      * Prime Field Integer factory
      *
+<<<<<<< HEAD
      * @var PrimeField
+=======
+     * @var \phpseclib3\Math\PrimeField
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $factory;
 
@@ -219,7 +223,11 @@ class Montgomery extends Base
     public function multiplyPoint(array $p, BigInteger $d)
     {
         $p1 = [$this->one, $this->zero];
+<<<<<<< HEAD
         $alreadyInternal = isset($p[1]);
+=======
+        $alreadyInternal = isset($x[1]);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $p2 = $this->convertToInternal($p);
         $x = $p[0];
 

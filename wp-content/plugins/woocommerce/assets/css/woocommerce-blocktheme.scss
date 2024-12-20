@@ -146,12 +146,20 @@
 		}
 	}
 
+<<<<<<< HEAD
 	.price, .woocommerce-grouped-product-list-item__price, .wc-block-components-product-price {
 		ins, bdi {
 			// Ensure discounted prices aren't underlined.
 			// For details see https://github.com/woocommerce/woocommerce-blocks/pull/5684.
 			text-decoration: none;
 		}
+=======
+	.price ins,
+	bdi {
+		// Ensure discounted prices aren't underlined.
+		// For details see https://github.com/woocommerce/woocommerce-blocks/pull/5684.
+		text-decoration: none;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	span.onsale {
@@ -239,10 +247,13 @@ a.added_to_cart {
 			}
 		}
 
+<<<<<<< HEAD
 		.select2-results__option:not(.select2-results__option--highlighted) {
 			color: #444;
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		.select2-selection .select2-selection__arrow {
 			position: absolute;
 			top: 0;

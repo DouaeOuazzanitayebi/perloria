@@ -60,8 +60,13 @@ class ScopedAccessTokenMiddleware
     public function __construct(
         callable $tokenFunc,
         $scopes,
+<<<<<<< HEAD
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null
+=======
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $this->tokenFunc = $tokenFunc;
         if (!(is_string($scopes) || is_array($scopes))) {

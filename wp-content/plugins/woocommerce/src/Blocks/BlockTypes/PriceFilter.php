@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
 /**
@@ -15,6 +18,7 @@ class PriceFilter extends AbstractBlock {
 	protected $block_name     = 'price-filter';
 	const MIN_PRICE_QUERY_VAR = 'min_price';
 	const MAX_PRICE_QUERY_VAR = 'max_price';
+<<<<<<< HEAD
 
 	/**
 	 * Extra data passed through from server to client for block.
@@ -40,4 +44,6 @@ class PriceFilter extends AbstractBlock {
 
 		$this->asset_data_registry->add( 'queryState', $query_state );
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

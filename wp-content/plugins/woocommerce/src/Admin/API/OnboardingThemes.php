@@ -7,6 +7,11 @@
 
 namespace Automattic\WooCommerce\Admin\API;
 
+<<<<<<< HEAD
+=======
+use Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingThemes as Themes;
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 defined( 'ABSPATH' ) || exit;
 
 /**

@@ -2468,7 +2468,11 @@ return array(
 		'weight_unit'    => 'kg',
 		'dimension_unit' => 'cm',
 		'direction'      => 'rtl',
+<<<<<<< HEAD
 		'default_locale' => 'dv_MV',
+=======
+		'default_locale' => '',
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		'name'           => 'Maldivian rufiyaa',
 		'singular'       => 'Maldivian rufiyaa',
 		'plural'         => 'Maldivian rufiyaas',

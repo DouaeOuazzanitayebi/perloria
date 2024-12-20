@@ -54,7 +54,11 @@ class PathTemplate implements ResourceTemplateInterface
      * @param string $path A path template string
      * @throws ValidationException When $path cannot be parsed into a valid PathTemplate
      */
+<<<<<<< HEAD
     public function __construct(?string $path = null)
+=======
+    public function __construct(string $path = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (empty($path)) {
             throw new ValidationException('Cannot construct PathTemplate from empty string');

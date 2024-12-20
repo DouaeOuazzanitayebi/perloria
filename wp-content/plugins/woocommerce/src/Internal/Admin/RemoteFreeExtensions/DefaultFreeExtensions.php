@@ -70,7 +70,10 @@ class DefaultFreeExtensions {
 						self::get_plugin( 'woocommerce-services:shipping' ),
 						self::get_plugin( 'jetpack' ),
 						self::get_plugin( 'pinterest-for-woocommerce' ),
+<<<<<<< HEAD
 						self::get_plugin( 'kliken-ads-pixel-for-meta' ),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 						self::get_plugin( 'mailpoet' ),
 						self::get_plugin( 'google-listings-and-ads' ),
 						self::get_plugin( 'woocommerce-services:tax' ),
@@ -144,6 +147,7 @@ class DefaultFreeExtensions {
 				'description'     => __( 'Get your products in front of Pinners searching for ideas and things to buy.', 'woocommerce' ),
 				'image_url'       => plugins_url( '/assets/images/onboarding/pinterest.png', WC_PLUGIN_FILE ),
 				'manage_url'      => 'admin.php?page=wc-admin&path=%2Fpinterest%2Flanding',
+<<<<<<< HEAD
 				'is_visible'      => array(
 					array(
 						'type'        => 'option',
@@ -153,6 +157,8 @@ class DefaultFreeExtensions {
 						'operation'   => 'range',
 					),
 				),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				'is_built_by_wc'  => true,
 				'min_php_version' => '7.3',
 			),
@@ -170,6 +176,7 @@ class DefaultFreeExtensions {
 				'manage_url'     => 'admin.php?page=mailpoet-newsletters',
 				'is_built_by_wc' => true,
 			),
+<<<<<<< HEAD
 			// Shared 50% segment with pinterest-for-woocommerce.
 			'kliken-ads-pixel-for-meta'     => array(
 				'name'        => __( 'Meta Ads & Pixel for WooCommerce', 'woocommerce' ),
@@ -186,6 +193,8 @@ class DefaultFreeExtensions {
 					),
 				),
 			),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'mailchimp-for-woocommerce'     => array(
 				'name'           => __( 'Mailchimp', 'woocommerce' ),
 				'description'    => __( 'Send targeted campaigns, recover abandoned carts and much more with Mailchimp.', 'woocommerce' ),
@@ -559,6 +568,7 @@ class DefaultFreeExtensions {
 				'learn_more_link'  => 'https://woocommerce.com/products/pinterest-for-woocommerce?utm_source=storeprofiler&utm_medium=product&utm_campaign=freefeatures',
 				'install_priority' => 2,
 			),
+<<<<<<< HEAD
 			'kliken-ads-pixel-for-meta'     => array(
 				'label'            => __( 'Grow your business with Facebook and Instagram', 'woocommerce' ),
 				'image_url'        => plugins_url( '/assets/images/core-profiler/kliken-ads-pixel-for-meta.svg', WC_PLUGIN_FILE ),
@@ -566,6 +576,8 @@ class DefaultFreeExtensions {
 				'learn_more_link'  => 'https://woocommerce.com/products/meta-ads-and-pixel?utm_source=storeprofiler&utm_medium=product&utm_campaign=freefeatures',
 				'install_priority' => 2,
 			),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'mailpoet'                      => array(
 				'label'            => __( 'Reach your customers with MailPoet', 'woocommerce' ),
 				'image_url'        => plugins_url( '/assets/images/core-profiler/logo-mailpoet.svg', WC_PLUGIN_FILE ),

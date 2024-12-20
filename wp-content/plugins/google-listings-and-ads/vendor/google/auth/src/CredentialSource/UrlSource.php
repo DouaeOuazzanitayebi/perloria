@@ -47,9 +47,15 @@ class UrlSource implements ExternalAccountCredentialSourceInterface
      */
     public function __construct(
         string $url,
+<<<<<<< HEAD
         ?string $format = null,
         ?string $subjectTokenFieldName = null,
         ?array $headers = null
+=======
+        string $format = null,
+        string $subjectTokenFieldName = null,
+        array $headers = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $this->url = $url;
 
@@ -64,7 +70,11 @@ class UrlSource implements ExternalAccountCredentialSourceInterface
         $this->headers = $headers;
     }
 
+<<<<<<< HEAD
     public function fetchSubjectToken(?callable $httpHandler = null): string
+=======
+    public function fetchSubjectToken(callable $httpHandler = null): string
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (is_null($httpHandler)) {
             $httpHandler = HttpHandlerFactory::build(HttpClientCache::getHttpClient());

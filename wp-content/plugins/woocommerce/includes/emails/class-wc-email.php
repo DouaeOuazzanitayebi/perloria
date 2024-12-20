@@ -721,6 +721,7 @@ class WC_Email extends WC_Settings_API {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Set the object for the outgoing email.
 	 *
 	 * @param object $object Object this email is for, e.g. customer, or product.
@@ -731,6 +732,8 @@ class WC_Email extends WC_Settings_API {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Send an email.
 	 *
 	 * @param string $to Email to.

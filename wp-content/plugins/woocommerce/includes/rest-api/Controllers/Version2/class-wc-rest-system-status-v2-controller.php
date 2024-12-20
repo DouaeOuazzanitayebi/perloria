@@ -51,7 +51,11 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 		add_action( 'deactivate_plugin', array( __CLASS__, 'clean_plugin_cache' ) );
 		add_action(
 			'upgrader_process_complete',
+<<<<<<< HEAD
 			function ( $upgrader, $extra ) {
+=======
+			function( $upgrader, $extra ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				if ( ! $extra || ! $extra['type'] ) {
 					return;
 				}
@@ -499,12 +503,15 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
+<<<<<<< HEAD
 						'is_block_theme'          => array(
 							'description' => __( 'Is this theme a block theme?', 'woocommerce' ),
 							'type'        => 'boolean',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 						'has_woocommerce_support' => array(
 							'description' => __( 'Does the theme declare WooCommerce support?', 'woocommerce' ),
 							'type'        => 'boolean',
@@ -1339,7 +1346,10 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 				'version_latest'          => WC_Admin_Status::get_latest_theme_version( $active_theme ),
 				'author_url'              => esc_url_raw( $active_theme->{'Author URI'} ),
 				'is_child_theme'          => is_child_theme(),
+<<<<<<< HEAD
 				'is_block_theme'          => wc_current_theme_is_fse_theme(),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				'has_woocommerce_support' => current_theme_supports( 'woocommerce' ),
 				'has_woocommerce_file'    => ( file_exists( get_stylesheet_directory() . '/woocommerce.php' ) || file_exists( get_template_directory() . '/woocommerce.php' ) ),
 				'has_outdated_templates'  => $outdated_templates,

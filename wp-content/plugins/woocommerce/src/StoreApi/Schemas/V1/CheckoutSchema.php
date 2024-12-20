@@ -207,11 +207,19 @@ class CheckoutSchema extends AbstractSchema {
 	/**
 	 * Get the checkout response based on the current order and any payments.
 	 *
+<<<<<<< HEAD
 	 * @param \WC_Order          $order          Order object.
 	 * @param PaymentResult|null $payment_result Payment result object.
 	 * @return array
 	 */
 	protected function get_checkout_response( \WC_Order $order, ?PaymentResult $payment_result = null ) {
+=======
+	 * @param \WC_Order     $order Order object.
+	 * @param PaymentResult $payment_result Payment result object.
+	 * @return array
+	 */
+	protected function get_checkout_response( \WC_Order $order, PaymentResult $payment_result = null ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return [
 			'order_id'          => $order->get_id(),
 			'status'            => $order->get_status(),

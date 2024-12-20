@@ -18,6 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * Order item fee.
  */
 class WC_Order_Item_Fee extends WC_Order_Item {
+<<<<<<< HEAD
 	/**
 	 * Legacy fee data.
 	 *
@@ -33,6 +34,8 @@ class WC_Order_Item_Fee extends WC_Order_Item {
 	 * @var string
 	 */
 	public $legacy_fee_key = '';
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	/**
 	 * Order Data array. This is the core order data exposed in APIs since 3.0.0.

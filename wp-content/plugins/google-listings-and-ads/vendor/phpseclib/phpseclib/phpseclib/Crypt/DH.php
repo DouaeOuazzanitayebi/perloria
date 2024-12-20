@@ -49,7 +49,11 @@ abstract class DH extends AsymmetricKey
     /**
      * DH prime
      *
+<<<<<<< HEAD
      * @var BigInteger
+=======
+     * @var \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $prime;
 
@@ -58,14 +62,22 @@ abstract class DH extends AsymmetricKey
      *
      * Prime divisor of p-1
      *
+<<<<<<< HEAD
      * @var BigInteger
+=======
+     * @var \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $base;
 
     /**
      * Public Key
      *
+<<<<<<< HEAD
      * @var BigInteger
+=======
+     * @var \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $publicKey;
 
@@ -243,7 +255,11 @@ abstract class DH extends AsymmetricKey
      *
      * @param Parameters $params
      * @param int $length optional
+<<<<<<< HEAD
      * @return PrivateKey
+=======
+     * @return DH\PrivateKey
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public static function createKey(Parameters $params, $length = 0)
     {

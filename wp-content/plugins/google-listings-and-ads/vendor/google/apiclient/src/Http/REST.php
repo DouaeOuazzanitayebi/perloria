@@ -120,7 +120,11 @@ class REST
      */
     public static function decodeHttpResponse(
         ResponseInterface $response,
+<<<<<<< HEAD
         ?RequestInterface $request = null,
+=======
+        RequestInterface $request = null,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $expectedClass = null
     ) {
         $code = $response->getStatusCode();
@@ -147,7 +151,11 @@ class REST
         return $response;
     }
 
+<<<<<<< HEAD
     private static function decodeBody(ResponseInterface $response, ?RequestInterface $request = null)
+=======
+    private static function decodeBody(ResponseInterface $response, RequestInterface $request = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (self::isAltMedia($request)) {
             // don't decode the body, it's probably a really long string
@@ -157,7 +165,11 @@ class REST
         return (string) $response->getBody();
     }
 
+<<<<<<< HEAD
     private static function determineExpectedClass($expectedClass, ?RequestInterface $request = null)
+=======
+    private static function determineExpectedClass($expectedClass, RequestInterface $request = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         // "false" is used to explicitly prevent an expected class from being returned
         if (false === $expectedClass) {
@@ -184,7 +196,11 @@ class REST
         return null;
     }
 
+<<<<<<< HEAD
     private static function isAltMedia(?RequestInterface $request = null)
+=======
+    private static function isAltMedia(RequestInterface $request = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if ($request && $qs = $request->getUri()->getQuery()) {
             parse_str($qs, $query);

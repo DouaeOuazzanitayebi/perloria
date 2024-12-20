@@ -192,12 +192,20 @@ class GCECredentials extends CredentialsLoader implements
      *   instead of fetching one from the metadata server.
      */
     public function __construct(
+<<<<<<< HEAD
         ?Iam $iam = null,
+=======
+        Iam $iam = null,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $scope = null,
         $targetAudience = null,
         $quotaProject = null,
         $serviceAccountIdentity = null,
+<<<<<<< HEAD
         ?string $universeDomain = null
+=======
+        string $universeDomain = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $this->iam = $iam;
 
@@ -339,7 +347,11 @@ class GCECredentials extends CredentialsLoader implements
      * @param callable $httpHandler callback which delivers psr7 request
      * @return bool True if this a GCEInstance, false otherwise
      */
+<<<<<<< HEAD
     public static function onGce(?callable $httpHandler = null)
+=======
+    public static function onGce(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $httpHandler = $httpHandler
             ?: HttpHandlerFactory::build(HttpClientCache::getHttpClient());
@@ -408,7 +420,11 @@ class GCECredentials extends CredentialsLoader implements
      * }
      * @throws \Exception
      */
+<<<<<<< HEAD
     public function fetchAuthToken(?callable $httpHandler = null)
+=======
+    public function fetchAuthToken(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $httpHandler = $httpHandler
             ?: HttpHandlerFactory::build(HttpClientCache::getHttpClient());
@@ -474,7 +490,11 @@ class GCECredentials extends CredentialsLoader implements
      * @param callable $httpHandler callback which delivers psr7 request
      * @return string
      */
+<<<<<<< HEAD
     public function getClientName(?callable $httpHandler = null)
+=======
+    public function getClientName(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if ($this->clientName) {
             return $this->clientName;
@@ -508,7 +528,11 @@ class GCECredentials extends CredentialsLoader implements
      * @param callable $httpHandler Callback which delivers psr7 request
      * @return string|null
      */
+<<<<<<< HEAD
     public function getProjectId(?callable $httpHandler = null)
+=======
+    public function getProjectId(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if ($this->projectId) {
             return $this->projectId;
@@ -536,7 +560,11 @@ class GCECredentials extends CredentialsLoader implements
      * @param callable $httpHandler Callback which delivers psr7 request
      * @return string
      */
+<<<<<<< HEAD
     public function getUniverseDomain(?callable $httpHandler = null): string
+=======
+    public function getUniverseDomain(callable $httpHandler = null): string
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (null !== $this->universeDomain) {
             return $this->universeDomain;

@@ -10,16 +10,22 @@
  * @since   3.0.0
  */
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Order item class.
  */
 class WC_Order_Item extends WC_Data implements ArrayAccess {
+<<<<<<< HEAD
 	use CogsAwareTrait;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	/**
 	 * Legacy cart item values.
 	 *
@@ -85,10 +91,13 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 	 * @param int|object|array $item ID to load from the DB, or WC_Order_Item object.
 	 */
 	public function __construct( $item = 0 ) {
+<<<<<<< HEAD
 		if ( $this->has_cogs() && $this->cogs_is_enabled() ) {
 			$this->data['cogs_value'] = null;
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		parent::__construct( $item );
 
 		if ( $item instanceof WC_Order_Item ) {
@@ -115,7 +124,17 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 	 * @since 3.2.0
 	 */
 	public function apply_changes() {
+<<<<<<< HEAD
 		$this->data    = array_replace( $this->data, $this->changes );
+=======
+		if ( function_exists( 'array_replace' ) ) {
+			$this->data = array_replace( $this->data, $this->changes ); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctions.array_replaceFound
+		} else { // PHP 5.2 compatibility.
+			foreach ( $this->changes as $key => $change ) {
+				$this->data[ $key ] = $change;
+			}
+		}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$this->changes = array();
 	}
 
@@ -446,6 +465,7 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 
 		return null;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Indicates if the current order item has an associated Cost of Goods Sold value.
@@ -544,4 +564,6 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 			$this->set_prop( 'cogs_value', $value );
 		}
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

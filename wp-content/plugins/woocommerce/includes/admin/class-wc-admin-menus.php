@@ -120,6 +120,7 @@ class WC_Admin_Menus {
 	 * Add menu item.
 	 */
 	public function settings_menu() {
+<<<<<<< HEAD
 		$settings_page = add_submenu_page(
 			'woocommerce',
 			__( 'WooCommerce settings', 'woocommerce' ),
@@ -128,6 +129,9 @@ class WC_Admin_Menus {
 			'wc-settings',
 			array( $this, 'settings_page' )
 		);
+=======
+		$settings_page = add_submenu_page( 'woocommerce', __( 'WooCommerce settings', 'woocommerce' ), __( 'Settings', 'woocommerce' ), 'manage_woocommerce', 'wc-settings', array( $this, 'settings_page' ) );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		add_action( 'load-' . $settings_page, array( $this, 'settings_page_init' ) );
 	}
@@ -354,11 +358,15 @@ class WC_Admin_Menus {
 	 * Init the settings page.
 	 */
 	public function settings_page() {
+<<<<<<< HEAD
 		if ( Features::is_enabled( 'settings' ) ) {
 			echo '<div id="wc-settings-page"/>';
 		} else {
 			WC_Admin_Settings::output();
 		}
+=======
+		WC_Admin_Settings::output();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**

@@ -1,15 +1,24 @@
 language: php
 
 php:
+<<<<<<< HEAD
   - 8.1
   - 8.2
   - 8.3
   - 8.4
+=======
+  - 8.0
+  - 8.1
+  - 8.2
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
   - nightly
 
 matrix:
   allow_failures:
+<<<<<<< HEAD
     - php: 8.4
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     - php: nightly
 
 branches:

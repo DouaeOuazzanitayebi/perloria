@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <?php return array('dependencies' => array('react', 'wc-blocks-checkout', 'wc-blocks-components', 'wc-blocks-data-store', 'wc-blocks-registry', 'wc-price-format', 'wc-settings', 'wc-types', 'wp-a11y', 'wp-autop', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-data', 'wp-deprecated', 'wp-dom', 'wp-element', 'wp-hooks', 'wp-html-entities', 'wp-i18n', 'wp-is-shallow-equal', 'wp-keycodes', 'wp-polyfill', 'wp-primitives', 'wp-style-engine', 'wp-url', 'wp-wordcount'), 'version' => '8a5870946acd16f3b01c');
+=======
+<?php return array('dependencies' => array('react', 'wc-blocks-checkout', 'wc-blocks-components', 'wc-blocks-data-store', 'wc-blocks-registry', 'wc-price-format', 'wc-settings', 'wc-types', 'wp-a11y', 'wp-autop', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-data', 'wp-deprecated', 'wp-dom', 'wp-element', 'wp-hooks', 'wp-html-entities', 'wp-i18n', 'wp-is-shallow-equal', 'wp-keycodes', 'wp-polyfill', 'wp-primitives', 'wp-style-engine', 'wp-url', 'wp-wordcount'), 'version' => 'd50911ba7c349203ff0e');
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

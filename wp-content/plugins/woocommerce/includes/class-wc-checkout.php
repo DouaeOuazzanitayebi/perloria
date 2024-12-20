@@ -8,15 +8,21 @@
  * @version 3.4.0
  */
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Checkout class.
  */
 class WC_Checkout {
+<<<<<<< HEAD
 	use CogsAwareTrait;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	/**
 	 * The single instance of the class.
@@ -223,9 +229,22 @@ class WC_Checkout {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Initialize the checkout fields.
 	 */
 	protected function initialize_checkout_fields() {
+=======
+	 * Get an array of checkout fields.
+	 *
+	 * @param  string $fieldset to get.
+	 * @return array
+	 */
+	public function get_checkout_fields( $fieldset = '' ) {
+		if ( ! is_null( $this->fields ) ) {
+			return $fieldset ? $this->fields[ $fieldset ] : $this->fields;
+		}
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		// Fields are based on billing/shipping country. Grab those values but ensure they are valid for the store before using.
 		$billing_country   = $this->get_value( 'billing_country' );
 		$billing_country   = empty( $billing_country ) ? WC()->countries->get_base_country() : $billing_country;
@@ -307,6 +326,7 @@ class WC_Checkout {
 				}
 			}
 		}
+<<<<<<< HEAD
 	}
 
 	/**
@@ -326,6 +346,10 @@ class WC_Checkout {
 		}
 
 		return $this->fields;
+=======
+
+		return $fieldset ? $this->fields[ $fieldset ] : $this->fields;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -454,10 +478,13 @@ class WC_Checkout {
 			$order->set_payment_method( isset( $available_gateways[ $data['payment_method'] ] ) ? $available_gateways[ $data['payment_method'] ] : $data['payment_method'] );
 			$this->set_data_from_cart( $order );
 
+<<<<<<< HEAD
 			if ( $this->cogs_is_enabled() ) {
 				$order->calculate_cogs_total_value();
 			}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			/**
 			 * Action hook to adjust order before save.
 			 *
@@ -883,8 +910,11 @@ class WC_Checkout {
 				}
 
 				if ( in_array( 'phone', $format, true ) ) {
+<<<<<<< HEAD
 					$data[ $key ] = wc_sanitize_phone_number( $data[ $key ] );
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					if ( $validate_fieldset && '' !== $data[ $key ] && ! WC_Validation::is_phone( $data[ $key ] ) ) {
 						/* translators: %s: phone number */
 						$errors->add( $key . '_validation', sprintf( __( '%s is not a valid phone number.', 'woocommerce' ), '<strong>' . esc_html( $field_label ) . '</strong>' ), array( 'id' => $key ) );
@@ -943,7 +973,11 @@ class WC_Checkout {
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Missing
 		if ( empty( $data['woocommerce_checkout_update_totals'] ) && empty( $data['terms'] ) && ! empty( $data['terms-field'] ) ) {
+<<<<<<< HEAD
 			$errors->add( 'terms', __( 'Please read and accept the terms and conditions to proceed with your order.', 'woocommerce' ), array( 'id' => 'terms' ) );
+=======
+			$errors->add( 'terms', __( 'Please read and accept the terms and conditions to proceed with your order.', 'woocommerce' ) );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		if ( WC()->cart->needs_shipping() ) {

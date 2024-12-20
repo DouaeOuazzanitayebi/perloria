@@ -2,8 +2,11 @@
 
 namespace Automattic\WooCommerce\Blocks\BlockTypes\OrderConfirmation;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Blocks\Utils\StyleAttributesUtils;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 /**
  * Status class.
  */
@@ -28,7 +31,11 @@ class Status extends AbstractOrderConfirmationBlock {
 	 */
 	protected function render( $attributes, $content, $block ) {
 		$order     = $this->get_order();
+<<<<<<< HEAD
 		$classname = StyleAttributesUtils::get_classes_by_attributes( $attributes, array( 'extra_classes' ) );
+=======
+		$classname = $attributes['className'] ?? '';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		if ( isset( $attributes['align'] ) ) {
 			$classname .= " align{$attributes['align']}";
@@ -165,7 +172,11 @@ class Status extends AbstractOrderConfirmationBlock {
 	protected function render_account_notice( $order = null ) {
 		if ( $order && $order->get_customer_id() && 'store-api' === $order->get_created_via() ) {
 			$nag      = get_user_option( 'default_password_nag', $order->get_customer_id() );
+<<<<<<< HEAD
 			$generate = filter_var( get_option( 'woocommerce_registration_generate_password', 'no' ), FILTER_VALIDATE_BOOLEAN );
+=======
+			$generate = filter_var( get_option( 'woocommerce_registration_generate_password', false ), FILTER_VALIDATE_BOOLEAN );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 			if ( $nag && $generate ) {
 				return wc_print_notice(

@@ -70,7 +70,11 @@ abstract class EC extends AsymmetricKey
     /**
      * Curve
      *
+<<<<<<< HEAD
      * @var EC\BaseCurves\Base
+=======
+     * @var \phpseclib3\Crypt\EC\BaseCurves\Base
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $curve;
 
@@ -100,7 +104,11 @@ abstract class EC extends AsymmetricKey
      *
      * Used for deterministic ECDSA
      *
+<<<<<<< HEAD
      * @var BigInteger
+=======
+     * @var \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $q;
 
@@ -112,7 +120,11 @@ abstract class EC extends AsymmetricKey
      * public key. But the x is different depending on which side of the equal sign
      * you're on. It's less ambiguous if you do dA * base point = (x, y)-coordinate.
      *
+<<<<<<< HEAD
      * @var BigInteger
+=======
+     * @var \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $x;
 
@@ -134,7 +146,11 @@ abstract class EC extends AsymmetricKey
      * Create public / private key pair.
      *
      * @param string $curve
+<<<<<<< HEAD
      * @return PrivateKey
+=======
+     * @return \phpseclib3\Crypt\EC\PrivateKey
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public static function createKey($curve)
     {

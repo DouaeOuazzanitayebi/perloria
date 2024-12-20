@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 25.0.0
 *   Added support for v18 of Google Ads API.
 *   Removed support for the `useGapicV2Source` configuration, as the source code
@@ -61,6 +62,8 @@
     * DismissRecommendation
     * RejectMerchantCenterLink
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 ## 22.1.0
 *   Added support for v16 of Google Ads API.
 *   Fixed dependabot alert in `examples/LaravelSampleApp/composer.lock`.

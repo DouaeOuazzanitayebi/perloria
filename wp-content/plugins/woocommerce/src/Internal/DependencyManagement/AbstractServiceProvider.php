@@ -150,7 +150,11 @@ abstract class AbstractServiceProvider extends BaseServiceProvider {
 	 *
 	 * @return DefinitionInterface The generated container definition.
 	 */
+<<<<<<< HEAD
 	protected function add( string $id, $concrete = null, ?bool $shared = null ) : DefinitionInterface {
+=======
+	protected function add( string $id, $concrete = null, bool $shared = null ) : DefinitionInterface {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return $this->getContainer()->add( $id, $concrete, $shared );
 	}
 

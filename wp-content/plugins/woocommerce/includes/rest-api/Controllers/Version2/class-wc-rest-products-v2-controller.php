@@ -162,9 +162,26 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 	public function prepare_object_for_response( $object, $request ) {
 		$context       = ! empty( $request['context'] ) ? $request['context'] : 'view';
 		$this->request = $request;
+<<<<<<< HEAD
 
 		$data = $this->prepare_object_for_response_core( $object, $request, $context );
 
+=======
+		$data          = $this->get_product_data( $object, $context, $request );
+
+		// Add variations to variable products.
+		if ( $object->is_type( 'variable' ) && $object->has_child() ) {
+			$data['variations'] = $object->get_children();
+		}
+
+		// Add grouped products data.
+		if ( $object->is_type( 'grouped' ) && $object->has_child() ) {
+			$data['grouped_products'] = $object->get_children();
+		}
+
+		$data     = $this->add_additional_fields_to_object( $data, $request );
+		$data     = $this->filter_response_by_context( $data, $context );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$response = rest_ensure_response( $data );
 		$response->add_links( $this->prepare_links( $object, $request ) );
 
@@ -182,6 +199,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Core function to prepare a single product output for response
 	 * (doesn't fire hooks, ensure_response, or add links).
 	 *
@@ -209,6 +227,8 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Prepare objects query.
 	 *
 	 * @param WP_REST_Request $request Full details about the request.

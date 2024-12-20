@@ -28,7 +28,11 @@ final class PrivateKey extends DSA implements Common\PrivateKey
     /**
      * DSA secret exponent x
      *
+<<<<<<< HEAD
      * @var BigInteger
+=======
+     * @var \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $x;
 

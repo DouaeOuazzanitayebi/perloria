@@ -55,8 +55,13 @@ abstract class SSH2
     /**
      * Returns a signature in the appropriate format
      *
+<<<<<<< HEAD
      * @param BigInteger $r
      * @param BigInteger $s
+=======
+     * @param \phpseclib3\Math\BigInteger $r
+     * @param \phpseclib3\Math\BigInteger $s
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @return string
      */
     public static function save(BigInteger $r, BigInteger $s)

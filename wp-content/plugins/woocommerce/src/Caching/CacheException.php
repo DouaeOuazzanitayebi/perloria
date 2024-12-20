@@ -38,7 +38,11 @@ class CacheException extends \Exception {
 	 * @param mixed           $code An error code, if available.
 	 * @param \Throwable|null $previous The previous exception, if available.
 	 */
+<<<<<<< HEAD
 	public function __construct( string $message, ObjectCache $thrower, $cached_id = null, ?array $errors = null, $code = 0, ?\Throwable $previous = null ) {
+=======
+	public function __construct( string $message, ObjectCache $thrower, $cached_id = null, ?array $errors = null, $code = 0, \Throwable $previous = null ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$this->errors    = $errors ?? array();
 		$this->thrower   = $thrower;
 		$this->cached_id = $cached_id;

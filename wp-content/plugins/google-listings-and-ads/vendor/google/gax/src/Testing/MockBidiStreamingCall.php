@@ -59,7 +59,11 @@ class MockBidiStreamingCall extends Grpc\BidiStreamingCall
      * @param mixed|null $deserialize An optional deserialize method for the response object.
      * @param stdClass|null $status An optional status object. If set to null, a status of OK is used.
      */
+<<<<<<< HEAD
     public function __construct(array $responses, $deserialize = null, ?stdClass $status = null)
+=======
+    public function __construct(array $responses, $deserialize = null, stdClass $status = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $this->responses = $responses;
         $this->deserialize = $deserialize;

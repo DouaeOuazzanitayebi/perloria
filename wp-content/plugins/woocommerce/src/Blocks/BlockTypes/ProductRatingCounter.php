@@ -132,7 +132,11 @@ class ProductRatingCounter extends AbstractBlock {
 			 * @param int    $count  Total number of ratings.
 			 * @return string
 			 */
+<<<<<<< HEAD
 			$filter_rating_html = function ( $html, $rating, $count ) use ( $post_id, $product_rating, $product_reviews_count, $is_descendent_of_single_product_block, $is_descendent_of_single_product_template ) {
+=======
+			$filter_rating_html = function( $html, $rating, $count ) use ( $post_id, $product_rating, $product_reviews_count, $is_descendent_of_single_product_block, $is_descendent_of_single_product_template ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				$product_permalink = get_permalink( $post_id );
 				$reviews_count     = $count;
 				$average_rating    = $rating;
@@ -193,6 +197,7 @@ class ProductRatingCounter extends AbstractBlock {
 				10
 			);
 
+<<<<<<< HEAD
 			$classes = implode(
 				' ',
 				array_filter(
@@ -216,9 +221,22 @@ class ProductRatingCounter extends AbstractBlock {
 					%2$s
 				</div>',
 				$wrapper_attributes,
+=======
+			return sprintf(
+				'<div class="wc-block-components-product-rating-counter wc-block-grid__product-rating-counter %1$s %2$s" style="%3$s">
+					%4$s
+				</div>',
+				esc_attr( $text_align_styles_and_classes['class'] ?? '' ),
+				esc_attr( $styles_and_classes['classes'] ),
+				esc_attr( $styles_and_classes['styles'] ?? '' ),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				$rating_html
 			);
 		}
 		return '';
 	}
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

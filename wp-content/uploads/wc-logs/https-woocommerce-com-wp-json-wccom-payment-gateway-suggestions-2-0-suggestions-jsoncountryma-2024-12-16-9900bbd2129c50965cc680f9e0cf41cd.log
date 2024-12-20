@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 2024-12-16T20:02:20+00:00 ERROR Error getting data feed
+=======
+2024-12-16T20:02:20+00:00 ERROR Error getting data feed
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 2024-12-16T20:02:20+00:00 ERROR WP_Error Object
 (
     [errors] => Array
@@ -19,4 +23,8 @@
         )
 
 )
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

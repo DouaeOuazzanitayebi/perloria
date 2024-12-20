@@ -58,8 +58,13 @@ class ProxyAuthTokenMiddleware
      */
     public function __construct(
         FetchAuthTokenInterface $fetcher,
+<<<<<<< HEAD
         ?callable $httpHandler = null,
         ?callable $tokenCallback = null
+=======
+        callable $httpHandler = null,
+        callable $tokenCallback = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $this->fetcher = $fetcher;
         $this->httpHandler = $httpHandler;

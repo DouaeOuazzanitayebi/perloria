@@ -315,7 +315,11 @@ trait GapicClientTrait
         string $apiEndpoint,
         $transport,
         $transportConfig,
+<<<<<<< HEAD
         ?callable $clientCertSource = null
+=======
+        callable $clientCertSource = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         if (!is_string($transport)) {
             throw new ValidationException(
@@ -511,7 +515,11 @@ trait GapicClientTrait
      */
     private function startApiCall(
         string $methodName,
+<<<<<<< HEAD
         ?Message $request = null,
+=======
+        Message $request = null,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         array $optionalArgs = []
     ) {
         $methodDescriptors =$this->validateCallConfig($methodName);
@@ -573,9 +581,15 @@ trait GapicClientTrait
         string $methodName,
         string $decodeType,
         array $optionalArgs = [],
+<<<<<<< HEAD
         ?Message $request = null,
         int $callType = Call::UNARY_CALL,
         ?string $interfaceName = null
+=======
+        Message $request = null,
+        int $callType = Call::UNARY_CALL,
+        string $interfaceName = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $optionalArgs = $this->configureCallOptions($optionalArgs);
         $callStack = $this->createCallStack(
@@ -713,8 +727,13 @@ trait GapicClientTrait
         array $optionalArgs,
         Message $request,
         $client,
+<<<<<<< HEAD
         ?string $interfaceName = null,
         ?string $operationClass = null
+=======
+        string $interfaceName = null,
+        string $operationClass = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $optionalArgs = $this->configureCallOptions($optionalArgs);
         $callStack = $this->createCallStack(
@@ -769,7 +788,11 @@ trait GapicClientTrait
         array $optionalArgs,
         string $decodeType,
         Message $request,
+<<<<<<< HEAD
         ?string $interfaceName = null
+=======
+        string $interfaceName = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         return $this->getPagedListResponseAsync(
             $methodName,
@@ -794,7 +817,11 @@ trait GapicClientTrait
         array $optionalArgs,
         string $decodeType,
         Message $request,
+<<<<<<< HEAD
         ?string $interfaceName = null
+=======
+        string $interfaceName = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $optionalArgs = $this->configureCallOptions($optionalArgs);
         $callStack = $this->createCallStack(
@@ -825,7 +852,11 @@ trait GapicClientTrait
      *
      * @return string
      */
+<<<<<<< HEAD
     private function buildMethod(?string $interfaceName = null, ?string $methodName = null)
+=======
+    private function buildMethod(string $interfaceName = null, string $methodName = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return sprintf(
             '%s/%s',
@@ -840,7 +871,11 @@ trait GapicClientTrait
      *
      * @return array
      */
+<<<<<<< HEAD
     private function buildRequestParamsHeader(array $headerParams, ?Message $request = null)
+=======
+    private function buildRequestParamsHeader(array $headerParams, Message $request = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $headers = [];
 

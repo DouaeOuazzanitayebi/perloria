@@ -584,7 +584,11 @@ class OAuth2 implements FetchAuthTokenInterface
      * @param callable $httpHandler callback which delivers psr7 request
      * @return RequestInterface the authorization Url.
      */
+<<<<<<< HEAD
     public function generateCredentialsRequest(?callable $httpHandler = null)
+=======
+    public function generateCredentialsRequest(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $uri = $this->getTokenCredentialUri();
         if (is_null($uri)) {
@@ -662,7 +666,11 @@ class OAuth2 implements FetchAuthTokenInterface
      * @param callable $httpHandler callback which delivers psr7 request
      * @return array<mixed> the response
      */
+<<<<<<< HEAD
     public function fetchAuthToken(?callable $httpHandler = null)
+=======
+    public function fetchAuthToken(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (is_null($httpHandler)) {
             $httpHandler = HttpHandlerFactory::build(HttpClientCache::getHttpClient());
@@ -1661,7 +1669,11 @@ class OAuth2 implements FetchAuthTokenInterface
      * @return string
      * @access private
      */
+<<<<<<< HEAD
     public function getClientName(?callable $httpHandler = null)
+=======
+    public function getClientName(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return $this->getClientId();
     }

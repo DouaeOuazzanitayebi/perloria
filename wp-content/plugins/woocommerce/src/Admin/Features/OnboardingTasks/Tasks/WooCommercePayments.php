@@ -7,7 +7,10 @@ use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Task;
 use Automattic\WooCommerce\Admin\PluginsHelper;
 use Automattic\WooCommerce\Admin\Features\PaymentGatewaySuggestions\Init as Suggestions;
 use Automattic\WooCommerce\Admin\Features\PaymentGatewaySuggestions\DefaultPaymentGateways;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * WooCommercePayments Task
@@ -194,6 +197,7 @@ class WooCommercePayments extends Task {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the WooPayments payment gateway suggestion.
 	 *
 	 * @return object|null The WooPayments suggestion, or null if none found.
@@ -227,6 +231,27 @@ class WooCommercePayments extends Task {
 	 */
 	public static function is_supported() {
 		return ! empty( self::get_suggestion() );
+=======
+	 * Check if the store is in a WooPayments supported country.
+	 *
+	 * @return bool
+	 */
+	public static function is_supported() {
+		$suggestions              = Suggestions::get_suggestions( DefaultPaymentGateways::get_all() );
+		$suggestion_plugins       = array_merge(
+			...array_filter(
+				array_column( $suggestions, 'plugins' ),
+				function ( $plugins ) {
+					return is_array( $plugins );
+				}
+			)
+		);
+		$woocommerce_payments_ids = array_search( 'woocommerce-payments', $suggestion_plugins, true );
+		if ( false !== $woocommerce_payments_ids ) {
+			return true;
+		}
+		return false;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -263,6 +288,7 @@ class WooCommercePayments extends Task {
 
 		return ! empty( $enabled_gateways );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * The task action URL.
@@ -305,4 +331,6 @@ class WooCommercePayments extends Task {
 		// Fall back to the WooPayments task page URL.
 		return add_query_arg( 'task', $this->get_id(), admin_url( 'admin.php?page=wc-admin' ) );
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

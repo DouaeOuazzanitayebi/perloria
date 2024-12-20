@@ -132,6 +132,7 @@ if (!function_exists('mb_str_pad')) {
     function mb_str_pad(string $string, int $length, string $pad_string = ' ', int $pad_type = STR_PAD_RIGHT, ?string $encoding = null): string { return p\Mbstring::mb_str_pad($string, $length, $pad_string, $pad_type, $encoding); }
 }
 
+<<<<<<< HEAD
 if (!function_exists('mb_ucfirst')) {
     function mb_ucfirst(string $string, ?string $encoding = null): string { return p\Mbstring::mb_ucfirst($string, $encoding); }
 }
@@ -153,6 +154,8 @@ if (!function_exists('mb_rtrim')) {
 }
 
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 if (extension_loaded('mbstring')) {
     return;
 }

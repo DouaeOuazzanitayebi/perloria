@@ -159,7 +159,11 @@ final class PrivateKey extends EC implements Common\PrivateKey
 
                 extract(ASN1Signature::load($signature));
 
+<<<<<<< HEAD
                 return $this->formatSignature($r, $s);
+=======
+                return $shortFormat == 'SSH2' ? $format::save($r, $s, $this->getCurve()) : $format::save($r, $s);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             }
         }
 
@@ -208,7 +212,11 @@ final class PrivateKey extends EC implements Common\PrivateKey
         list(, $s) = $temp->divide($this->q);
         */
 
+<<<<<<< HEAD
         return $this->formatSignature($r, $s);
+=======
+        return $shortFormat == 'SSH2' ? $format::save($r, $s, $this->getCurve()) : $format::save($r, $s);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 
     /**
@@ -253,6 +261,7 @@ final class PrivateKey extends EC implements Common\PrivateKey
         }
         return $key;
     }
+<<<<<<< HEAD
 
     /**
      * Returns a signature in the appropriate format
@@ -277,4 +286,6 @@ final class PrivateKey extends EC implements Common\PrivateKey
         // presumably the only way you could get to this is if you were using a custom plugin
         throw new UnsupportedOperationException("$format::save() has $paramCount parameters - the only valid parameter counts are 2 or 3");
     }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

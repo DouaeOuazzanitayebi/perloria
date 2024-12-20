@@ -171,7 +171,11 @@ abstract class XML
      * Extract points from an XML document
      *
      * @param \DOMXPath $xpath
+<<<<<<< HEAD
      * @param BaseCurve $curve
+=======
+     * @param \phpseclib3\Crypt\EC\BaseCurves\Base $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @return object[]
      */
     private static function extractPointRFC4050(\DOMXPath $xpath, BaseCurve $curve)
@@ -199,7 +203,11 @@ abstract class XML
      * on the curve parameters
      *
      * @param \DomXPath $xpath
+<<<<<<< HEAD
      * @return BaseCurve|false
+=======
+     * @return \phpseclib3\Crypt\EC\BaseCurves\Base|false
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     private static function loadCurveByParam(\DOMXPath $xpath)
     {
@@ -279,7 +287,11 @@ abstract class XML
      * on the curve parameters
      *
      * @param \DomXPath $xpath
+<<<<<<< HEAD
      * @return BaseCurve|false
+=======
+     * @return \phpseclib3\Crypt\EC\BaseCurves\Base|false
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     private static function loadCurveByParamRFC4050(\DOMXPath $xpath)
     {
@@ -366,7 +378,11 @@ abstract class XML
     /**
      * Convert a public key to the appropriate format
      *
+<<<<<<< HEAD
      * @param BaseCurve $curve
+=======
+     * @param \phpseclib3\Crypt\EC\BaseCurves\Base $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param \phpseclib3\Math\Common\FiniteField\Integer[] $publicKey
      * @param array $options optional
      * @return string
@@ -407,7 +423,11 @@ abstract class XML
     /**
      * Encode Parameters
      *
+<<<<<<< HEAD
      * @param BaseCurve $curve
+=======
+     * @param \phpseclib3\Crypt\EC\BaseCurves\Base $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param string $pre
      * @param array $options optional
      * @return string|false

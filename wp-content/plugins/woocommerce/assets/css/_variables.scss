@@ -14,8 +14,13 @@ $primarytext:       desaturate(lighten($primary, 50%), 18%) !default;    // Text
 $secondary:         desaturate(lighten($primary, 40%), 21%) !default;    // Secondary buttons
 $secondarytext:     desaturate(darken($secondary, 60%), 21%) !default;   // Text on secondary color bg
 
+<<<<<<< HEAD
 $highlight:         adjust-hue(darken($primary, 18%), 150deg) !default;  // Prices, In stock labels, sales flash
 $highlightext:      desaturate(lighten($highlight, 80%), 18%) !default;  // Text on highlight color bg
+=======
+$highlight:         adjust-hue($primary, 150deg) !default;               // Prices, In stock labels, sales flash
+$highlightext:      desaturate(lighten($highlight, 50%), 18%) !default;  // Text on highlight color bg
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 $contentbg:         #fff !default;                                     // Content BG - Tabs (active state)
 $subtext:           #767676 !default;                                  // small, breadcrumbs etc

@@ -54,7 +54,11 @@ class InsecureCredentialsWrapper extends CredentialsWrapper
      * @param $audience
      * @return callable
      */
+<<<<<<< HEAD
     public function getAuthorizationHeaderCallback($audience = null): ?callable
+=======
+    public function getAuthorizationHeaderCallback($audience = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return null;
     }

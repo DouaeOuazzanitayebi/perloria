@@ -17,17 +17,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class BrandInfo extends \Google\Protobuf\Internal\Message
 {
     /**
+<<<<<<< HEAD
      * Output only. A text representation of a brand.
      *
      * Generated from protobuf field <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $display_name = null;
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * The Commercial KG MID for the brand.
      *
      * Generated from protobuf field <code>optional string entity_id = 1;</code>
      */
     protected $entity_id = null;
+<<<<<<< HEAD
     /**
      * Output only. The primary url of a brand.
      *
@@ -46,6 +50,8 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .google.ads.googleads.v16.enums.BrandStateEnum.BrandState status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = null;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     /**
      * Constructor.
@@ -53,6 +59,7 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+<<<<<<< HEAD
      *     @type string $display_name
      *           Output only. A text representation of a brand.
      *     @type string $entity_id
@@ -63,6 +70,10 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
      *           Output only. The rejection reason when a brand status is REJECTED.
      *     @type int $status
      *           Output only. The status of a brand.
+=======
+     *     @type string $entity_id
+     *           The Commercial KG MID for the brand.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * }
      */
     public function __construct($data = NULL) {
@@ -71,6 +82,7 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+<<<<<<< HEAD
      * Output only. A text representation of a brand.
      *
      * Generated from protobuf field <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -107,6 +119,8 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * The Commercial KG MID for the brand.
      *
      * Generated from protobuf field <code>optional string entity_id = 1;</code>
@@ -142,6 +156,7 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * Output only. The primary url of a brand.
      *
@@ -250,5 +265,7 @@ class BrandInfo extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 

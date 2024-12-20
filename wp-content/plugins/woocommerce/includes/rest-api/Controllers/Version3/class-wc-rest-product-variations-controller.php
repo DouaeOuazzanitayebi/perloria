@@ -8,7 +8,10 @@
  * @since   3.0.0
  */
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareRestControllerTrait;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Utilities\I18nUtil;
 
 defined( 'ABSPATH' ) || exit;
@@ -22,7 +25,10 @@ use Automattic\Jetpack\Constants;
  * @extends WC_REST_Product_Variations_V2_Controller
  */
 class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V2_Controller {
+<<<<<<< HEAD
 	use CogsAwareRestControllerTrait;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	/**
 	 * Endpoint namespace.
@@ -151,6 +157,7 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 			'parent_id'             => $object->get_parent_id(),
 		);
 
+<<<<<<< HEAD
 		$data = $this->add_additional_fields_to_object( $data, $request );
 		$data = $this->filter_response_by_context( $data, $context );
 
@@ -158,6 +165,10 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 			$this->add_cogs_info_to_returned_product_data( $data, $object );
 		}
 
+=======
+		$data     = $this->add_additional_fields_to_object( $data, $request );
+		$data     = $this->filter_response_by_context( $data, $context );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$response = rest_ensure_response( $data );
 		$response->add_links( $this->prepare_links( $object, $request ) );
 
@@ -385,10 +396,13 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 			}
 		}
 
+<<<<<<< HEAD
 		if ( $this->cogs_is_enabled() ) {
 			$this->set_cogs_info_in_product_object( $request, $variation );
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		/**
 		 * Filters an object before it is inserted via the REST API.
 		 *
@@ -871,11 +885,14 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 				),
 			),
 		);
+<<<<<<< HEAD
 
 		if ( $this->cogs_is_enabled() ) {
 			$schema = $this->add_cogs_related_product_schema( $schema, true );
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return $this->add_additional_fields_schema( $schema );
 	}
 

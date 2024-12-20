@@ -8,8 +8,13 @@
  * @since    2.6.0
  */
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
 use Automattic\WooCommerce\Utilities\ArrayUtil;
+=======
+use Automattic\WooCommerce\Utilities\ArrayUtil;
+use Automattic\WooCommerce\Utilities\OrderUtil;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Utilities\StringUtil;
 
 defined( 'ABSPATH' ) || exit;
@@ -21,7 +26,10 @@ defined( 'ABSPATH' ) || exit;
  * @extends WC_REST_Orders_V2_Controller
  */
 class WC_REST_Orders_Controller extends WC_REST_Orders_V2_Controller {
+<<<<<<< HEAD
 	use CogsAwareTrait;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 	/**
 	 * Endpoint namespace.
@@ -50,7 +58,11 @@ class WC_REST_Orders_Controller extends WC_REST_Orders_V2_Controller {
 
 		$current_order_coupons      = array_values( $order->get_coupons() );
 		$current_order_coupon_codes = array_map(
+<<<<<<< HEAD
 			function ( $coupon ) {
+=======
+			function( $coupon ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				return $coupon->get_code();
 			},
 			$current_order_coupons
@@ -172,6 +184,7 @@ class WC_REST_Orders_Controller extends WC_REST_Orders_V2_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Create or update a line item, overridden to add COGS data as needed.
 	 *
 	 * @param array  $posted Line item data.
@@ -196,6 +209,8 @@ class WC_REST_Orders_Controller extends WC_REST_Orders_V2_Controller {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Wrapper method to remove order items.
 	 * When updating, the item ID provided is checked to ensure it is associated
 	 * with the order.
@@ -355,6 +370,7 @@ class WC_REST_Orders_Controller extends WC_REST_Orders_V2_Controller {
 			'context'     => array( 'edit' ),
 		);
 
+<<<<<<< HEAD
 		if ( $this->cogs_is_enabled() ) {
 			$schema = $this->add_cogs_related_schema( $schema );
 		}
@@ -397,6 +413,8 @@ class WC_REST_Orders_Controller extends WC_REST_Orders_V2_Controller {
 			),
 		);
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return $schema;
 	}
 
@@ -421,6 +439,7 @@ class WC_REST_Orders_Controller extends WC_REST_Orders_V2_Controller {
 
 		return $params;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Core method to prepare a single order object for response
@@ -453,4 +472,6 @@ class WC_REST_Orders_Controller extends WC_REST_Orders_V2_Controller {
 
 		return $data;
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

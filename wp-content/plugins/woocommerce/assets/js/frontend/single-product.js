@@ -249,12 +249,16 @@ jQuery( function( $ ) {
 	 */
 	ProductGallery.prototype.initPhotoswipe = function() {
 		if ( this.zoom_enabled && this.$images.length > 0 ) {
+<<<<<<< HEAD
 			this.$target.prepend(
 				'<a href="#" role="button" class="woocommerce-product-gallery__trigger" aria-haspopup="dialog" aria-label="'+
 				wc_single_product_params.i18n_product_gallery_trigger_text + '">' +
 					'<span aria-hidden="true">🔍</span>' +
 				'</a>'
 			);
+=======
+			this.$target.prepend( '<a href="#" class="woocommerce-product-gallery__trigger">🔍</a>' );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			this.$target.on( 'click', '.woocommerce-product-gallery__trigger', this.openPhotoswipe );
 			this.$target.on( 'click', '.woocommerce-product-gallery__image a', function( e ) {
 				e.preventDefault();

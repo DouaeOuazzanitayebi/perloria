@@ -1,7 +1,11 @@
 <?php
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Blocks\Utils\StyleAttributesUtils;
+=======
+use Automattic\WooCommerce\Blocks\Utils\BlockTemplateUtils;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * ProductFilters class.
@@ -20,6 +24,7 @@ class ProductFilters extends AbstractBlock {
 	 * @return string[]
 	 */
 	protected function get_block_type_uses_context() {
+<<<<<<< HEAD
 		return array( 'postId', 'query', 'queryId' );
 	}
 
@@ -33,6 +38,9 @@ class ProductFilters extends AbstractBlock {
 	protected function initialize() {
 		add_filter( 'block_type_metadata_settings', array( $this, 'add_block_type_metadata_settings' ), 10, 2 );
 		parent::initialize();
+=======
+		return array( 'postId' );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -53,6 +61,93 @@ class ProductFilters extends AbstractBlock {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Return the dialog content.
+	 *
+	 * @return string
+	 */
+	protected function render_dialog() {
+		$template_part = BlockTemplateUtils::get_template_part( 'product-filters-overlay' );
+
+		$html = $this->render_template_part( $template_part );
+
+		$html = strtr(
+			'<dialog hidden role="dialog" aria-modal="true">
+				{{html}}
+			</dialog>',
+			array(
+				'{{html}}' => $html,
+			)
+		);
+
+		$p = new \WP_HTML_Tag_Processor( $html );
+		if ( $p->next_tag() ) {
+			$p->set_attribute( 'data-wc-interactive', wp_json_encode( array( 'namespace' => 'woocommerce/product-filters' ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ) );
+			$p->set_attribute( 'data-wc-bind--hidden', '!state.isDialogOpen' );
+			$p->set_attribute( 'data-wc-class--wc-block-product-filters--dialog-open', 'state.isDialogOpen' );
+			$p->set_attribute( 'data-wc-class--wc-block-product-filters--with-admin-bar', 'context.hasPageWithWordPressAdminBar' );
+			$html = $p->get_updated_html();
+		}
+
+		return $html;
+	}
+
+	/**
+	 * This method is used to render the template part. For each template part, we parse the blocks and render them.
+	 *
+	 * @param string $template_part The template part to render.
+	 * @return string The rendered template part.
+	 */
+	protected function render_template_part( $template_part ) {
+		$parsed_blocks               = parse_blocks( $template_part );
+		$wrapper_template_part_block = $parsed_blocks[0];
+		$html                        = $wrapper_template_part_block['innerHTML'];
+		$target_div                  = '</div>';
+
+		$template_part_content_html = array_reduce(
+			$wrapper_template_part_block['innerBlocks'],
+			function ( $carry, $item ) {
+				if ( 'core/template-part' === $item['blockName'] ) {
+					$inner_template_part              = BlockTemplateUtils::get_template_part( $item['attrs']['slug'] );
+					$inner_template_part_content_html = $this->render_template_part( $inner_template_part );
+
+					return $carry . $inner_template_part_content_html;
+				}
+				return $carry . render_block( $item );
+			},
+			''
+		);
+
+		$html = str_replace( $target_div, $template_part_content_html . $target_div, $html );
+
+		return $html;
+	}
+
+	/**
+	 * Inject dialog into the product filters HTML.
+	 *
+	 * @param string $product_filters_html The Product Filters HTML.
+	 * @param string $dialog_html The dialog HTML.
+	 *
+	 * @return string
+	 */
+	protected function inject_dialog( $product_filters_html, $dialog_html ) {
+		// Find the position of the last </div>.
+		$pos = strrpos( $product_filters_html, '</div>' );
+
+		if ( $pos ) {
+			// Inject the dialog_html at the correct position.
+			$html = substr_replace( $product_filters_html, $dialog_html, $pos, 0 );
+
+			return $html;
+		}
+
+		return $product_filters_html;
+	}
+
+	/**
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Include and render the block.
 	 *
 	 * @param array    $attributes Block attributes. Default empty array.
@@ -61,6 +156,7 @@ class ProductFilters extends AbstractBlock {
 	 * @return string Rendered block type output.
 	 */
 	protected function render( $attributes, $content, $block ) {
+<<<<<<< HEAD
 		$query_id      = $block->context['queryId'] ?? 0;
 		$filter_params = $this->get_filter_params( $query_id );
 		$block_context = array_merge(
@@ -188,6 +284,35 @@ class ProductFilters extends AbstractBlock {
 			'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">%s</svg>',
 			$icons[ $name ]
 		);
+=======
+		$tags = new \WP_HTML_Tag_Processor( $content );
+		if ( $tags->next_tag() ) {
+			$tags->set_attribute( 'data-wc-interactive', wp_json_encode( array( 'namespace' => 'woocommerce/' . $this->block_name ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ) );
+			$tags->set_attribute(
+				'data-wc-context',
+				wp_json_encode(
+					array(
+						'isDialogOpen'                 => false,
+						'hasPageWithWordPressAdminBar' => false,
+						'params'                       => $this->get_filter_query_params( 0 ),
+						'originalParams'               => $this->get_filter_query_params( 0 ),
+					),
+					JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP
+				)
+			);
+			$tags->set_attribute( 'data-wc-navigation-id', $this->generate_navigation_id( $block ) );
+			$tags->set_attribute( 'data-wc-watch', 'callbacks.maybeNavigate' );
+
+			if (
+				'always' === $attributes['overlay'] ||
+				( 'mobile' === $attributes['overlay'] && wp_is_mobile() )
+			) {
+				return $this->inject_dialog( $tags->get_updated_html(), $this->render_dialog() );
+			}
+
+			return $tags->get_updated_html();
+		}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -211,7 +336,11 @@ class ProductFilters extends AbstractBlock {
 	 * @param int $query_id Query ID.
 	 * @return array Parsed filter params.
 	 */
+<<<<<<< HEAD
 	private function get_filter_params( $query_id ) {
+=======
+	private function get_filter_query_params( $query_id ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
 
@@ -243,6 +372,7 @@ class ProductFilters extends AbstractBlock {
 			ARRAY_FILTER_USE_KEY
 		);
 	}
+<<<<<<< HEAD
 
 	/**
 	 * This block renders inner blocks manually so we need to skip default
@@ -258,4 +388,6 @@ class ProductFilters extends AbstractBlock {
 		}
 			return $settings;
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

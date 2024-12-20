@@ -89,10 +89,17 @@ abstract class PKCS8 extends Progenitor
     /**
      * Convert a private key to the appropriate format.
      *
+<<<<<<< HEAD
      * @param BigInteger $prime
      * @param BigInteger $base
      * @param BigInteger $privateKey
      * @param BigInteger $publicKey
+=======
+     * @param \phpseclib3\Math\BigInteger $prime
+     * @param \phpseclib3\Math\BigInteger $base
+     * @param \phpseclib3\Math\BigInteger $privateKey
+     * @param \phpseclib3\Math\BigInteger $publicKey
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param string $password optional
      * @param array $options optional
      * @return string
@@ -112,9 +119,15 @@ abstract class PKCS8 extends Progenitor
     /**
      * Convert a public key to the appropriate format
      *
+<<<<<<< HEAD
      * @param BigInteger $prime
      * @param BigInteger $base
      * @param BigInteger $publicKey
+=======
+     * @param \phpseclib3\Math\BigInteger $prime
+     * @param \phpseclib3\Math\BigInteger $base
+     * @param \phpseclib3\Math\BigInteger $publicKey
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param array $options optional
      * @return string
      */
@@ -127,6 +140,10 @@ abstract class PKCS8 extends Progenitor
         $params = ASN1::encodeDER($params, Maps\DHParameter::MAP);
         $params = new ASN1\Element($params);
         $key = ASN1::encodeDER($publicKey, ['type' => ASN1::TYPE_INTEGER]);
+<<<<<<< HEAD
         return self::wrapPublicKey($key, $params, null, $options);
+=======
+        return self::wrapPublicKey($key, $params);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 }

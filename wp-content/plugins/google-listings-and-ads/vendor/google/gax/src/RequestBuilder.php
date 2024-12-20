@@ -233,7 +233,11 @@ class RequestBuilder
         foreach ($placeholders as $placeholder => $metadata) {
             $value = array_reduce(
                 $metadata['getters'],
+<<<<<<< HEAD
                 function (?Message $result = null, $getter = null) {
+=======
+                function (Message $result = null, $getter) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                     if ($result) {
                         return $result->$getter();
                     }

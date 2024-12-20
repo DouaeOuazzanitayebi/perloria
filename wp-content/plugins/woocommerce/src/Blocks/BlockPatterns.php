@@ -1,6 +1,9 @@
 <?php
+<<<<<<< HEAD
 declare(strict_types=1);
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 namespace Automattic\WooCommerce\Blocks;
 
 use Automattic\WooCommerce\Admin\Features\Features;
@@ -112,6 +115,7 @@ class BlockPatterns {
 			return;
 		}
 
+<<<<<<< HEAD
 		$patterns = $this->get_block_patterns();
 		foreach ( $patterns as $pattern ) {
 			$this->pattern_registry->register_block_pattern( $pattern['source'], $pattern, $this->get_patterns_dictionary() );
@@ -130,6 +134,8 @@ class BlockPatterns {
 			return $pattern_data;
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$default_headers = array(
 			'title'         => 'Title',
 			'slug'          => 'Slug',
@@ -140,15 +146,23 @@ class BlockPatterns {
 			'blockTypes'    => 'Block Types',
 			'inserter'      => 'Inserter',
 			'featureFlag'   => 'Feature Flag',
+<<<<<<< HEAD
 			'templateTypes' => 'Template Types',
 		);
 
 		if ( ! file_exists( $this->patterns_path ) ) {
 			return array();
+=======
+		);
+
+		if ( ! file_exists( $this->patterns_path ) ) {
+			return;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		$files = glob( $this->patterns_path . '/*.php' );
 		if ( ! $files ) {
+<<<<<<< HEAD
 			return array();
 		}
 
@@ -191,6 +205,16 @@ class BlockPatterns {
 		);
 
 		set_site_transient( 'woocommerce_blocks_patterns', $pattern_data, MONTH_IN_SECONDS );
+=======
+			return;
+		}
+
+		foreach ( $files as $file ) {
+			$pattern_data = get_file_data( $file, $default_headers );
+
+			$this->pattern_registry->register_block_pattern( $file, $pattern_data, $this->get_patterns_dictionary() );
+		}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**

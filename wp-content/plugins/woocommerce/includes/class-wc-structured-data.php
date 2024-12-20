@@ -231,6 +231,7 @@ class WC_Structured_Data {
 				if ( $lowest === $highest ) {
 					$markup_offer = array(
 						'@type'              => 'Offer',
+<<<<<<< HEAD
 						'priceSpecification' => array(
 							array(
 								'@type'                 => 'UnitPriceSpecification',
@@ -239,6 +240,14 @@ class WC_Structured_Data {
 								'valueAddedTaxIncluded' => wc_prices_include_tax(),
 								'validThrough'          => $price_valid_until,
 							),
+=======
+						'price'              => wc_format_decimal( $lowest, wc_get_price_decimals() ),
+						'priceValidUntil'    => $price_valid_until,
+						'priceSpecification' => array(
+							'price'                 => wc_format_decimal( $lowest, wc_get_price_decimals() ),
+							'priceCurrency'         => $currency,
+							'valueAddedTaxIncluded' => wc_prices_include_tax() ? 'true' : 'false',
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 						),
 					);
 				} else {
@@ -248,6 +257,7 @@ class WC_Structured_Data {
 						'highPrice'  => wc_format_decimal( $highest, wc_get_price_decimals() ),
 						'offerCount' => count( $product->get_children() ),
 					);
+<<<<<<< HEAD
 
 					if ( $product->is_on_sale() ) {
 						$children                = array_map( 'wc_get_product', $product->get_children() );
@@ -280,16 +290,29 @@ class WC_Structured_Data {
 					}
 				}
 			} elseif ( $product->is_type( 'grouped' ) ) {
+=======
+				}
+			} elseif ( $product->is_type( 'grouped' ) ) {
+				if ( $product->is_on_sale() && $product->get_date_on_sale_to() ) {
+					$price_valid_until = gmdate( 'Y-m-d', $product->get_date_on_sale_to()->getTimestamp() );
+				}
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				$tax_display_mode = get_option( 'woocommerce_tax_display_shop' );
 				$children         = array_filter( array_map( 'wc_get_product', $product->get_children() ), 'wc_products_array_filter_visible_grouped' );
 				$price_function   = 'incl' === $tax_display_mode ? 'wc_get_price_including_tax' : 'wc_get_price_excluding_tax';
 
 				foreach ( $children as $child ) {
+<<<<<<< HEAD
 					if ( '' !== $child->get_regular_price() ) {
 						$child_prices[] = $price_function( $child, array( 'price' => $child->get_regular_price() ) );
 					}
 					if ( '' !== $child->get_sale_price() ) {
 						$child_sale_prices[] = $price_function( $child, array( 'price' => $child->get_sale_price() ) );
+=======
+					if ( '' !== $child->get_price() ) {
+						$child_prices[] = $price_function( $child );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					}
 				}
 				if ( empty( $child_prices ) ) {
@@ -297,6 +320,7 @@ class WC_Structured_Data {
 				} else {
 					$min_price = min( $child_prices );
 				}
+<<<<<<< HEAD
 				if ( empty( $child_sale_prices ) ) {
 					$min_sale_price = 0;
 				} else {
@@ -368,6 +392,33 @@ class WC_Structured_Data {
 						'validThrough'          => $sale_price_valid_until ?? $price_valid_until,
 					);
 				}
+=======
+
+				$markup_offer = array(
+					'@type'              => 'Offer',
+					'price'              => wc_format_decimal( $min_price, wc_get_price_decimals() ),
+					'priceValidUntil'    => $price_valid_until,
+					'priceSpecification' => array(
+						'price'                 => wc_format_decimal( $min_price, wc_get_price_decimals() ),
+						'priceCurrency'         => $currency,
+						'valueAddedTaxIncluded' => wc_prices_include_tax() ? 'true' : 'false',
+					),
+				);
+			} else {
+				if ( $product->is_on_sale() && $product->get_date_on_sale_to() ) {
+					$price_valid_until = gmdate( 'Y-m-d', $product->get_date_on_sale_to()->getTimestamp() );
+				}
+				$markup_offer = array(
+					'@type'              => 'Offer',
+					'price'              => wc_format_decimal( $product->get_price(), wc_get_price_decimals() ),
+					'priceValidUntil'    => $price_valid_until,
+					'priceSpecification' => array(
+						'price'                 => wc_format_decimal( $product->get_price(), wc_get_price_decimals() ),
+						'priceCurrency'         => $currency,
+						'valueAddedTaxIncluded' => wc_prices_include_tax() ? 'true' : 'false',
+					),
+				);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			}
 
 			if ( $product->is_in_stock() ) {
@@ -377,15 +428,23 @@ class WC_Structured_Data {
 			}
 
 			$markup_offer += array(
+<<<<<<< HEAD
 				'priceValidUntil' => $sale_price_valid_until ?? $price_valid_until,
 				'availability'    => 'http://schema.org/' . $stock_status_schema,
 				'url'             => $permalink,
 				'seller'          => array(
+=======
+				'priceCurrency' => $currency,
+				'availability'  => 'http://schema.org/' . $stock_status_schema,
+				'url'           => $permalink,
+				'seller'        => array(
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					'@type' => 'Organization',
 					'name'  => $shop_name,
 					'url'   => $shop_url,
 				),
 			);
+<<<<<<< HEAD
 			if (
 				( ! empty( $markup_offer['price'] ) ||
 					! empty( $markup_offer['lowPrice'] ) ||
@@ -394,6 +453,8 @@ class WC_Structured_Data {
 			) {
 				$markup_offer['priceCurrency'] = $currency;
 			}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 			$markup['offers'] = array( apply_filters( 'woocommerce_structured_data_product_offer', $markup_offer, $product ) );
 		}

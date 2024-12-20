@@ -49,9 +49,14 @@ class WC_Product_Variation extends WC_Product_Simple {
 	 * @param int|WC_Product|object $product Product to init.
 	 */
 	public function __construct( $product = 0 ) {
+<<<<<<< HEAD
 		$this->data['tax_class']                   = 'parent';
 		$this->data['attribute_summary']           = '';
 		$this->data['cogs_value_overrides_parent'] = false;
+=======
+		$this->data['tax_class']         = 'parent';
+		$this->data['attribute_summary'] = '';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		parent::__construct( $product );
 	}
 
@@ -584,6 +589,7 @@ class WC_Product_Variation extends WC_Product_Simple {
 
 		return $valid_classes;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Get the value of the "Cost of Goods Sold value overrides parent value" flag for this product.
@@ -624,4 +630,6 @@ class WC_Product_Variation extends WC_Product_Simple {
 		$parent_value = (float) get_post_meta( $this->get_parent_id(), '_cogs_total_value', true );
 		return parent::get_cogs_value() + $parent_value;
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

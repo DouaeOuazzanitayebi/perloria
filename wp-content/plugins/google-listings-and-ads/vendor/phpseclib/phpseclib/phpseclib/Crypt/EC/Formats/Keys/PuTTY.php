@@ -84,8 +84,13 @@ abstract class PuTTY extends Progenitor
     /**
      * Convert a private key to the appropriate format.
      *
+<<<<<<< HEAD
      * @param BigInteger $privateKey
      * @param BaseCurve $curve
+=======
+     * @param \phpseclib3\Math\BigInteger $privateKey
+     * @param \phpseclib3\Crypt\EC\BaseCurves\Base $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param \phpseclib3\Math\Common\FiniteField\Integer[] $publicKey
      * @param string $secret optional
      * @param string $password optional
@@ -121,7 +126,11 @@ abstract class PuTTY extends Progenitor
     /**
      * Convert an EC public key to the appropriate format
      *
+<<<<<<< HEAD
      * @param BaseCurve $curve
+=======
+     * @param \phpseclib3\Crypt\EC\BaseCurves\Base $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param \phpseclib3\Math\Common\FiniteField[] $publicKey
      * @return string
      */

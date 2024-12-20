@@ -352,11 +352,19 @@ class URL {
 	/**
 	 * Outputs the path. Especially useful if it was a a regular filepath that was passed in originally.
 	 *
+<<<<<<< HEAD
 	 * @param string|null $path_override If provided this will be used as the URL path. Does not impact drive letter.
 	 *
 	 * @return string
 	 */
 	public function get_path( ?string $path_override = null ): string {
+=======
+	 * @param string $path_override If provided this will be used as the URL path. Does not impact drive letter.
+	 *
+	 * @return string
+	 */
+	public function get_path( string $path_override = null ): string {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return ( $this->components['drive'] ? $this->components['drive'] . ':' : '' ) . ( $path_override ?? $this->components['path'] );
 	}
 

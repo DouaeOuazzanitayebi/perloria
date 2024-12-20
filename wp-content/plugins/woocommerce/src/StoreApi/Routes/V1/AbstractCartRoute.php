@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 declare( strict_types=1 );
+=======
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 namespace Automattic\WooCommerce\StoreApi\Routes\V1;
 
 use Automattic\WooCommerce\Blocks\Package;
@@ -177,7 +181,10 @@ abstract class AbstractCartRoute extends AbstractRoute {
 			);
 		}
 		$this->cart_controller->load_cart();
+<<<<<<< HEAD
 		$this->cart_controller->normalize_cart();
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -189,6 +196,7 @@ abstract class AbstractCartRoute extends AbstractRoute {
 	 * @return string
 	 */
 	protected function get_cart_token() {
+<<<<<<< HEAD
 		// Ensure cart is loaded.
 		$this->cart_controller->load_cart();
 
@@ -196,6 +204,8 @@ abstract class AbstractCartRoute extends AbstractRoute {
 			return null;
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return JsonWebToken::create(
 			[
 				'user_id' => wc()->session->get_customer_id(),

@@ -77,6 +77,30 @@ class WC_Admin_Notes extends DeprecatedClassFacade {
 }
 
 /**
+<<<<<<< HEAD
+=======
+ * WC_Admin_Notes_Coupon_Page_Moved.
+ *
+ * @deprecated since 4.8.0, use CouponPageMoved
+ */
+class WC_Admin_Notes_Coupon_Page_Moved extends DeprecatedClassFacade {
+	/**
+	 * The name of the non-deprecated class that this facade covers.
+	 *
+	 * @var string
+	 */
+	protected static $facade_over_classname = 'Automattic\WooCommerce\Internal\Admin\Notes\CouponPageMoved';
+
+	/**
+	 * The version that this class was deprecated in.
+	 *
+	 * @var string
+	 */
+	protected static $deprecated_in_version = '4.8.0';
+}
+
+/**
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  * WC_Admin_Notes_Customize_Store_With_Blocks.
  *
  * @deprecated since 4.8.0, use CustomizeStoreWithBlocks

@@ -62,8 +62,13 @@ class Onboarding extends DeprecatedClassFacade {
 	 * @return array
 	 */
 	public static function get_themes() {
+<<<<<<< HEAD
 		wc_deprecated_function( 'get_themes', '6.3' );
 		return array();
+=======
+		wc_deprecated_function( 'get_themes', '6.3', '\Automattic\WooCommerce\Internal\Admin\OnboardingThemes::get_themes()' );
+		return \Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingThemes::get_themes();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -74,8 +79,13 @@ class Onboarding extends DeprecatedClassFacade {
 	 * @return array
 	 */
 	public static function get_theme_data( $theme ) {
+<<<<<<< HEAD
 		wc_deprecated_function( 'get_theme_data', '6.3' );
 		return array();
+=======
+		wc_deprecated_function( 'get_theme_data', '6.3', '\Automattic\WooCommerce\Internal\Admin\OnboardingThemes::get_theme_data()' );
+		return \Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingThemes::get_theme_data();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -85,8 +95,13 @@ class Onboarding extends DeprecatedClassFacade {
 	 * @return array
 	 */
 	public static function get_allowed_themes() {
+<<<<<<< HEAD
 		wc_deprecated_function( 'get_allowed_themes', '6.3' );
 		return array();
+=======
+		wc_deprecated_function( 'get_allowed_themes', '6.3', '\Automattic\WooCommerce\Internal\Admin\OnboardingThemes::get_allowed_themes()' );
+		return \Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingThemes::get_allowed_themes();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -97,7 +112,12 @@ class Onboarding extends DeprecatedClassFacade {
 	 * @return array
 	 */
 	public static function get_product_data( $product_types ) {
+<<<<<<< HEAD
 		wc_deprecated_function( 'get_product_data', '6.3' );
 		return array();
+=======
+		wc_deprecated_function( 'get_product_data', '6.3', '\Automattic\WooCommerce\Internal\Admin\OnboardingProducts::get_product_data()' );
+		return \Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingProducts::get_product_data();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 }

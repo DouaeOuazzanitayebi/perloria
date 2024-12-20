@@ -256,7 +256,10 @@
                   onload: 'this.width = this.naturalWidth; this.height = this.naturalHeight',
                   src: slide.attr('data-thumb'),
                   srcset: slide.attr('data-thumb-srcset'),
+<<<<<<< HEAD
                   sizes: slide.attr('data-thumb-sizes'),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                   alt: slide.attr('alt')
                 })
               }

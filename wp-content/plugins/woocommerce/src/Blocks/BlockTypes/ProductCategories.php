@@ -89,7 +89,11 @@ class ProductCategories extends AbstractDynamicBlock {
 
 		$classes_and_styles = StyleAttributesUtils::get_classes_and_styles_by_attributes(
 			$attributes,
+<<<<<<< HEAD
 			array( 'line_height', 'text_color', 'font_size', 'extra_classes' )
+=======
+			array( 'line_height', 'text_color', 'font_size' )
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 
 		$classes = $this->get_container_classes( $attributes ) . ' ' . $classes_and_styles['classes'];
@@ -116,6 +120,13 @@ class ProductCategories extends AbstractDynamicBlock {
 			$classes[] = "align{$attributes['align']}";
 		}
 
+<<<<<<< HEAD
+=======
+		if ( ! empty( $attributes['className'] ) ) {
+			$classes[] = $attributes['className'];
+		}
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		if ( $attributes['isDropdown'] ) {
 			$classes[] = 'is-dropdown';
 		} else {

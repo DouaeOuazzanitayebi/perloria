@@ -19,6 +19,7 @@ class Init extends RemoteSpecsEngine {
 	 * Constructor.
 	 */
 	public function __construct() {
+<<<<<<< HEAD
 		/* phpcs:disable WordPress.Security.NonceVerification */
 		$is_payments_setting_page = isset( $_GET['page'] ) && 'wc-settings' === $_GET['page'] && isset( $_GET['tab'] ) && 'checkout' === $_GET['tab'];
 		$is_wc_admin_page         = isset( $_GET['page'] ) && 'wc-admin' === $_GET['page'];
@@ -28,6 +29,10 @@ class Init extends RemoteSpecsEngine {
 		}
 
 		if ( ! wp_is_json_request() && ! $is_payments_setting_page ) {
+=======
+		$is_payments_page = isset( $_GET['page'] ) && $_GET['page'] === 'wc-settings' && isset( $_GET['tab'] ) && $_GET['tab'] === 'checkout'; // phpcs:ignore WordPress.Security.NonceVerification
+		if ( ! wp_is_json_request() && ! $is_payments_page ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			return;
 		}
 
@@ -94,6 +99,7 @@ class Init extends RemoteSpecsEngine {
 	/**
 	 * Get WooPayments promotion spec.
 	 *
+<<<<<<< HEAD
 	 * @param boolean $fetch_from_remote Whether to fetch the spec from remote or not.
 	 *
 	 * @return object|false WooPayments promotion spec or false if there isn't one.
@@ -104,6 +110,16 @@ class Init extends RemoteSpecsEngine {
 			array_filter(
 				$promotions,
 				function ( $promotion ) {
+=======
+	 * @return object|false WooPayments promotion spec or false if there isn't one.
+	 */
+	public static function get_wc_pay_promotion_spec() {
+		$promotions            = self::get_promotions();
+		$wc_pay_promotion_spec = array_values(
+			array_filter(
+				$promotions,
+				function( $promotion ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					return isset( $promotion->plugins ) && in_array( 'woocommerce-payments', $promotion->plugins, true );
 				}
 			)
@@ -146,6 +162,7 @@ class Init extends RemoteSpecsEngine {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets either cached or default promotions.
 	 *
 	 * @return array
@@ -163,12 +180,18 @@ class Init extends RemoteSpecsEngine {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Get merchant WooPay eligibility.
 	 *
 	 * @return boolean If merchant is eligible for WooPay.
 	 */
 	public static function is_woopay_eligible() {
+<<<<<<< HEAD
 		$wcpay_promotion = self::get_wc_pay_promotion_spec( false );
+=======
+		$wcpay_promotion = self::get_wc_pay_promotion_spec();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		return $wcpay_promotion && 'woocommerce_payments:woopay' === $wcpay_promotion->id;
 	}
@@ -200,6 +223,7 @@ class Init extends RemoteSpecsEngine {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Add component settings.
 	 *
 	 * @param array $settings Component settings.
@@ -212,6 +236,8 @@ class Init extends RemoteSpecsEngine {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Loads the payment method promotions scripts and styles.
 	 */
 	public static function load_payment_method_promotions() {
@@ -219,3 +245,7 @@ class Init extends RemoteSpecsEngine {
 		WCAdminAssets::register_script( 'wp-admin-scripts', 'payment-method-promotions', true );
 	}
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

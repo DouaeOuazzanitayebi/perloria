@@ -9,7 +9,11 @@ use Automattic\Jetpack\Constants;
  *
  * Important: For internal use only by the Automattic\WooCommerce\Internal\Brands package.
  *
+<<<<<<< HEAD
  * @version 9.5.0
+=======
+ * @version 9.4.0
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 class WC_Brands {
 
@@ -269,7 +273,10 @@ class WC_Brands {
 					'labels'                => array(
 						'name'              => __( 'Brands', 'woocommerce' ),
 						'singular_name'     => __( 'Brand', 'woocommerce' ),
+<<<<<<< HEAD
 						'template_name'     => _x( 'Products by Brand', 'Template name', 'woocommerce' ),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 						'search_items'      => __( 'Search Brands', 'woocommerce' ),
 						'all_items'         => __( 'All Brands', 'woocommerce' ),
 						'parent_item'       => __( 'Parent Brand', 'woocommerce' ),

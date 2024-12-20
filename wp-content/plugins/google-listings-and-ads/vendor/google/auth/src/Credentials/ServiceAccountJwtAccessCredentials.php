@@ -113,7 +113,11 @@ class ServiceAccountJwtAccessCredentials extends CredentialsLoader implements
     public function updateMetadata(
         $metadata,
         $authUri = null,
+<<<<<<< HEAD
         ?callable $httpHandler = null
+=======
+        callable $httpHandler = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $scope = $this->auth->getScope();
         if (empty($authUri) && empty($scope)) {
@@ -132,7 +136,11 @@ class ServiceAccountJwtAccessCredentials extends CredentialsLoader implements
      *
      * @return null|array{access_token:string} A set of auth related metadata
      */
+<<<<<<< HEAD
     public function fetchAuthToken(?callable $httpHandler = null)
+=======
+    public function fetchAuthToken(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $audience = $this->auth->getAudience();
         $scope = $this->auth->getScope();
@@ -182,7 +190,11 @@ class ServiceAccountJwtAccessCredentials extends CredentialsLoader implements
      * @param callable $httpHandler Not used by this credentials type.
      * @return string|null
      */
+<<<<<<< HEAD
     public function getProjectId(?callable $httpHandler = null)
+=======
+    public function getProjectId(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return $this->projectId;
     }
@@ -195,7 +207,11 @@ class ServiceAccountJwtAccessCredentials extends CredentialsLoader implements
      * @param callable $httpHandler Not used by this credentials type.
      * @return string
      */
+<<<<<<< HEAD
     public function getClientName(?callable $httpHandler = null)
+=======
+    public function getClientName(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return $this->auth->getIssuer();
     }

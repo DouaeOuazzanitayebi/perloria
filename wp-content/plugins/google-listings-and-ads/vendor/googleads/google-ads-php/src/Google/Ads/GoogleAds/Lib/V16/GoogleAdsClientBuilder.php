@@ -46,6 +46,10 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private const DEFAULT_LOGGER_CHANNEL = 'google-ads';
     private const DEFAULT_GRPC_CHANNEL_IS_SECURE = true;
     private const DEFAULT_USE_CLOUD_ORG_FOR_API_ACCESS = false;
+<<<<<<< HEAD
+=======
+    private const DEFAULT_USE_GAPIC_V2_SOURCE = false;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     private $loggerFactory;
 
@@ -61,10 +65,17 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $transport;
     private $grpcChannelIsSecure;
     private $grpcChannelCredential;
+<<<<<<< HEAD
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
     private $grpcInterceptors = [];
     private $httpHandler =  null;
+=======
+    private $useGapicV2Source;
+    private $unaryMiddlewares = [];
+    private $streamingMiddlewares = [];
+    private $grpcInterceptors = [];
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     /** @var Dependencies $dependencies */
     private $dependencies;
 
@@ -127,6 +138,22 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
                         'flags' => FILTER_NULL_ON_FAILURE
                     ]
                 );
+<<<<<<< HEAD
+=======
+        $this->useGapicV2Source =
+            is_null($configuration->getConfiguration('useGapicV2Source', 'GAPIC'))
+            || $configuration->getConfiguration('useGapicV2Source', 'GAPIC') === ""
+                ? self::DEFAULT_USE_GAPIC_V2_SOURCE
+                : filter_var(
+                    $configuration->getConfiguration('useGapicV2Source', 'GAPIC'),
+                    FILTER_VALIDATE_BOOLEAN,
+                    // Defaults when value is not a valid boolean.
+                    [
+                        'options' => ['default' => self::DEFAULT_USE_GAPIC_V2_SOURCE],
+                        'flags' => FILTER_NULL_ON_FAILURE
+                    ]
+                );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
         return $this;
     }
@@ -309,6 +336,21 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Sets whether this library should use GAPIC v2 source code or not.
+     *
+     * @param bool $useGapicV2Source
+     * @return self this builder
+     */
+    public function usingGapicV2Source(bool $useGapicV2Source)
+    {
+        $this->useGapicV2Source = $useGapicV2Source;
+        return $this;
+    }
+
+    /**
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Sets the unary middlewares for Google Ads API requests. They execute in order after the ones
      * defined by the library.
      *
@@ -348,6 +390,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+<<<<<<< HEAD
      * Sets the REST HTTP handler for Google Ads API requests.
      *
      * @param callable $httpHandler the HTTP handler
@@ -360,6 +403,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Sets the Dependencies utilities for this Google Ads client builder.
      *
      * @param Dependencies $dependencies
@@ -612,6 +657,19 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Returns true when this library is set to use GAPIC v2 source.
+     *
+     * @return bool
+     */
+    public function useGapicV2Source()
+    {
+        return $this->useGapicV2Source;
+    }
+
+    /**
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Gets the Google Ads unary middlewares.
      *
      * @return GoogleAdsMiddlewareAbstract[] the Google Ads unary middlewares
@@ -640,6 +698,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     {
         return $this->grpcInterceptors;
     }
+<<<<<<< HEAD
 
     /**
      * Gets the REST HTTP handler.
@@ -650,4 +709,6 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     {
         return $this->httpHandler;
     }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

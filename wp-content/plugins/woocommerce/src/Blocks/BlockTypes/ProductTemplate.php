@@ -94,6 +94,7 @@ class ProductTemplate extends AbstractBlock {
 			// Render the inner blocks of the Post Template block with `dynamic` set to `false` to prevent calling
 			// `render_callback` and ensure that no wrapper markup is included.
 			$block_content = (
+<<<<<<< HEAD
 				new WP_Block(
 					$block_instance,
 					array(
@@ -101,6 +102,15 @@ class ProductTemplate extends AbstractBlock {
 						'postId'   => $product_id,
 					)
 				)
+=======
+			new WP_Block(
+				$block_instance,
+				array(
+					'postType' => get_post_type(),
+					'postId'   => $product_id,
+				)
+			)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			)->render( array( 'dynamic' => false ) );
 
 			$interactive = array(

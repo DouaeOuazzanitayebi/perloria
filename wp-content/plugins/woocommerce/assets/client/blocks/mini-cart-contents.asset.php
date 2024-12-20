@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <?php return array('dependencies' => array('react', 'wc-blocks-checkout', 'wc-blocks-components', 'wc-blocks-data-store', 'wc-blocks-registry', 'wc-price-format', 'wc-settings', 'wc-types', 'wp-a11y', 'wp-autop', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-data', 'wp-deprecated', 'wp-dom', 'wp-element', 'wp-hooks', 'wp-html-entities', 'wp-i18n', 'wp-is-shallow-equal', 'wp-keycodes', 'wp-polyfill', 'wp-primitives', 'wp-url', 'wp-wordcount'), 'version' => '560c1826c145f13b1394');
+=======
+<?php return array('dependencies' => array('react', 'wc-blocks-checkout', 'wc-blocks-components', 'wc-blocks-data-store', 'wc-blocks-registry', 'wc-price-format', 'wc-settings', 'wc-types', 'wp-a11y', 'wp-autop', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-data', 'wp-deprecated', 'wp-dom', 'wp-element', 'wp-hooks', 'wp-html-entities', 'wp-i18n', 'wp-is-shallow-equal', 'wp-keycodes', 'wp-polyfill', 'wp-primitives', 'wp-url', 'wp-wordcount'), 'version' => '0d14f879bb931ec28d02');
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

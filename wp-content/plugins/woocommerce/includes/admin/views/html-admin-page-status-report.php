@@ -983,6 +983,7 @@ if ( 0 < $mu_plugins_count ) :
 				<td><?php echo esc_html( $theme['parent_author_url'] ); ?></td>
 			</tr>
 		<?php endif ?>
+<<<<<<< HEAD
 		<?php if ( isset( $theme['is_block_theme'] ) ) : ?>
 		<tr>
 			<td data-export-label="Theme type"><?php esc_html_e( 'Theme type', 'woocommerce' ); ?>:</td>
@@ -998,6 +999,8 @@ if ( 0 < $mu_plugins_count ) :
 			</td>
 		</tr>
 		<?php endif ?>
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		<tr>
 			<td data-export-label="WooCommerce Support"><?php esc_html_e( 'WooCommerce support', 'woocommerce' ); ?>:</td>
 			<td class="help"><?php echo wc_help_tip( esc_html__( 'Displays whether or not the current active theme declares WooCommerce support.', 'woocommerce' ) ); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?></td>

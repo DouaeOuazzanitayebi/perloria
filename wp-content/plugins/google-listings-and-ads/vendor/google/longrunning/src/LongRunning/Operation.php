@@ -65,7 +65,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Rpc\Status $error
      *           The error result of the operation in case of failure or cancellation.
      *     @type \Google\Protobuf\Any $response
+<<<<<<< HEAD
      *           The normal, successful response of the operation.  If the original
+=======
+     *           The normal response of the operation in case of success.  If the original
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *           method returns no data on success, such as `Delete`, the response is
      *           `google.protobuf.Empty`.  If the original method is standard
      *           `Get`/`Create`/`Update`, the response should be the resource.  For other
@@ -214,7 +218,11 @@ class Operation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+<<<<<<< HEAD
      * The normal, successful response of the operation.  If the original
+=======
+     * The normal response of the operation in case of success.  If the original
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * method returns no data on success, such as `Delete`, the response is
      * `google.protobuf.Empty`.  If the original method is standard
      * `Get`/`Create`/`Update`, the response should be the resource.  For other
@@ -237,7 +245,11 @@ class Operation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+<<<<<<< HEAD
      * The normal, successful response of the operation.  If the original
+=======
+     * The normal response of the operation in case of success.  If the original
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * method returns no data on success, such as `Delete`, the response is
      * `google.protobuf.Empty`.  If the original method is standard
      * `Get`/`Create`/`Update`, the response should be the resource.  For other

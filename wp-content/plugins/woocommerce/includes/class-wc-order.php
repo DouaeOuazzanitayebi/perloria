@@ -6,8 +6,11 @@
  * @version 2.2.0
  */
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Enums\OrderStatus;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -142,6 +145,7 @@ class WC_Order extends WC_Abstract_Order {
 				WC()->session->set( 'order_awaiting_payment', false );
 			}
 
+<<<<<<< HEAD
 			/**
 			 * Filters the valid order statuses for payment complete.
 			 *
@@ -151,12 +155,16 @@ class WC_Order extends WC_Abstract_Order {
 			 */
 			$valid_completed_statuses = apply_filters( 'woocommerce_valid_order_statuses_for_payment_complete', array( OrderStatus::ON_HOLD, OrderStatus::PENDING, OrderStatus::FAILED, OrderStatus::CANCELLED ), $this );
 			if ( $this->has_status( $valid_completed_statuses ) ) {
+=======
+			if ( $this->has_status( apply_filters( 'woocommerce_valid_order_statuses_for_payment_complete', array( 'on-hold', 'pending', 'failed', 'cancelled' ), $this ) ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				if ( ! empty( $transaction_id ) ) {
 					$this->set_transaction_id( $transaction_id );
 				}
 				if ( ! $this->get_date_paid( 'edit' ) ) {
 					$this->set_date_paid( time() );
 				}
+<<<<<<< HEAD
 				/**
 				 * Filters the order status to set after payment complete.
 				 *
@@ -166,6 +174,9 @@ class WC_Order extends WC_Abstract_Order {
 				 * @since 2.7.0
 				 */
 				$this->set_status( apply_filters( 'woocommerce_payment_complete_order_status', $this->needs_processing() ? OrderStatus::PROCESSING : OrderStatus::COMPLETED, $this->get_id(), $this ) );
+=======
+				$this->set_status( apply_filters( 'woocommerce_payment_complete_order_status', $this->needs_processing() ? 'processing' : 'completed', $this->get_id(), $this ) );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				$this->save();
 
 				do_action( 'woocommerce_payment_complete', $this->get_id(), $transaction_id );
@@ -338,6 +349,7 @@ class WC_Order extends WC_Abstract_Order {
 	public function maybe_set_date_paid() {
 		// This logic only runs if the date_paid prop has not been set yet.
 		if ( ! $this->get_date_paid( 'edit' ) ) {
+<<<<<<< HEAD
 			/**
 			 * Filters the order status to set after payment complete.
 			 *
@@ -347,12 +359,19 @@ class WC_Order extends WC_Abstract_Order {
 			 * @since 2.7.0
 			 */
 			$payment_completed_status = apply_filters( 'woocommerce_payment_complete_order_status', $this->needs_processing() ? OrderStatus::PROCESSING : OrderStatus::COMPLETED, $this->get_id(), $this );
+=======
+			$payment_completed_status = apply_filters( 'woocommerce_payment_complete_order_status', $this->needs_processing() ? 'processing' : 'completed', $this->get_id(), $this );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 			if ( $this->has_status( $payment_completed_status ) ) {
 				// If payment complete status is reached, set paid now.
 				$this->set_date_paid( time() );
 
+<<<<<<< HEAD
 			} elseif ( OrderStatus::PROCESSING === $payment_completed_status && $this->has_status( OrderStatus::COMPLETED ) ) {
+=======
+			} elseif ( 'processing' === $payment_completed_status && $this->has_status( 'completed' ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				// If payment complete status was processing, but we've passed that and still have no date, set it now.
 				$this->set_date_paid( time() );
 			}
@@ -367,7 +386,11 @@ class WC_Order extends WC_Abstract_Order {
 	 * @since 3.0.0
 	 */
 	protected function maybe_set_date_completed() {
+<<<<<<< HEAD
 		if ( $this->has_status( OrderStatus::COMPLETED ) ) {
+=======
+		if ( $this->has_status( 'completed' ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			$this->set_date_completed( time() );
 		}
 	}
@@ -375,7 +398,11 @@ class WC_Order extends WC_Abstract_Order {
 	/**
 	 * Updates status of order immediately.
 	 *
+<<<<<<< HEAD
 	 * @uses self::set_status()
+=======
+	 * @uses WC_Order::set_status()
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * @param string $new_status    Status to change the order to. No internal wc- prefix is required.
 	 * @param string $note          Optional note to add.
 	 * @param bool   $manual        Is this a manual order status change?.
@@ -448,6 +475,7 @@ class WC_Order extends WC_Abstract_Order {
 
 					// Work out if this was for a payment, and trigger a payment_status hook instead.
 					if (
+<<<<<<< HEAD
 						/**
 						 * Filter the valid order statuses for payment.
 						 *
@@ -456,6 +484,9 @@ class WC_Order extends WC_Abstract_Order {
 						 * @since 4.0.0
 						 */
 						in_array( $status_transition['from'], apply_filters( 'woocommerce_valid_order_statuses_for_payment', array( OrderStatus::PENDING, OrderStatus::FAILED ), $this ), true )
+=======
+						in_array( $status_transition['from'], apply_filters( 'woocommerce_valid_order_statuses_for_payment', array( 'pending', 'failed' ), $this ), true )
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 						&& in_array( $status_transition['to'], wc_get_is_paid_statuses(), true )
 					) {
 						/**
@@ -932,6 +963,7 @@ class WC_Order extends WC_Abstract_Order {
 	public function get_date_paid( $context = 'view' ) {
 		$date_paid = $this->get_prop( 'date_paid', $context );
 
+<<<<<<< HEAD
 		if ( 'view' === $context && ! $date_paid && version_compare( $this->get_version( 'edit' ), '3.0', '<' )
 			/**
 			 * Filters the order status to set after payment complete.
@@ -942,6 +974,9 @@ class WC_Order extends WC_Abstract_Order {
 			 * @since 3.0.0
 			 */
 			&& $this->has_status( apply_filters( 'woocommerce_payment_complete_order_status', $this->needs_processing() ? OrderStatus::PROCESSING : OrderStatus::COMPLETED, $this->get_id(), $this ) ) ) {
+=======
+		if ( 'view' === $context && ! $date_paid && version_compare( $this->get_version( 'edit' ), '3.0', '<' ) && $this->has_status( apply_filters( 'woocommerce_payment_complete_order_status', $this->needs_processing() ? 'processing' : 'completed', $this->get_id(), $this ) ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			// In view context, return a date if missing.
 			$date_paid = $this->get_date_created( 'edit' );
 		}
@@ -1643,6 +1678,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return bool
 	 */
 	public function is_editable() {
+<<<<<<< HEAD
 		/**
 		 * Filter to check if an order is editable.
 		 *
@@ -1651,6 +1687,9 @@ class WC_Order extends WC_Abstract_Order {
 		 * @since 2.7.0
 		 */
 		return apply_filters( 'wc_order_is_editable', in_array( $this->get_status(), array( OrderStatus::PENDING, OrderStatus::ON_HOLD, OrderStatus::AUTO_DRAFT ), true ), $this );
+=======
+		return apply_filters( 'wc_order_is_editable', in_array( $this->get_status(), array( 'pending', 'on-hold', 'auto-draft' ), true ), $this );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -1669,6 +1708,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return bool
 	 */
 	public function is_download_permitted() {
+<<<<<<< HEAD
 		/**
 		 * Filter to check if an order is downloadable.
 		 *
@@ -1677,6 +1717,9 @@ class WC_Order extends WC_Abstract_Order {
 		 * @since 2.7.0
 		 */
 		return apply_filters( 'woocommerce_order_is_download_permitted', $this->has_status( OrderStatus::COMPLETED ) || ( 'yes' === get_option( 'woocommerce_downloads_grant_access_after_payment' ) && $this->has_status( OrderStatus::PROCESSING ) ), $this );
+=======
+		return apply_filters( 'woocommerce_order_is_download_permitted', $this->has_status( 'completed' ) || ( 'yes' === get_option( 'woocommerce_downloads_grant_access_after_payment' ) && $this->has_status( 'processing' ) ), $this );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -1777,6 +1820,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return bool
 	 */
 	public function needs_payment() {
+<<<<<<< HEAD
 		/**
 		 * Filter the valid order statuses for payment.
 		 *
@@ -1785,6 +1829,9 @@ class WC_Order extends WC_Abstract_Order {
 		 * @since 2.7.0
 		 */
 		$valid_order_statuses = apply_filters( 'woocommerce_valid_order_statuses_for_payment', array( OrderStatus::PENDING, OrderStatus::FAILED ), $this );
+=======
+		$valid_order_statuses = apply_filters( 'woocommerce_valid_order_statuses_for_payment', array( 'pending', 'failed' ), $this );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return apply_filters( 'woocommerce_order_needs_payment', ( $this->has_status( $valid_order_statuses ) && $this->get_total() > 0 ), $this, $valid_order_statuses );
 	}
 
@@ -2064,7 +2111,11 @@ class WC_Order extends WC_Abstract_Order {
 	 * Add an order note for status transition
 	 *
 	 * @since 3.9.0
+<<<<<<< HEAD
 	 * @uses self::add_order_note()
+=======
+	 * @uses WC_Order::add_order_note()
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * @param string $note          Note to be added giving status transition from and to details.
 	 * @param bool   $transition    Details of the status transition.
 	 * @return int                  Comment ID.
@@ -2348,6 +2399,7 @@ class WC_Order extends WC_Abstract_Order {
 	 */
 	protected function add_order_item_totals_payment_method_row( &$total_rows, $tax_display ) {
 		if ( $this->get_total() > 0 && $this->get_payment_method_title() && 'other' !== $this->get_payment_method() ) {
+<<<<<<< HEAD
 			$value = $this->get_payment_method_title();
 
 			$card_info = $this->get_payment_card_info();
@@ -2358,6 +2410,11 @@ class WC_Order extends WC_Abstract_Order {
 			$total_rows['payment_method'] = array(
 				'label' => __( 'Payment method:', 'woocommerce' ),
 				'value' => $value,
+=======
+			$total_rows['payment_method'] = array(
+				'label' => __( 'Payment method:', 'woocommerce' ),
+				'value' => $this->get_payment_method_title(),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			);
 		}
 	}
@@ -2427,6 +2484,7 @@ class WC_Order extends WC_Abstract_Order {
 	public function untrash(): bool {
 		return (bool) $this->data_store->untrash_order( $this );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Indicates that regular orders have an associated Cost of Goods Sold value.
@@ -2437,4 +2495,6 @@ class WC_Order extends WC_Abstract_Order {
 	public function has_cogs() {
 		return true;
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

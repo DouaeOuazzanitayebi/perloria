@@ -4,12 +4,21 @@ namespace Automattic\WooCommerce\Internal;
 
 use Automattic\WooCommerce\Internal\RegisterHooksInterface;
 use Automattic\WooCommerce\Utilities\StringUtil;
+<<<<<<< HEAD
 use WP_HTTP_Response;
 use WP_REST_Request;
 use WP_REST_Response;
 use WP_Error;
 use InvalidArgumentException;
 use Exception;
+=======
+use \WP_HTTP_Response;
+use \WP_REST_Request;
+use \WP_REST_Response;
+use \WP_Error;
+use \InvalidArgumentException;
+use \Exception;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
 
 /**
@@ -22,10 +31,13 @@ use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
  * Derived classes must also contain this line:
  * use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
  *
+<<<<<<< HEAD
  * Also, the following must be added at the end of the 'init_hooks' method in the 'WooCommerce' class,
  * otherwise the routes won't be registered:
  * $container->get( <full class name>::class )->register();
  *
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  * Minimal controller example:
  *
  * class FoobarsController extends RestApiControllerBase {

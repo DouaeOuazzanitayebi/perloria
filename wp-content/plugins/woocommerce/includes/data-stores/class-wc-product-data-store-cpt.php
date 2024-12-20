@@ -6,7 +6,10 @@
  */
 
 use Automattic\Jetpack\Constants;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CostOfGoodsSoldController;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Internal\DownloadPermissionsAdjuster;
 use Automattic\WooCommerce\Utilities\NumberUtil;
 
@@ -71,7 +74,10 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		'_wp_old_slug',
 		'_edit_last',
 		'_edit_lock',
+<<<<<<< HEAD
 		'_cogs_total_value',
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	);
 
 	/**
@@ -467,7 +473,11 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		$set_props = array();
 
 		foreach ( $meta_key_to_props as $meta_key => $prop ) {
+<<<<<<< HEAD
 			$meta_value         = $post_meta_values[ $meta_key ][0] ?? null;
+=======
+			$meta_value         = isset( $post_meta_values[ $meta_key ][0] ) ? $post_meta_values[ $meta_key ][0] : null;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			$set_props[ $prop ] = maybe_unserialize( $meta_value ); // get_post_meta only unserializes single values.
 		}
 
@@ -477,6 +487,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		$set_props['gallery_image_ids'] = array_filter( explode( ',', $set_props['gallery_image_ids'] ?? '' ) );
 
 		$product->set_props( $set_props );
+<<<<<<< HEAD
 
 		if ( $this->cogs_feature_is_enabled() ) {
 			$this->load_cogs_data( $product );
@@ -502,6 +513,8 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		$cogs_value = apply_filters( 'woocommerce_load_product_cogs_value', $cogs_value, $product );
 
 		$product->set_props( array( 'cogs_value' => $cogs_value ) );
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -737,6 +750,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 			}
 		}
 
+<<<<<<< HEAD
 		if ( $this->cogs_feature_is_enabled() ) {
 			$cogs_value = $product->get_cogs_value();
 
@@ -759,6 +773,8 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 			}
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		// Update extra data associated with the product like button text or product URL for external products.
 		if ( ! $this->extra_data_saved ) {
 			foreach ( $extra_data_keys as $key ) {
@@ -2415,6 +2431,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 			$product_id
 		);
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Check if the Cost of Goods Sold feature is enabled.
@@ -2424,4 +2441,6 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 	protected function cogs_feature_is_enabled(): bool {
 		return wc_get_container()->get( CostOfGoodsSoldController::class )->feature_is_enabled();
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

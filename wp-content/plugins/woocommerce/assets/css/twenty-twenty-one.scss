@@ -8,7 +8,11 @@ $headings: var(--heading--font-family);
 $body: var(--global--font-secondary);
 
 $body-color: currentColor;
+<<<<<<< HEAD
 $highlights-color: var(--wc-highlight, #777335);
+=======
+$highlights-color: #88a171;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * Fonts
@@ -167,8 +171,13 @@ a.button {
 }
 
 .onsale + .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+<<<<<<< HEAD
 	top: 1em;
 	right: 1em;
+=======
+	top: 2.2em;
+	right: 2.2em;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 
 .single-product .type-product.sale > .onsale {
@@ -204,10 +213,26 @@ a.button {
 	list-style: none;
 	overflow: hidden;
 
+<<<<<<< HEAD
 	a.button {
 		background: #111;
 		color: #fff;
 	}
+=======
+	a {
+		color: #fff;
+
+		&:hover {
+			color: #fff;
+		}
+
+		&.button {
+			background: #111;
+			color: #fff;
+		}
+	}
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 
 .woocommerce-store-notice__dismiss-link {
@@ -573,7 +598,11 @@ table.variations {
 	}
 }
 
+<<<<<<< HEAD
 button.reset_variations {
+=======
+a.reset_variations {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	margin-left: 0.5em;
 }
 
@@ -674,12 +703,19 @@ button.reset_variations {
 }
 
 .woocommerce-product-gallery__trigger {
+<<<<<<< HEAD
 	@include woocommerce-product-gallery__trigger;
 
 	&:focus {
 		outline-offset: 2px;
     	outline: 2px dotted var(--form--border-color) !important;
 	}
+=======
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 99;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 
 .woocommerce-tabs {
@@ -1662,7 +1698,11 @@ button.reset_variations {
 		.form-row.woocommerce-invalid {
 
 			input.input-text {
+<<<<<<< HEAD
 				border: 2px solid var(--wc-red);
+=======
+				border: 2px solid $highlights-color;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			}
 		}
 
@@ -2236,6 +2276,15 @@ button.reset_variations {
 		.onsale {
 			font-size: 1rem;
 		}
+<<<<<<< HEAD
+=======
+
+		.onsale + .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+			top: 1.8em;
+			right: 1.8em;
+		}
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 }
 
@@ -3091,6 +3140,7 @@ form.checkout_coupon {
 		border-color: var(--wc-red);
 	}
 }
+<<<<<<< HEAD
 
 /**
  * Checkout error message
@@ -3100,3 +3150,5 @@ form.checkout_coupon {
 		@include checkout-inline-error-message();
 	}
 }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

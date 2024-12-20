@@ -38,8 +38,13 @@ class FileSource implements ExternalAccountCredentialSourceInterface
      */
     public function __construct(
         string $file,
+<<<<<<< HEAD
         ?string $format = null,
         ?string $subjectTokenFieldName = null
+=======
+        string $format = null,
+        string $subjectTokenFieldName = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $this->file = $file;
 
@@ -53,7 +58,11 @@ class FileSource implements ExternalAccountCredentialSourceInterface
         $this->subjectTokenFieldName = $subjectTokenFieldName;
     }
 
+<<<<<<< HEAD
     public function fetchSubjectToken(?callable $httpHandler = null): string
+=======
+    public function fetchSubjectToken(callable $httpHandler = null): string
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $contents = file_get_contents($this->file);
         if ($this->format === 'json') {

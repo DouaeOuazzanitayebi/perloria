@@ -123,6 +123,15 @@ class WcPayWelcomePage {
 				'capability' => 'manage_woocommerce',
 				'path'       => '/wc-pay-welcome-page',
 				'position'   => '56',
+<<<<<<< HEAD
+=======
+				'nav_args'   => array(
+					'title'        => 'WooPayments', // Do not translate the brand name.
+					'is_category'  => false,
+					'menuId'       => 'plugins',
+					'is_top_level' => true,
+				),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				'icon'       => $menu_icon,
 			);
 

@@ -1,9 +1,15 @@
 <?php
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
 use Automattic\WooCommerce\Admin\Features\Features;
+=======
+
+namespace Automattic\WooCommerce\Blocks\BlockTypes;
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Blocks\Utils\StyleAttributesUtils;
 
 /**
@@ -44,12 +50,16 @@ class AddToCartForm extends AbstractBlock {
 		// These should match what's set in JS `registerBlockType`.
 		$defaults = array(
 			'isDescendentOfSingleProductBlock' => false,
+<<<<<<< HEAD
 			'quantitySelectorStyle'            => 'input',
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 
 		return wp_parse_args( $attributes, $defaults );
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Enqueue assets specific to this block.
@@ -124,6 +134,8 @@ class AddToCartForm extends AbstractBlock {
 	}
 
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	/**
 	 * Render the block.
 	 *
@@ -150,13 +162,17 @@ class AddToCartForm extends AbstractBlock {
 			return '';
 		}
 
+<<<<<<< HEAD
 		$is_external_product_with_url = $product instanceof \WC_Product_External && $product->get_product_url();
 		$is_stepper_style             = 'stepper' === $attributes['quantitySelectorStyle'] && ! $product->is_sold_individually() && Features::is_enabled( 'add-to-cart-with-options-stepper-layout' );
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		ob_start();
 
 		/**
 		 * Trigger the single product add to cart action for each product type.
+<<<<<<< HEAD
 		 *
 		 * @since 9.7.0
 		 */
@@ -165,10 +181,21 @@ class AddToCartForm extends AbstractBlock {
 		$product_html = ob_get_clean();
 
 		if ( ! $product_html ) {
+=======
+		*
+		* @since 9.7.0
+		*/
+		do_action( 'woocommerce_' . $product->get_type() . '_add_to_cart' );
+
+		$product = ob_get_clean();
+
+		if ( ! $product ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			$product = $previous_product;
 
 			return '';
 		}
+<<<<<<< HEAD
 		$product_name = $product->get_name();
 		$product_html = $is_stepper_style ? $this->add_steppers( $product_html, $product_name ) : $product_html;
 
@@ -213,6 +240,24 @@ class AddToCartForm extends AbstractBlock {
 				JSON_NUMERIC_CHECK | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP
 			) . '\'' : '',
 			$product_html
+=======
+
+		$parsed_attributes                     = $this->parse_attributes( $attributes );
+		$is_descendent_of_single_product_block = $parsed_attributes['isDescendentOfSingleProductBlock'];
+		$product                               = $this->add_is_descendent_of_single_product_block_hidden_input_to_product_form( $product, $is_descendent_of_single_product_block );
+
+		$classname          = $attributes['className'] ?? '';
+		$classes_and_styles = StyleAttributesUtils::get_classes_and_styles_by_attributes( $attributes );
+		$product_classname  = $is_descendent_of_single_product_block ? 'product' : '';
+
+		$form = sprintf(
+			'<div class="wp-block-add-to-cart-form wc-block-add-to-cart-form %1$s %2$s %3$s" style="%4$s">%5$s</div>',
+			esc_attr( $classes_and_styles['classes'] ),
+			esc_attr( $classname ),
+			esc_attr( $product_classname ),
+			esc_attr( $classes_and_styles['styles'] ),
+			$product
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 
 		$product = $previous_product;
@@ -223,18 +268,28 @@ class AddToCartForm extends AbstractBlock {
 	/**
 	 * Add a hidden input to the Add to Cart form to indicate that it is a descendent of a Single Product block.
 	 *
+<<<<<<< HEAD
 	 * @param string $product_html The Add to Cart Form HTML.
+=======
+	 * @param string $product The Add to Cart Form HTML.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * @param string $is_descendent_of_single_product_block Indicates if block is descendent of Single Product block.
 	 *
 	 * @return string The Add to Cart Form HTML with the hidden input.
 	 */
+<<<<<<< HEAD
 	protected function add_is_descendent_of_single_product_block_hidden_input_to_product_form( $product_html, $is_descendent_of_single_product_block ) {
+=======
+	protected function add_is_descendent_of_single_product_block_hidden_input_to_product_form( $product, $is_descendent_of_single_product_block ) {
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$hidden_is_descendent_of_single_product_block_input = sprintf(
 			'<input type="hidden" name="is-descendent-of-single-product-block" value="%1$s">',
 			$is_descendent_of_single_product_block ? 'true' : 'false'
 		);
 		$regex_pattern                                      = '/<button\s+type="submit"[^>]*>.*?<\/button>/i';
 
+<<<<<<< HEAD
 		preg_match( $regex_pattern, $product_html, $input_matches );
 
 		if ( ! empty( $input_matches ) ) {
@@ -242,6 +297,15 @@ class AddToCartForm extends AbstractBlock {
 		}
 
 		return $product_html;
+=======
+		preg_match( $regex_pattern, $product, $input_matches );
+
+		if ( ! empty( $input_matches ) ) {
+			$product = preg_replace( $regex_pattern, $hidden_is_descendent_of_single_product_block_input . $input_matches[0], $product );
+		}
+
+		return $product;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -279,4 +343,32 @@ class AddToCartForm extends AbstractBlock {
 
 		return $url;
 	}
+<<<<<<< HEAD
+=======
+
+	/**
+	 * Get the frontend script handle for this block type.
+	 *
+	 * @param string $key Data to get, or default to everything.
+	 */
+	protected function get_block_type_script( $key = null ) {
+		return null;
+	}
+
+	/**
+	 * Get the frontend style handle for this block type.
+	 *
+	 * @return null
+	 */
+	protected function get_block_type_style() {
+		return array_merge( parent::get_block_type_style(), [ 'wc-blocks-packages-style' ] );
+	}
+
+	/**
+	 * It isn't necessary to register block assets because it is a server side block.
+	 */
+	protected function register_block_type_assets() {
+		return null;
+	}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

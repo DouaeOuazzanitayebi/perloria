@@ -24,15 +24,22 @@ final class ProductFilterChips extends AbstractBlock {
 	 * @return string Rendered block type output.
 	 */
 	protected function render( $attributes, $content, $block ) {
+<<<<<<< HEAD
 		if ( empty( $block->context['filterData'] ) || empty( $block->context['filterData']['items'] ) ) {
 			return '';
 		}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$classes               = '';
 		$style                 = '';
 		$context               = $block->context['filterData'];
 		$items                 = $context['items'] ?? array();
 		$checkbox_list_context = array( 'items' => $items );
+<<<<<<< HEAD
 		$action                = $context['actions']['toggleFilter'] ?? '';
+=======
+		$action                = $context['action'] ?? '';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$namespace             = wp_json_encode( array( 'namespace' => 'woocommerce/product-filter-chips' ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP );
 
 		$tags = new \WP_HTML_Tag_Processor( $content );
@@ -54,7 +61,10 @@ final class ProductFilterChips extends AbstractBlock {
 		$wrapper_attributes = array(
 			'data-wc-interactive' => esc_attr( $namespace ),
 			'data-wc-context'     => wp_json_encode( $checkbox_list_context, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ),
+<<<<<<< HEAD
 			'data-wc-key'         => wp_unique_prefixed_id( $this->get_full_block_name() ),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'class'               => esc_attr( $classes ),
 			'style'               => esc_attr( $style ),
 		);

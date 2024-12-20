@@ -80,6 +80,7 @@ class Identity implements PrivateKey
     private $flags = 0;
 
     /**
+<<<<<<< HEAD
      * Comment
      *
      * @var null|string
@@ -87,6 +88,8 @@ class Identity implements PrivateKey
     private $comment;
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Curve Aliases
      *
      * @var array
@@ -113,7 +116,11 @@ class Identity implements PrivateKey
      *
      * Called by \phpseclib3\System\SSH\Agent::requestIdentities()
      *
+<<<<<<< HEAD
      * @param PublicKey $key
+=======
+     * @param \phpseclib3\Crypt\Common\PublicKey $key
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function withPublicKey(PublicKey $key)
     {
@@ -148,9 +155,16 @@ class Identity implements PrivateKey
      *
      * Wrapper for $this->key->getPublicKey()
      *
+<<<<<<< HEAD
      * @return mixed
      */
     public function getPublicKey()
+=======
+     * @param string $type optional
+     * @return mixed
+     */
+    public function getPublicKey($type = 'PKCS8')
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return $this->key;
     }
@@ -267,7 +281,11 @@ class Identity implements PrivateKey
      * @param string $message
      * @return string
      * @throws \RuntimeException on connection errors
+<<<<<<< HEAD
      * @throws UnsupportedAlgorithmException if the algorithm is unsupported
+=======
+     * @throws \phpseclib3\Exception\UnsupportedAlgorithmException if the algorithm is unsupported
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function sign($message)
     {
@@ -323,6 +341,7 @@ class Identity implements PrivateKey
     {
         throw new \RuntimeException('ssh-agent does not provide a mechanism to get the private key');
     }
+<<<<<<< HEAD
 
     /**
      * Sets the comment
@@ -343,4 +362,6 @@ class Identity implements PrivateKey
     {
         return $this->comment;
     }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

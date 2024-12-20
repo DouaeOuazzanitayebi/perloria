@@ -14,7 +14,11 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
+<<<<<<< HEAD
  * @version 9.5.0
+=======
+ * @version 9.2.0
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -75,6 +79,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 								if ( ! empty( $actions ) ) {
 									foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+<<<<<<< HEAD
 										if ( empty( $action['aria-label'] ) ) {
 											// Generate the aria-label based on the action name.
 											/* translators: %1$s Action name, %2$s Order number. */
@@ -84,6 +89,10 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 										}
 										echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button' . esc_attr( $wp_button_class ) . ' button ' . sanitize_html_class( $key ) . '" aria-label="' . esc_attr( $action_aria_label ) . '">' . esc_html( $action['name'] ) . '</a>';
 										unset( $action_aria_label );
+=======
+										/* translators: %s: order number */
+										echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button' . esc_attr( $wp_button_class ) . ' button ' . sanitize_html_class( $key ) . '" aria-label="' . esc_attr( sprintf( __( 'View order number %s', 'woocommerce' ), $order->get_order_number() ) ) . '">' . esc_html( $action['name'] ) . '</a>';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 									}
 								}
 								?>

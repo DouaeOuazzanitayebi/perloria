@@ -40,5 +40,9 @@ interface SignBlobInterface extends FetchAuthTokenInterface
      *     one is required to obtain a client name.
      * @return string
      */
+<<<<<<< HEAD
     public function getClientName(?callable $httpHandler = null);
+=======
+    public function getClientName(callable $httpHandler = null);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

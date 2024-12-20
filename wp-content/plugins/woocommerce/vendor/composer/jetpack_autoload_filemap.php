@@ -15,6 +15,7 @@ return array(
 		'path'    => $vendorDir . '/automattic/jetpack-assets/actions.php'
 	),
 	'44e8414cd27982ecf86403af6e48f123' => array(
+<<<<<<< HEAD
 		'version' => '9.5.1.0',
 		'path'    => $baseDir . '/src/StoreApi/deprecated.php'
 	),
@@ -30,4 +31,17 @@ return array(
 		'version' => '9.5.1.0',
 		'path'    => $baseDir . '/src/Deprecated.php'
 	),
+=======
+		'version' => '9.4.3.0',
+		'path'    => $baseDir . '/src/StoreApi/deprecated.php'
+	),
+	'9ce98895d0a470c71998c4b530020d26' => array(
+		'version' => '9.4.3.0',
+		'path'    => $baseDir . '/src/StoreApi/functions.php'
+	),
+	'c379ea42c3f5964a973a7106b08c5ef0' => array(
+		'version' => '9.4.3.0',
+		'path'    => $baseDir . '/src/Blocks/Domain/Services/functions.php'
+	),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 );

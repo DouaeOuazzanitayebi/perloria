@@ -44,7 +44,11 @@ class MockStatus extends stdClass
     public $code;
     public $details;
     public $metadata;
+<<<<<<< HEAD
     public function __construct($code, ?string $details = null, array $metadata = [])
+=======
+    public function __construct($code, string $details = null, array $metadata = [])
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $this->code = $code;
         $this->details = $details;

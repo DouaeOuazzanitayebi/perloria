@@ -124,7 +124,11 @@ class AppIdentityCredentials extends CredentialsLoader implements
      *     @type string $expiration_time
      * }
      */
+<<<<<<< HEAD
     public function fetchAuthToken(?callable $httpHandler = null)
+=======
+    public function fetchAuthToken(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         try {
             $this->checkAppEngineContext();
@@ -164,7 +168,11 @@ class AppIdentityCredentials extends CredentialsLoader implements
      * @param callable $httpHandler Not used by this type.
      * @return string|null
      */
+<<<<<<< HEAD
     public function getProjectId(?callable $httpHandler = null)
+=======
+    public function getProjectId(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         try {
             $this->checkAppEngineContext();
@@ -185,7 +193,11 @@ class AppIdentityCredentials extends CredentialsLoader implements
      * @return string
      * @throws \Exception If AppEngine SDK or mock is not available.
      */
+<<<<<<< HEAD
     public function getClientName(?callable $httpHandler = null)
+=======
+    public function getClientName(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $this->checkAppEngineContext();
 

@@ -12,8 +12,12 @@
 			"wide",
 			"full"
 		],
+<<<<<<< HEAD
 		"html": false,
 		"inserter": false
+=======
+		"html": false
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	},
 	"attributes": {
 		"align": {
@@ -84,4 +88,8 @@
 	"textdomain": "woocommerce",
 	"apiVersion": 3,
 	"$schema": "https://schemas.wp.org/trunk/block.json"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

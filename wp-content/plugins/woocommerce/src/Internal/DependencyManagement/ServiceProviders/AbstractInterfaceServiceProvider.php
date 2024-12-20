@@ -56,7 +56,11 @@ abstract class AbstractInterfaceServiceProvider extends AbstractServiceProvider 
 	 *
 	 * @return DefinitionInterface
 	 */
+<<<<<<< HEAD
 	protected function add_with_implements_tags( string $id, $concrete = null, ?bool $shared = null ): DefinitionInterface {
+=======
+	protected function add_with_implements_tags( string $id, $concrete = null, bool $shared = null ): DefinitionInterface {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$definition = $this->add( $id, $concrete, $shared );
 		foreach ( class_implements( $id ) as $interface ) {
 			$definition->addTag( $interface );

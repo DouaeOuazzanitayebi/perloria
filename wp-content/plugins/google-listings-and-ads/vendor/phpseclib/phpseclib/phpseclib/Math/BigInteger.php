@@ -162,7 +162,11 @@ class BigInteger implements \JsonSerializable
      * If the second parameter - $base - is negative, then it will be assumed that the number's are encoded using
      * two's compliment.  The sole exception to this is -10, which is treated the same as 10 is.
      *
+<<<<<<< HEAD
      * @param string|int|Engine $x Base-10 number or base-$base number if $base set.
+=======
+     * @param string|int|BigInteger\Engines\Engine $x Base-10 number or base-$base number if $base set.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param int $base
      */
     public function __construct($x = 0, $base = 10)
@@ -171,7 +175,11 @@ class BigInteger implements \JsonSerializable
 
         if ($x instanceof self::$mainEngine) {
             $this->value = clone $x;
+<<<<<<< HEAD
         } elseif ($x instanceof Engine) {
+=======
+        } elseif ($x instanceof BigInteger\Engines\Engine) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             $this->value = new static("$x");
             $this->value->setPrecision($x->getPrecision());
         } else {

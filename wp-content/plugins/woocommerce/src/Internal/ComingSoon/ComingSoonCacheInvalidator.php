@@ -39,5 +39,13 @@ class ComingSoonCacheInvalidator {
 				)
 			);
 		}
+<<<<<<< HEAD
+=======
+
+		// Invalidate the SiteGround Speed Optimizer cache.
+		if ( function_exists( '\sg_cachepress_purge_cache' ) ) {
+			\sg_cachepress_purge_cache();
+		}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 }

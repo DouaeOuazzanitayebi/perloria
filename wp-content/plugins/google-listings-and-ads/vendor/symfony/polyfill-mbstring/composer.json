@@ -16,7 +16,11 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
         "php": ">=7.2"
+=======
+        "php": ">=7.1"
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     },
     "provide": {
         "ext-mbstring": "*"

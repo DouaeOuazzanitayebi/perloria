@@ -32,7 +32,11 @@ abstract class Base
     /**
      * Finite Field Integer factory
      *
+<<<<<<< HEAD
      * @var FiniteField\Integer
+=======
+     * @var \phpseclib3\Math\FiniteField\Integer
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     protected $factory;
 
@@ -47,7 +51,11 @@ abstract class Base
     }
 
     /**
+<<<<<<< HEAD
      * Converts a BigInteger to a FiniteField\Integer integer
+=======
+     * Converts a BigInteger to a \phpseclib3\Math\FiniteField\Integer integer
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * @return object
      */
@@ -147,7 +155,11 @@ abstract class Base
     /**
      * Returns the Order
      *
+<<<<<<< HEAD
      * @return BigInteger
+=======
+     * @return \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function getOrder()
     {

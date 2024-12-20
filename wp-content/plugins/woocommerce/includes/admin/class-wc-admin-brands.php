@@ -18,13 +18,18 @@ use Automattic\Jetpack\Constants;
 class WC_Brands_Admin {
 
 	/**
+<<<<<<< HEAD
 	 * Settings array (Deprecated).
+=======
+	 * Settings array.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 *
 	 * @var array
 	 */
 	public $settings_tabs;
 
 	/**
+<<<<<<< HEAD
 	 * Settings form fields (Deprecated).
 	 *
 	 * @var array
@@ -32,6 +37,8 @@ class WC_Brands_Admin {
 	private $settings;
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Admin fields.
 	 *
 	 * @var array
@@ -62,6 +69,7 @@ class WC_Brands_Admin {
 			}
 		);
 
+<<<<<<< HEAD
 		// Hiding setting for future depreciation. Only users who have touched this settings should see it.
 		$setting_value = get_option( 'wc_brands_show_description' );
 		if ( is_string( $setting_value ) ) {
@@ -76,6 +84,17 @@ class WC_Brands_Admin {
 					);
 				}
 			);
+=======
+		$this->settings_tabs = array(
+			'brands' => __( 'Brands', 'woocommerce' ),
+		);
+
+		// Hiding setting for future depreciation. Only users who have touched this settings should see it.
+		$setting_value = get_option( 'wc_brands_show_description' );
+		if ( is_string( $setting_value ) ) {
+			// Add the settings fields to each tab.
+			$this->init_form_fields();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			add_action( 'woocommerce_get_sections_products', array( $this, 'add_settings_tab' ) );
 			add_action( 'woocommerce_get_settings_products', array( $this, 'add_settings_section' ), null, 2 );
 		}

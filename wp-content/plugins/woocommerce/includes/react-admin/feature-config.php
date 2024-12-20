@@ -9,7 +9,10 @@ if ( ! function_exists( 'wc_admin_get_feature_config' ) ) {
 			'product-block-editor' => true,
 			'product-data-views' => false,
 			'experimental-blocks' => false,
+<<<<<<< HEAD
 			'coming-soon-newsletter-template' => false,
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'coupons' => true,
 			'core-profiler' => true,
 			'customize-store' => true,
@@ -22,6 +25,10 @@ if ( ! function_exists( 'wc_admin_get_feature_config' ) ) {
 			'marketing' => true,
 			'minified-js' => false,
 			'mobile-app-banner' => true,
+<<<<<<< HEAD
+=======
+			'navigation' => true,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'onboarding' => true,
 			'onboarding-tasks' => true,
 			'pattern-toolkit-full-composability' => true,
@@ -45,7 +52,10 @@ if ( ! function_exists( 'wc_admin_get_feature_config' ) ) {
 			'blueprint' => false,
 			'reactify-classic-payments-settings' => false,
 			'use-wp-horizon' => false,
+<<<<<<< HEAD
 			'add-to-cart-with-options-stepper-layout' => false,
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 	}
 }

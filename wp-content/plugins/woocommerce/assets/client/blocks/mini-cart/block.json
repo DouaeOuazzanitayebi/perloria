@@ -5,7 +5,13 @@
 	"icon": "miniCartAlt",
 	"description": "Display a button for shoppers to quickly view their cart.",
 	"category": "woocommerce",
+<<<<<<< HEAD
 	"keywords": [ "WooCommerce" ],
+=======
+	"keywords": [
+		"WooCommerce"
+	],
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	"textdomain": "woocommerce",
 	"supports": {
 		"html": false,
@@ -33,10 +39,13 @@
 			"type": "string",
 			"default": "none"
 		},
+<<<<<<< HEAD
 		"onCartClickBehaviour": {
 			"type": "string",
 			"default": "open_drawer"
 		},
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		"hasHiddenPrice": {
 			"type": "boolean",
 			"default": true
@@ -70,4 +79,8 @@
 	},
 	"apiVersion": 3,
 	"$schema": "https://schemas.wp.org/trunk/block.json"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

@@ -1100,7 +1100,11 @@ class WC_Helper {
 
 		// Attempt to activate this plugin.
 		$local = self::_get_local_from_product_id( $product_id );
+<<<<<<< HEAD
 		if ( $local && 'plugin' === $local['_type'] && current_user_can( 'activate_plugins' ) && ! is_plugin_active( $local['_filename'] ) ) {
+=======
+		if ( $local && 'plugin' == $local['_type'] && current_user_can( 'activate_plugins' ) && ! is_plugin_active( $local['_filename'] ) ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			activate_plugin( $local['_filename'] );
 		}
 
@@ -2416,6 +2420,7 @@ class WC_Helper {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get WooCommerce.com base URL.
 	 *
 	 * @return string
@@ -2431,12 +2436,25 @@ class WC_Helper {
 
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Get base URL for plugin auto installer.
 	 *
 	 * @return string
 	 */
 	public static function get_install_base_url() {
+<<<<<<< HEAD
 		return self::get_woocommerce_com_base_url() . 'auto-install-init/';
+=======
+		/**
+		 * Filter the base URL used to install the Woo hosted plugins.
+		 *
+		 * @since 8.7.0
+		 */
+		$woo_com_base_url = apply_filters( 'woo_com_base_url', 'https://woocommerce.com/' );
+
+		return $woo_com_base_url . 'auto-install-init/';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**

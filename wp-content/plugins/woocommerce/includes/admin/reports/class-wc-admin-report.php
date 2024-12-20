@@ -524,6 +524,7 @@ class WC_Admin_Report {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prepares the data for a sparkline to show sales in the last X days.
 	 *
 	 * @param  int    $id ID of the product to show. Blank to get all orders.
@@ -532,6 +533,16 @@ class WC_Admin_Report {
 	 * @return array
 	 */
 	public function get_sales_sparkline( $id = '', $days = 7, $type = 'sales' ) {
+=======
+	 * Prepares a sparkline to show sales in the last X days.
+	 *
+	 * @param  int    $id ID of the product to show. Blank to get all orders.
+	 * @param  int    $days Days of stats to get.
+	 * @param  string $type Type of sparkline to get. Ignored if ID is not set.
+	 * @return string
+	 */
+	public function sales_sparkline( $id = '', $days = 7, $type = 'sales' ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		// phpcs:disable WordPress.DateTime.RestrictedFunctions.date_date, WordPress.DateTime.CurrentTimeTimestamp.Requested
 
@@ -611,6 +622,7 @@ class WC_Admin_Report {
 			$total += $d->sparkline_value;
 		}
 
+<<<<<<< HEAD
 		$sparkline_data = array_values( $this->prepare_chart_data( $data, 'post_date', 'sparkline_value', $days - 1, strtotime( 'midnight -' . ( $days - 1 ) . ' days', current_time( 'timestamp' ) ), 'day' ) );
 
 		// phpcs:enable WordPress.DateTime.RestrictedFunctions.date_date, WordPress.DateTime.CurrentTimeTimestamp.Requested
@@ -633,6 +645,8 @@ class WC_Admin_Report {
 		$sparkline = $this->get_sales_sparkline( $id, $days, $type );
 		$total     = $sparkline['total'];
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		if ( 'sales' === $type ) {
 			/* translators: 1: total income 2: days */
 			$tooltip = sprintf( __( 'Sold %1$s worth in the last %2$d days', 'woocommerce' ), wp_strip_all_tags( wc_price( $total ) ), $days );
@@ -641,9 +655,17 @@ class WC_Admin_Report {
 			$tooltip = sprintf( _n( 'Sold %1$d item in the last %2$d days', 'Sold %1$d items in the last %2$d days', $total, 'woocommerce' ), $total, $days );
 		}
 
+<<<<<<< HEAD
 		$sparkline_data = $sparkline['data'];
 
 		return '<span class="wc_sparkline ' . ( ( 'sales' === $type ) ? 'lines' : 'bars' ) . ' tips" data-color="#777" data-tip="' . esc_attr( $tooltip ) . '" data-barwidth="' . 60 * 60 * 16 * 1000 . '" data-sparkline="' . wc_esc_json( wp_json_encode( $sparkline_data ) ) . '"></span>';
+=======
+		$sparkline_data = array_values( $this->prepare_chart_data( $data, 'post_date', 'sparkline_value', $days - 1, strtotime( 'midnight -' . ( $days - 1 ) . ' days', current_time( 'timestamp' ) ), 'day' ) );
+
+		return '<span class="wc_sparkline ' . ( ( 'sales' === $type ) ? 'lines' : 'bars' ) . ' tips" data-color="#777" data-tip="' . esc_attr( $tooltip ) . '" data-barwidth="' . 60 * 60 * 16 * 1000 . '" data-sparkline="' . wc_esc_json( wp_json_encode( $sparkline_data ) ) . '"></span>';
+
+		// phpcs:enable WordPress.DateTime.RestrictedFunctions.date_date, WordPress.DateTime.CurrentTimeTimestamp.Requested
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**

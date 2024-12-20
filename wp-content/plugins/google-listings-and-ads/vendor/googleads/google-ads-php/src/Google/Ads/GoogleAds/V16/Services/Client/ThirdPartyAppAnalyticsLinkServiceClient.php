@@ -51,7 +51,11 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method PromiseInterface regenerateShareableLinkIdAsync(RegenerateShareableLinkIdRequest $request, array $optionalArgs = [])
  */
+<<<<<<< HEAD
 class ThirdPartyAppAnalyticsLinkServiceClient
+=======
+final class ThirdPartyAppAnalyticsLinkServiceClient
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;

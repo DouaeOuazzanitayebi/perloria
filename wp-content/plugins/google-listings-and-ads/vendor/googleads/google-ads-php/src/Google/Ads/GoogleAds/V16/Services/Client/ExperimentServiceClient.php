@@ -35,6 +35,10 @@ use Google\Ads\GoogleAds\V16\Services\ScheduleExperimentRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+<<<<<<< HEAD
+=======
+use Google\ApiCore\LongRunning\OperationsClient;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PagedListResponse;
 use Google\ApiCore\ResourceHelperTrait;
@@ -42,7 +46,10 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+<<<<<<< HEAD
 use Google\LongRunning\Client\OperationsClient;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Google\LongRunning\Operation;
 use GuzzleHttp\Promise\PromiseInterface;
 
@@ -64,7 +71,11 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface promoteExperimentAsync(PromoteExperimentRequest $request, array $optionalArgs = [])
  * @method PromiseInterface scheduleExperimentAsync(ScheduleExperimentRequest $request, array $optionalArgs = [])
  */
+<<<<<<< HEAD
 class ExperimentServiceClient
+=======
+final class ExperimentServiceClient
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;
@@ -148,6 +159,7 @@ class ExperimentServiceClient
     }
 
     /**
+<<<<<<< HEAD
      * Create the default operation client for the service.
      *
      * @param array $options ClientOptions for the client.
@@ -167,6 +179,8 @@ class ExperimentServiceClient
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Formats a string containing the fully-qualified path to represent a campaign
      * resource.
      *

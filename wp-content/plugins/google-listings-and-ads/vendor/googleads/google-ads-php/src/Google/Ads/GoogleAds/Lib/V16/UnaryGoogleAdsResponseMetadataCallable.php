@@ -21,8 +21,11 @@ namespace Google\Ads\GoogleAds\Lib\V16;
 use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\ApiCore\Call;
 use Google\ApiCore\Middleware\ResponseMetadataMiddleware;
+<<<<<<< HEAD
 use GuzzleHttp\Promise\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * Callable for returning `GoogleAdsResponseMetadata` from unary calls to the API.
@@ -31,6 +34,7 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
 {
     use GoogleAdsMetadataTrait;
 
+<<<<<<< HEAD
     private $adsClient;
 
     public function __construct(callable $nextHandler = null, $adsClient = null)
@@ -42,11 +46,18 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
      * @param Call $call the current request
      * @param array $options the optional parameters
      * @return array|PromiseInterface the two-member array of
+=======
+    /**
+     * @param Call $call the current request
+     * @param array $options the optional parameters
+     * @return array|\GuzzleHttp\Promise\PromiseInterface the two-member array of
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *     response and metadata if `withResponseMetadata` is specified as an option;
      *     Or else, the `Promise` interface of the next handler
      */
     public function __invoke(Call $call, array $options)
     {
+<<<<<<< HEAD
         $next = $this->getNextHandler();
         if (empty($options['withResponseMetadata'])) {
             // Bypass this middleware if the option is not set.
@@ -74,5 +85,17 @@ class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
                 return $response;
             }
         );
+=======
+        if (!empty($options['withResponseMetadata'])) {
+            $next = new ResponseMetadataMiddleware($this->getNextHandler());
+            return $next($call, $options)->then(function ($responseList) {
+                list($response, $metadata) = $responseList;
+                return [$response, new GoogleAdsResponseMetadata($metadata)];
+            });
+        } else {
+            $next = $this->getNextHandler();
+            return $next($call, $options);
+        }
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 }

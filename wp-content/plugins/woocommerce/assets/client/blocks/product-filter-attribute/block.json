@@ -60,7 +60,11 @@
 	},
 	"usesContext": [
 		"query",
+<<<<<<< HEAD
 		"filterParams"
+=======
+		"queryId"
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	],
 	"attributes": {
 		"attributeId": {

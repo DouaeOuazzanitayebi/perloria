@@ -83,12 +83,20 @@ class Marketing {
 		}
 
 		PageController::get_instance()->connect_page(
+<<<<<<< HEAD
 			array(
+=======
+			[
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				'id'         => 'woocommerce-marketing',
 				'title'      => 'Marketing',
 				'capability' => 'manage_woocommerce',
 				'path'       => 'wc-admin&path=/marketing',
+<<<<<<< HEAD
 			)
+=======
+			]
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 	}
 
@@ -99,6 +107,7 @@ class Marketing {
 		$this->register_overview_page();
 
 		$controller = PageController::get_instance();
+<<<<<<< HEAD
 		$defaults   = array(
 			'parent'        => 'woocommerce-marketing',
 			'existing_page' => false,
@@ -111,6 +120,14 @@ class Marketing {
 		 * @param array $items Marketing pages.
 		 */
 		$marketing_pages = apply_filters( 'woocommerce_marketing_menu_items', array() );
+=======
+		$defaults   = [
+			'parent'        => 'woocommerce-marketing',
+			'existing_page' => false,
+		];
+
+		$marketing_pages = apply_filters( 'woocommerce_marketing_menu_items', [] );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		foreach ( $marketing_pages as $marketing_page ) {
 			if ( ! is_array( $marketing_page ) ) {
 				continue;
@@ -138,12 +155,25 @@ class Marketing {
 
 		// First register the page.
 		PageController::get_instance()->register_page(
+<<<<<<< HEAD
 			array(
 				'id'     => 'woocommerce-marketing-overview',
 				'title'  => __( 'Overview', 'woocommerce' ),
 				'path'   => 'wc-admin&path=/marketing',
 				'parent' => 'woocommerce-marketing',
 			)
+=======
+			[
+				'id'       => 'woocommerce-marketing-overview',
+				'title'    => __( 'Overview', 'woocommerce' ),
+				'path'     => 'wc-admin&path=/marketing',
+				'parent'   => 'woocommerce-marketing',
+				'nav_args' => array(
+					'parent' => 'woocommerce-marketing',
+					'order'  => 10,
+				),
+			]
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 
 		// Now fix the path, since register_page() gets it wrong.
@@ -210,7 +240,11 @@ class Marketing {
 		// Sort the rest of the items alphabetically.
 		usort(
 			$marketing_submenu,
+<<<<<<< HEAD
 			function ( $a, $b ) {
+=======
+			function( $a, $b ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				return strcmp( $a[0], $b[0] );
 			}
 		);

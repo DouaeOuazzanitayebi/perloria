@@ -12,6 +12,10 @@ use Automattic\WooCommerce\Admin\RemoteInboxNotifications\RemoteInboxNotificatio
 use Automattic\WooCommerce\Admin\RemoteInboxNotifications\RemoteInboxNotificationsEngine;
 use Automattic\WooCommerce\Internal\Admin\Notes\AddFirstProduct;
 use Automattic\WooCommerce\Internal\Admin\Notes\ChoosingTheme;
+<<<<<<< HEAD
+=======
+use Automattic\WooCommerce\Internal\Admin\Notes\CouponPageMoved;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Internal\Admin\Notes\CustomizeStoreWithBlocks;
 use Automattic\WooCommerce\Internal\Admin\Notes\CustomizingProductCatalog;
 use Automattic\WooCommerce\Internal\Admin\Notes\EditProductsOnTheMove;
@@ -101,6 +105,10 @@ class Events {
 	 * @var array
 	 */
 	private static $other_note_classes = array(
+<<<<<<< HEAD
+=======
+		CouponPageMoved::class,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		InstallJPAndWCSPlugins::class,
 		OrderMilestones::class,
 		SellingOnlineCourses::class,

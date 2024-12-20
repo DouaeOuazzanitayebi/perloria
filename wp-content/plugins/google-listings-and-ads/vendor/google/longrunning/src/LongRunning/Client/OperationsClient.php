@@ -39,27 +39,47 @@ use Google\LongRunning\ListOperationsRequest;
 use Google\LongRunning\Operation;
 use Google\LongRunning\WaitOperationRequest;
 use GuzzleHttp\Promise\PromiseInterface;
+<<<<<<< HEAD
 use Psr\Log\LoggerInterface;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * Service Description: Manages long-running operations with an API service.
  *
  * When an API method normally takes long time to complete, it can be designed
+<<<<<<< HEAD
  * to return [Operation][google.longrunning.Operation] to the client, and the
  * client can use this interface to receive the real response asynchronously by
  * polling the operation resource, or pass the operation resource to another API
  * (such as Pub/Sub API) to receive the response.  Any API service that returns
  * long-running operations should implement the `Operations` interface so
  * developers can have a consistent client experience.
+=======
+ * to return [Operation][google.longrunning.Operation] to the client, and the client can use this
+ * interface to receive the real response asynchronously by polling the
+ * operation resource, or pass the operation resource to another API (such as
+ * Google Cloud Pub/Sub API) to receive the response.  Any API service that
+ * returns long-running operations should implement the `Operations` interface
+ * so developers can have a consistent client experience.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods.
  *
+<<<<<<< HEAD
  * @method PromiseInterface<void> cancelOperationAsync(CancelOperationRequest $request, array $optionalArgs = [])
  * @method PromiseInterface<void> deleteOperationAsync(DeleteOperationRequest $request, array $optionalArgs = [])
  * @method PromiseInterface<Operation> getOperationAsync(GetOperationRequest $request, array $optionalArgs = [])
  * @method PromiseInterface<PagedListResponse> listOperationsAsync(ListOperationsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface<Operation> waitOperationAsync(WaitOperationRequest $request, array $optionalArgs = [])
+=======
+ * @method PromiseInterface cancelOperationAsync(CancelOperationRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface deleteOperationAsync(DeleteOperationRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface getOperationAsync(GetOperationRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface listOperationsAsync(ListOperationsRequest $request, array $optionalArgs = [])
+ * @method PromiseInterface waitOperationAsync(WaitOperationRequest $request, array $optionalArgs = [])
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 class OperationsClient
 {
@@ -156,9 +176,12 @@ class OperationsClient
      *     @type callable $clientCertSource
      *           A callable which returns the client cert as a string. This can be used to
      *           provide a certificate and private key to the transport layer for mTLS.
+<<<<<<< HEAD
      *     @type false|LoggerInterface $logger
      *           A PSR-3 compliant logger. If set to false, logging is disabled, ignoring the
      *           'GOOGLE_SDK_PHP_LOGGING' environment flag
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * }
      *
      * @throws ValidationException
@@ -189,9 +212,14 @@ class OperationsClient
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
+<<<<<<< HEAD
      * an [Operation.error][google.longrunning.Operation.error] value with a
      * [google.rpc.Status.code][google.rpc.Status.code] of `1`, corresponding to
      * `Code.CANCELLED`.
+=======
+     * an [Operation.error][google.longrunning.Operation.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * The async variant is {@see OperationsClient::cancelOperationAsync()} .
      *
@@ -273,6 +301,17 @@ class OperationsClient
      * Lists operations that match the specified filter in the request. If the
      * server doesn't support this method, it returns `UNIMPLEMENTED`.
      *
+<<<<<<< HEAD
+=======
+     * NOTE: the `name` binding allows API services to override the binding
+     * to use different resource name schemes, such as `users/&#42;/operations`. To
+     * override the binding, API services can add a binding such as
+     * `"/v1/{name=users/*}/operations"` to their service configuration.
+     * For backwards compatibility, the default name includes the operations
+     * collection id, however overriding users must ensure the name binding
+     * is the parent resource, without the operations collection id.
+     *
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * The async variant is {@see OperationsClient::listOperationsAsync()} .
      *
      * @example samples/OperationsClient/list_operations.php

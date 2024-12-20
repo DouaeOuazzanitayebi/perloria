@@ -12,7 +12,10 @@ if ( class_exists( 'WC_Settings_Accounts', false ) ) {
 }
 
 use Automattic\WooCommerce\Blocks\Utils\CartCheckoutUtils;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Admin\Features\Features;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * WC_Settings_Accounts.
@@ -79,6 +82,7 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 				'default'       => 'no',
 				'type'          => 'checkbox',
 				'checkboxgroup' => 'start',
+<<<<<<< HEAD
 				'legend'        => __( 'Allow customers to create an account', 'woocommerce' ),
 				'autoload'      => false,
 			),
@@ -101,6 +105,12 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 				),
 			),
 			array(
+=======
+				'legend'        => __( 'Allow customers to create an account:', 'woocommerce' ),
+				'autoload'      => false,
+			),
+			array(
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				'title'         => __( 'Account creation', 'woocommerce' ),
 				'desc'          => __( 'On "My account" page', 'woocommerce' ),
 				'id'            => 'woocommerce_enable_myaccount_registration',
@@ -110,6 +120,7 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 				'autoload'      => false,
 			),
 			array(
+<<<<<<< HEAD
 				'title'             => __( 'Account creation options', 'woocommerce' ),
 				'desc'              => __( 'Send password setup link (recommended)', 'woocommerce' ),
 				'desc_tip'          => __( 'New users receive an email to set up their password.', 'woocommerce' ),
@@ -134,6 +145,26 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 				'custom_attributes' => array(
 					'disabled-tooltip' => __( 'Enable an account creation method to use this feature.', 'woocommerce' ),
 				),
+=======
+				'title'         => __( 'Account creation options', 'woocommerce' ),
+				'desc'          => __( 'Use email address as account login (recommended)', 'woocommerce' ),
+				'desc_tip'      => __( 'If unchecked, customers will need to set a username during account creation.', 'woocommerce' ),
+				'id'            => 'woocommerce_registration_generate_username',
+				'default'       => 'yes',
+				'type'          => 'checkbox',
+				'checkboxgroup' => 'start',
+				'autoload'      => false,
+			),
+			array(
+				'title'         => __( 'Account creation options', 'woocommerce' ),
+				'desc'          => __( 'Send password setup link (recommended)', 'woocommerce' ),
+				'desc_tip'      => __( 'New customers receive an email to set up their password.', 'woocommerce' ),
+				'id'            => 'woocommerce_registration_generate_password',
+				'default'       => 'yes',
+				'type'          => 'checkbox',
+				'checkboxgroup' => 'end',
+				'autoload'      => false,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			),
 			array(
 				'title'         => __( 'Account erasure requests', 'woocommerce' ),
@@ -264,6 +295,7 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 			),
 		);
 
+<<<<<<< HEAD
 		// Feature requires a block theme.
 		if ( ! wc_current_theme_is_fse_theme() ) {
 			$account_settings = array_filter(
@@ -274,6 +306,8 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 			);
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		// Change settings when using the block based checkout.
 		if ( CartCheckoutUtils::is_checkout_block_default() ) {
 			$account_settings = array_filter(
@@ -291,6 +325,7 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 				},
 				$account_settings
 			);
+<<<<<<< HEAD
 		} else {
 			$account_settings = array_map(
 				function ( $setting ) {
@@ -309,6 +344,8 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 				},
 				$account_settings
 			);
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		}
 
 		/**
@@ -331,6 +368,7 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 		?>
 		<script type="text/javascript">
 			document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
 				// Move tooltips to label element. This is not possible through the settings field API so this is a workaround
 				// until said API is refactored.
 				document.querySelectorAll('input[disabled-tooltip]').forEach(function(element) {
@@ -343,19 +381,30 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 					document.getElementById("woocommerce_enable_signup_and_login_from_checkout"),
 					document.getElementById("woocommerce_enable_myaccount_registration"),
 					document.getElementById("woocommerce_enable_delayed_account_creation"),
+=======
+				const checkboxes = [
+					document.getElementById("woocommerce_enable_signup_and_login_from_checkout"),
+					document.getElementById("woocommerce_enable_myaccount_registration"),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					document.getElementById("woocommerce_enable_signup_from_checkout_for_subscriptions")
 				];
 				const inputs = [
 					document.getElementById("woocommerce_registration_generate_username"),
 					document.getElementById("woocommerce_registration_generate_password")
 				];
+<<<<<<< HEAD
 				checkboxes.forEach(cb => cb && cb.addEventListener('change', function() {
+=======
+
+				function updateInputs() {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					const isChecked = checkboxes.some(cb => cb && cb.checked);
 					inputs.forEach(input => {
 						if ( ! input ) {
 							return;
 						}
 						input.disabled = !isChecked;
+<<<<<<< HEAD
 					});
 				}));
 				checkboxes[0].dispatchEvent(new Event('change')); // Initial state
@@ -374,6 +423,14 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 					});
 					guestCheckout.dispatchEvent(new Event('change')); // Initial state
 				}
+=======
+						input.closest('td').classList.toggle("disabled", !isChecked);
+					});
+				}
+
+				checkboxes.forEach(cb => cb && cb.addEventListener('change', updateInputs));
+				updateInputs(); // Initial state
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			});
 		</script>
 		<?php

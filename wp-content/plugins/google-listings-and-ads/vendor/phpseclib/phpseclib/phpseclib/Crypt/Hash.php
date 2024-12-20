@@ -128,7 +128,11 @@ class Hash
     /**
      * Outer XOR (Internal HMAC)
      *
+<<<<<<< HEAD
      * Used only for sha512
+=======
+     * Used only for sha512/*
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * @see self::hash()
      * @var string
@@ -138,7 +142,11 @@ class Hash
     /**
      * Inner XOR (Internal HMAC)
      *
+<<<<<<< HEAD
      * Used only for sha512
+=======
+     * Used only for sha512/*
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * @see self::hash()
      * @var string
@@ -159,7 +167,11 @@ class Hash
      * umac cipher object
      *
      * @see self::hash()
+<<<<<<< HEAD
      * @var AES
+=======
+     * @var \phpseclib3\Crypt\AES
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     private $c;
 
@@ -285,16 +297,22 @@ class Hash
      */
     public function setHash($hash)
     {
+<<<<<<< HEAD
         $oldHash = $this->hashParam;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $this->hashParam = $hash = strtolower($hash);
         switch ($hash) {
             case 'umac-32':
             case 'umac-64':
             case 'umac-96':
             case 'umac-128':
+<<<<<<< HEAD
                 if ($oldHash != $this->hashParam) {
                     $this->recomputeAESKey = true;
                 }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                 $this->blockSize = 128;
                 $this->length = abs(substr($hash, -3)) >> 3;
                 $this->algo = 'umac';
@@ -422,17 +440,26 @@ class Hash
                         '0F6D2B697BD44DA8', '77E36F7304C48942', '3F9D85A86A1D36C8', '1112E6AD91D692A1'
                     ];
                 for ($i = 0; $i < 8; $i++) {
+<<<<<<< HEAD
                     if (PHP_INT_SIZE == 8) {
                         list(, $initial[$i]) = unpack('J', pack('H*', $initial[$i]));
                     } else {
                         $initial[$i] = new BigInteger($initial[$i], 16);
                         $initial[$i]->setPrecision(64);
                     }
+=======
+                    $initial[$i] = new BigInteger($initial[$i], 16);
+                    $initial[$i]->setPrecision(64);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                 }
 
                 $this->parameters = compact('initial');
 
+<<<<<<< HEAD
                 $hash = ['phpseclib3\Crypt\Hash', PHP_INT_SIZE == 8 ? 'sha512_64' : 'sha512'];
+=======
+                $hash = ['phpseclib3\Crypt\Hash', 'sha512'];
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             }
         }
 
@@ -572,6 +599,7 @@ class Hash
         // For each chunk, except the last: endian-adjust, NH hash
         // and add bit-length.  Use results to build Y.
         //
+<<<<<<< HEAD
         $length = 1024 * 8;
         $y = '';
 
@@ -580,6 +608,13 @@ class Hash
             $y .= PHP_INT_SIZE == 8 ?
                 static::nh64($k, $m[$i], $length) :
                 static::nh32($k, $m[$i], $length);
+=======
+        $length = new BigInteger(1024 * 8);
+        $y = '';
+        for ($i = 0; $i < count($m) - 1; $i++) {
+            $m[$i] = pack('N*', ...unpack('V*', $m[$i])); // ENDIAN-SWAP
+            $y .= static::nh($k, $m[$i], $length);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         }
 
         //
@@ -592,14 +627,19 @@ class Hash
         $m[$i] = str_pad(isset($m[$i]) ? $m[$i] : '', $pad, "\0"); // zeropad
         $m[$i] = pack('N*', ...unpack('V*', $m[$i])); // ENDIAN-SWAP
 
+<<<<<<< HEAD
         $y .= PHP_INT_SIZE == 8 ?
             static::nh64($k, $m[$i], $length * 8) :
             static::nh32($k, $m[$i], $length * 8);
+=======
+        $y .= static::nh($k, $m[$i], new BigInteger($length * 8));
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
         return $y;
     }
 
     /**
+<<<<<<< HEAD
      * 32-bit safe 64-bit Multiply with 2x 32-bit ints
      *
      * @param int $x
@@ -675,11 +715,15 @@ class Hash
 
     /**
      * NH Algorithm / 32-bit safe
+=======
+     * NH Algorithm
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * @param string $k string of length 1024 bytes.
      * @param string $m string with length divisible by 32 bytes.
      * @return string string of length 8 bytes.
      */
+<<<<<<< HEAD
     private static function nh32($k, $m, $length)
     {
         //
@@ -688,11 +732,33 @@ class Hash
         $k = unpack('N*', $k);
         $m = unpack('N*', $m);
         $t = count($m);
+=======
+    private static function nh($k, $m, $length)
+    {
+        $toUInt32 = function ($x) {
+            $x = new BigInteger($x, 256);
+            $x->setPrecision(32);
+            return $x;
+        };
+
+        //
+        // Break M and K into 4-byte chunks
+        //
+        //$t = strlen($m) >> 2;
+        $m = str_split($m, 4);
+        $t = count($m);
+        $k = str_split($k, 4);
+        $k = array_pad(array_slice($k, 0, $t), $t, 0);
+
+        $m = array_map($toUInt32, $m);
+        $k = array_map($toUInt32, $k);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
         //
         // Perform NH hash on the chunks, pairing words for multiplication
         // which are 4 apart to accommodate vector-parallelism.
         //
+<<<<<<< HEAD
         $i = 1;
         $y = "\0\0\0\0\0\0\0\0";
         while ($i <= $t) {
@@ -711,10 +777,36 @@ class Hash
             $temp  = self::add32($m[$i + 3], $k[$i + 3]);
             $temp2 = self::add32($m[$i + 7], $k[$i + 7]);
             $y = self::add32_64($y, self::mul32_64($temp, $temp2));
+=======
+        $y = new BigInteger();
+        $y->setPrecision(64);
+        $i = 0;
+        while ($i < $t) {
+            $temp = $m[$i]->add($k[$i]);
+            $temp->setPrecision(64);
+            $temp = $temp->multiply($m[$i + 4]->add($k[$i + 4]));
+            $y = $y->add($temp);
+
+            $temp = $m[$i + 1]->add($k[$i + 1]);
+            $temp->setPrecision(64);
+            $temp = $temp->multiply($m[$i + 5]->add($k[$i + 5]));
+            $y = $y->add($temp);
+
+            $temp = $m[$i + 2]->add($k[$i + 2]);
+            $temp->setPrecision(64);
+            $temp = $temp->multiply($m[$i + 6]->add($k[$i + 6]));
+            $y = $y->add($temp);
+
+            $temp = $m[$i + 3]->add($k[$i + 3]);
+            $temp->setPrecision(64);
+            $temp = $temp->multiply($m[$i + 7]->add($k[$i + 7]));
+            $y = $y->add($temp);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
             $i += 8;
         }
 
+<<<<<<< HEAD
         return self::add32_64($y, pack('N2', 0, $length));
     }
 
@@ -842,6 +934,9 @@ class Hash
         }
 
         return pack('J', self::add64($y, $length));
+=======
+        return $y->add($length)->toBytes();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 
     /**
@@ -1322,10 +1417,16 @@ class Hash
             list($lo, $hi) = $x;
         }
 
+<<<<<<< HEAD
         $mask = -1 ^ (-1 << $shift);
         return [
             ($hi << $shift) | (($lo >> (32 - $shift)) & $mask),
             ($lo << $shift) | (($hi >> (32 - $shift)) & $mask)
+=======
+        return [
+            ($hi << $shift) | (($lo >> (32 - $shift)) & (1 << $shift) - 1),
+            ($lo << $shift) | (($hi >> (32 - $shift)) & (1 << $shift) - 1)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         ];
     }
 
@@ -1475,13 +1576,18 @@ class Hash
     }
 
     /**
+<<<<<<< HEAD
      * Left rotate 64-bit int
+=======
+     * Rotate 64-bit int
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * @param int $x
      * @param int $shift
      */
     private static function rotateLeft64($x, $shift)
     {
+<<<<<<< HEAD
         $mask = -1 ^ (-1 << $shift);
         return ($x << $shift) | (($x >> (64 - $shift)) & $mask);
     }
@@ -1496,6 +1602,9 @@ class Hash
     {
         $mask = -1 ^ (-1 << (64 - $shift));
         return (($x >> $shift) & $mask) | ($x << (64 - $shift));
+=======
+        return ($x << $shift) | (($x >> (64 - $shift)) & ((1 << $shift) - 1));
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 
     /**
@@ -1657,6 +1766,7 @@ class Hash
     }
 
     /**
+<<<<<<< HEAD
      * Pure-PHP implementation of SHA512
      *
      * @param string $m
@@ -1791,6 +1901,8 @@ class Hash
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *  __toString() magic method
      */
     public function __toString()

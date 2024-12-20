@@ -7,6 +7,7 @@
 	"category": "woocommerce",
 	"supports": {
 		"align": true,
+<<<<<<< HEAD
 		"reusable": false,
 		"inserter": false
 	},
@@ -16,3 +17,19 @@
 	"apiVersion": 3,
 	"$schema": "https://schemas.wp.org/trunk/block.json"
 }
+=======
+		"reusable": false
+	},
+	"keywords": [
+		"WooCommerce"
+	],
+	"usesContext": [
+		"postId",
+		"postType",
+		"queryId"
+	],
+	"textdomain": "woocommerce",
+	"apiVersion": 3,
+	"$schema": "https://schemas.wp.org/trunk/block.json"
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

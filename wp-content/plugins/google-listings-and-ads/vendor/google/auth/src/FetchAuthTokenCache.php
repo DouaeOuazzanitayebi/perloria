@@ -50,8 +50,13 @@ class FetchAuthTokenCache implements
      */
     public function __construct(
         FetchAuthTokenInterface $fetcher,
+<<<<<<< HEAD
         ?array $cacheConfig = null,
         ?CacheItemPoolInterface $cache = null
+=======
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $this->fetcher = $fetcher;
         $this->cache = $cache;
@@ -80,7 +85,11 @@ class FetchAuthTokenCache implements
      * @return array<mixed> the response
      * @throws \Exception
      */
+<<<<<<< HEAD
     public function fetchAuthToken(?callable $httpHandler = null)
+=======
+    public function fetchAuthToken(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if ($cached = $this->fetchAuthTokenFromCache()) {
             return $cached;
@@ -115,7 +124,11 @@ class FetchAuthTokenCache implements
      * @param callable $httpHandler An HTTP handler to deliver PSR7 requests.
      * @return string
      */
+<<<<<<< HEAD
     public function getClientName(?callable $httpHandler = null)
+=======
+    public function getClientName(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (!$this->fetcher instanceof SignBlobInterface) {
             throw new \RuntimeException(
@@ -184,7 +197,11 @@ class FetchAuthTokenCache implements
      * @throws \RuntimeException If the fetcher does not implement
      *     `Google\Auth\ProvidesProjectIdInterface`.
      */
+<<<<<<< HEAD
     public function getProjectId(?callable $httpHandler = null)
+=======
+    public function getProjectId(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (!$this->fetcher instanceof ProjectIdProviderInterface) {
             throw new \RuntimeException(
@@ -235,7 +252,11 @@ class FetchAuthTokenCache implements
     public function updateMetadata(
         $metadata,
         $authUri = null,
+<<<<<<< HEAD
         ?callable $httpHandler = null
+=======
+        callable $httpHandler = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         if (!$this->fetcher instanceof UpdateMetadataInterface) {
             throw new \RuntimeException(

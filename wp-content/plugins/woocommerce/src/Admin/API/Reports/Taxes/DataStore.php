@@ -208,6 +208,10 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 
 		$this->subquery->clear_sql_clause( 'select' );
 		$this->subquery->add_sql_clause( 'select', $this->selected_columns( $query_args ) );
+<<<<<<< HEAD
+=======
+		$this->subquery->add_sql_clause( 'group_by', ", {$wpdb->prefix}woocommerce_order_items.order_item_name, {$wpdb->prefix}woocommerce_order_itemmeta.meta_value" );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$this->subquery->add_sql_clause( 'order_by', $this->get_sql_clause( 'order_by' ) );
 		$this->subquery->add_sql_clause( 'limit', $this->get_sql_clause( 'limit' ) );
 
@@ -332,13 +336,19 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	 * Initialize query objects.
 	 */
 	protected function initialize_queries() {
+<<<<<<< HEAD
 		global $wpdb;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$this->clear_all_clauses();
 		$this->subquery = new SqlQuery( $this->context . '_subquery' );
 		$this->subquery->add_sql_clause( 'select', self::get_db_table_name() . '.tax_rate_id' );
 		$this->subquery->add_sql_clause( 'from', self::get_db_table_name() );
 		$this->subquery->add_sql_clause( 'group_by', self::get_db_table_name() . '.tax_rate_id' );
+<<<<<<< HEAD
 		$this->subquery->add_sql_clause( 'group_by', ", {$wpdb->prefix}woocommerce_order_items.order_item_name, {$wpdb->prefix}woocommerce_order_itemmeta.meta_value" );
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 }

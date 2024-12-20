@@ -318,6 +318,7 @@ class WP {
 	public function wp_remote_get( string $url, array $args = [] ) {
 		return wp_remote_get( $url, $args );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Adds extra code to a registered script.
@@ -340,4 +341,6 @@ class WP {
 	public function wp_print_inline_script_tag( string $data, array $attributes = [] ) {
 		return wp_print_inline_script_tag( $data, $attributes );
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

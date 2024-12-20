@@ -35,8 +35,13 @@ final class PublicKey extends RSA implements Common\PublicKey
     /**
      * Exponentiate
      *
+<<<<<<< HEAD
      * @param BigInteger $x
      * @return BigInteger
+=======
+     * @param \phpseclib3\Math\BigInteger $x
+     * @return \phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     private function exponentiate(BigInteger $x)
     {
@@ -48,8 +53,13 @@ final class PublicKey extends RSA implements Common\PublicKey
      *
      * See {@link http://tools.ietf.org/html/rfc3447#section-5.2.2 RFC3447#section-5.2.2}.
      *
+<<<<<<< HEAD
      * @param BigInteger $s
      * @return bool|BigInteger
+=======
+     * @param \phpseclib3\Math\BigInteger $s
+     * @return bool|\phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     private function rsavp1($s)
     {
@@ -405,8 +415,13 @@ final class PublicKey extends RSA implements Common\PublicKey
      *
      * See {@link http://tools.ietf.org/html/rfc3447#section-5.1.1 RFC3447#section-5.1.1}.
      *
+<<<<<<< HEAD
      * @param BigInteger $m
      * @return bool|BigInteger
+=======
+     * @param \phpseclib3\Math\BigInteger $m
+     * @return bool|\phpseclib3\Math\BigInteger
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     private function rsaep($m)
     {

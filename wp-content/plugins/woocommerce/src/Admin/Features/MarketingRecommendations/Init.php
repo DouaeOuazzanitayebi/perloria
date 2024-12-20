@@ -37,7 +37,10 @@ class Init extends RemoteSpecsEngine {
 	 */
 	public static function delete_specs_transient() {
 		MarketingRecommendationsDataSourcePoller::get_instance()->delete_specs_transient();
+<<<<<<< HEAD
 		MiscRecommendationsDataSourcePoller::get_instance()->delete_specs_transient();
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -58,6 +61,7 @@ class Init extends RemoteSpecsEngine {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get misc recommendations specs or fetch remotely if they don't exist.
 	 *
 	 * @since 9.5.0
@@ -77,6 +81,8 @@ class Init extends RemoteSpecsEngine {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Process specs.
 	 *
 	 * @param array|null $specs Marketing recommendations spec array.
@@ -161,6 +167,7 @@ class Init extends RemoteSpecsEngine {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Load misc recommendations from WooCommerce.com
 	 *
 	 * @since 9.5.0
@@ -193,6 +200,8 @@ class Init extends RemoteSpecsEngine {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Returns whether a plugin is a marketing extension.
 	 *
 	 * @param array $plugin_data The plugin properties returned by the API.

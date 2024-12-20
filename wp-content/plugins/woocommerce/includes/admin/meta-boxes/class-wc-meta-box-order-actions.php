@@ -103,7 +103,11 @@ class WC_Meta_Box_Order_Actions {
 			$trash_order_url = add_query_arg(
 				array(
 					'action'           => 'trash',
+<<<<<<< HEAD
 					'id'               => array( $order_id ),
+=======
+					'id'            => array( $order_id ),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					'_wp_http_referer' => $order_list_url,
 				),
 				$order_list_url
@@ -131,11 +135,14 @@ class WC_Meta_Box_Order_Actions {
 			$action = wc_clean( wp_unslash( $_POST['wc_order_action'] ) ); // @codingStandardsIgnoreLine
 
 			if ( 'send_order_details' === $action ) {
+<<<<<<< HEAD
 				/**
 				 * Fires before an order email is resent.
 				 *
 				 * @since 1.0.0
 				 */
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				do_action( 'woocommerce_before_resend_order_emails', $order, 'customer_invoice' );
 
 				// Send the customer invoice email.
@@ -146,11 +153,14 @@ class WC_Meta_Box_Order_Actions {
 				// Note the event.
 				$order->add_order_note( __( 'Order details manually sent to customer.', 'woocommerce' ), false, true );
 
+<<<<<<< HEAD
 				/**
 				 * Fires after an order email has been resent.
 				 *
 				 * @since 1.0.0
 				 */
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				do_action( 'woocommerce_after_resend_order_email', $order, 'customer_invoice' );
 
 				// Change the post saved message.

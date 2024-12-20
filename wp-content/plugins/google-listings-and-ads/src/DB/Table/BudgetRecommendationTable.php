@@ -104,7 +104,11 @@ SQL;
 		if ( file_exists( $path ) ) {
 			$csv = array_map(
 				function ( $row ) {
+<<<<<<< HEAD
 					return str_getcsv( $row, ',', '"', '\\' );
+=======
+					str_getcsv( $row, ',', '"', '\\' );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				},
 				file( $path )
 			);

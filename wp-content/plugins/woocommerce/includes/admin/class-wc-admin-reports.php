@@ -24,6 +24,7 @@ if ( class_exists( 'WC_Admin_Reports', false ) ) {
 class WC_Admin_Reports {
 
 	/**
+<<<<<<< HEAD
 	 * Register the proper hook handlers.
 	 */
 	public static function register_hook_handlers() {
@@ -68,6 +69,8 @@ class WC_Admin_Reports {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Handles output of the reports page in admin.
 	 */
 	public static function output() {
@@ -184,6 +187,7 @@ class WC_Admin_Reports {
 			);
 		}
 
+<<<<<<< HEAD
 		/**
 		 * Filter the list and add reports to the legacy _WooCommerce > Reports_.
 		 *
@@ -230,6 +234,19 @@ class WC_Admin_Reports {
 			foreach ( $report_group['reports'] as &$report ) {
 				if ( isset( $report['function'] ) ) {
 					$report['callback'] = $report['function'];
+=======
+		$reports = apply_filters( 'woocommerce_admin_reports', $reports );
+		$reports = apply_filters( 'woocommerce_reports_charts', $reports ); // Backwards compatibility.
+
+		foreach ( $reports as $key => $report_group ) {
+			if ( isset( $reports[ $key ]['charts'] ) ) {
+				$reports[ $key ]['reports'] = $reports[ $key ]['charts'];
+			}
+
+			foreach ( $reports[ $key ]['reports'] as $report_key => $report ) {
+				if ( isset( $reports[ $key ]['reports'][ $report_key ]['function'] ) ) {
+					$reports[ $key ]['reports'][ $report_key ]['callback'] = $reports[ $key ]['reports'][ $report_key ]['function'];
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				}
 			}
 		}

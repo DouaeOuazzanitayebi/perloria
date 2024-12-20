@@ -5,8 +5,11 @@
 
 namespace Automattic\WooCommerce\Admin\Notes;
 
+<<<<<<< HEAD
 use WC_Site_Tracking;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

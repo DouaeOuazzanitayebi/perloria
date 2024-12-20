@@ -75,6 +75,7 @@ abstract class Barrett extends Base
             return self::regularBarrett($n, $m);
         }
         // n = 2 * m.length
+<<<<<<< HEAD
         $correctionNeeded = false;
         if ($m_length & 1) {
             $correctionNeeded = true;
@@ -82,6 +83,8 @@ abstract class Barrett extends Base
             $m .= '0';
             $m_length++;
         }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
         if (($key = array_search($m, $cache[self::VARIABLE])) === false) {
             $key = count($cache[self::VARIABLE]);
@@ -138,7 +141,11 @@ abstract class Barrett extends Base
             $result = bcsub($result, $m);
         }
 
+<<<<<<< HEAD
         return $correctionNeeded ? substr($result, 0, -1) : $result;
+=======
+        return $result;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     }
 
     /**

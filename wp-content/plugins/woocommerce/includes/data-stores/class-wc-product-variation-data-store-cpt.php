@@ -25,10 +25,14 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 	 * @return bool false if excluded.
 	 */
 	protected function exclude_internal_meta_keys( $meta ) {
+<<<<<<< HEAD
 		$internal_meta_keys   = $this->internal_meta_keys;
 		$internal_meta_keys[] = '_cogs_value_overrides_parent';
 
 		return ! in_array( $meta->meta_key, $internal_meta_keys, true ) && 0 !== stripos( $meta->meta_key, 'attribute_' ) && 0 !== stripos( $meta->meta_key, 'wp_' );
+=======
+		return ! in_array( $meta->meta_key, $this->internal_meta_keys, true ) && 0 !== stripos( $meta->meta_key, 'attribute_' ) && 0 !== stripos( $meta->meta_key, 'wp_' );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/*
@@ -380,6 +384,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 			)
 		);
 
+<<<<<<< HEAD
 		if ( $this->cogs_feature_is_enabled() ) {
 			$product->set_props(
 				array(
@@ -389,6 +394,8 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 			);
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		if ( $product->is_on_sale( 'edit' ) ) {
 			$product->set_price( $product->get_sale_price( 'edit' ) );
 		} else {
@@ -436,6 +443,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 		$product->set_sold_individually( get_post_meta( $product->get_parent_id(), '_sold_individually', true ) );
 		$product->set_tax_status( get_post_meta( $product->get_parent_id(), '_tax_status', true ) );
 		$product->set_cross_sell_ids( get_post_meta( $product->get_parent_id(), '_crosssell_ids', true ) );
+<<<<<<< HEAD
 
 		if ( $this->cogs_feature_is_enabled() ) {
 			$this->load_cogs_data( $product );
@@ -467,6 +475,8 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 				'cogs_value_overrides_parent' => $cogs_value_overrides_parent,
 			)
 		);
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -544,7 +554,11 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Helper method that updates all the post meta for a product based on its settings in the WC_Product class.
+=======
+	 * Helper method that updates all the post meta for a product based on it's settings in the WC_Product class.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 *
 	 * @since 3.0.0
 	 * @param WC_Product $product Product object.
@@ -565,6 +579,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 			}
 		}
 
+<<<<<<< HEAD
 		if ( $this->cogs_feature_is_enabled() ) {
 			$cogs_value_overrides_parent = $product->get_cogs_value_overrides_parent();
 
@@ -588,6 +603,8 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 			}
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		parent::update_post_meta( $product, $force );
 	}
 

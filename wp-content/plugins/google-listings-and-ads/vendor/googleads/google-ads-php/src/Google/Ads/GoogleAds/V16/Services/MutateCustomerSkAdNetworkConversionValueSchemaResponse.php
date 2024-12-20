@@ -21,6 +21,7 @@ class MutateCustomerSkAdNetworkConversionValueSchemaResponse extends \Google\Pro
      * Generated from protobuf field <code>.google.ads.googleads.v16.services.MutateCustomerSkAdNetworkConversionValueSchemaResult result = 1;</code>
      */
     protected $result = null;
+<<<<<<< HEAD
     /**
      * Non blocking errors that provides schema validation failure details.
      * Returned only when enable_warnings = true.
@@ -28,6 +29,8 @@ class MutateCustomerSkAdNetworkConversionValueSchemaResponse extends \Google\Pro
      * Generated from protobuf field <code>.google.rpc.Status warning = 2;</code>
      */
     protected $warning = null;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     /**
      * Constructor.
@@ -37,9 +40,12 @@ class MutateCustomerSkAdNetworkConversionValueSchemaResponse extends \Google\Pro
      *
      *     @type \Google\Ads\GoogleAds\V16\Services\MutateCustomerSkAdNetworkConversionValueSchemaResult $result
      *           All results for the mutate.
+<<<<<<< HEAD
      *     @type \Google\Rpc\Status $warning
      *           Non blocking errors that provides schema validation failure details.
      *           Returned only when enable_warnings = true.
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * }
      */
     public function __construct($data = NULL) {
@@ -83,6 +89,7 @@ class MutateCustomerSkAdNetworkConversionValueSchemaResponse extends \Google\Pro
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * Non blocking errors that provides schema validation failure details.
      * Returned only when enable_warnings = true.
@@ -121,5 +128,7 @@ class MutateCustomerSkAdNetworkConversionValueSchemaResponse extends \Google\Pro
         return $this;
     }
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }
 

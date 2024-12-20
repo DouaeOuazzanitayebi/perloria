@@ -39,6 +39,7 @@ class CartController {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Normalizes the cart by fixing any quantity violations.
 	 */
 	public function normalize_cart() {
@@ -55,6 +56,8 @@ class CartController {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Gets the latest cart instance, and ensures totals have been calculated before returning.
 	 *
 	 * @return \WC_Cart
@@ -226,7 +229,11 @@ class CartController {
 			throw new RouteException( 'woocommerce_rest_cart_invalid_key', esc_html__( 'Cart item does not exist.', 'woocommerce' ), 409 );
 		}
 
+<<<<<<< HEAD
 		$product = $cart_item['data'] ?? false;
+=======
+		$product = $cart_item['data'];
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		if ( ! $product instanceof \WC_Product ) {
 			throw new RouteException( 'woocommerce_rest_cart_invalid_product', esc_html__( 'Cart item is invalid.', 'woocommerce' ), 404 );
@@ -308,8 +315,12 @@ class CartController {
 			$this->get_product_id( $product ),
 			$request['quantity'],
 			$this->get_variation_id( $product ),
+<<<<<<< HEAD
 			$request['variation'],
 			$request['cart_item_data']
+=======
+			$request['variation']
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		);
 
 		if ( ! $passed_validation ) {
@@ -504,6 +515,7 @@ class CartController {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * When placing an order, validate that the cart is not empty.
 	 *
 	 * @throws InvalidCartException Exception if the cart is empty.
@@ -522,11 +534,17 @@ class CartController {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Validate all items in the cart and check for errors.
 	 *
 	 * @throws InvalidCartException Exception if invalid data is detected due to insufficient stock levels.
 	 */
 	public function validate_cart_items() {
+<<<<<<< HEAD
+=======
+		$cart       = $this->get_cart_instance();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$cart_items = $this->get_cart_items();
 
 		$errors                        = [];
@@ -535,7 +553,11 @@ class CartController {
 		$partial_out_of_stock_products = [];
 		$not_purchasable_products      = [];
 
+<<<<<<< HEAD
 		foreach ( $cart_items as $cart_item ) {
+=======
+		foreach ( $cart_items as $cart_item_key => $cart_item ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			try {
 				$this->validate_cart_item( $cart_item );
 			} catch ( RouteException $error ) {
@@ -644,7 +666,11 @@ class CartController {
 	 * @param array $cart_item Cart item array.
 	 */
 	public function validate_cart_item( $cart_item ) {
+<<<<<<< HEAD
 		$product = $cart_item['data'] ?? false;
+=======
+		$product = $cart_item['data'];
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		if ( ! $product instanceof \WC_Product ) {
 			return;

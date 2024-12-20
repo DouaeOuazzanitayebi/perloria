@@ -110,7 +110,11 @@ class Page implements IteratorAggregate
      * @throws ApiException if the call to fetch the next page fails.
      * @return Page
      */
+<<<<<<< HEAD
     public function getNextPage(?int $pageSize = null)
+=======
+    public function getNextPage(int $pageSize = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (!$this->hasNextPage()) {
             throw new ValidationException(

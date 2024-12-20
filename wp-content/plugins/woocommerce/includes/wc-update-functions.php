@@ -2920,6 +2920,7 @@ function wc_update_940_remove_help_panel_highlight_shown() {
 		);
 	}
 }
+<<<<<<< HEAD
 
 /**
  * Autoloads woocommerce_allow_tracking option.
@@ -2930,3 +2931,5 @@ function wc_update_950_tracking_option_autoload() {
 	);
 	wp_set_option_autoload_values( $options );
 }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

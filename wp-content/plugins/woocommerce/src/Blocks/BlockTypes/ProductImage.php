@@ -165,6 +165,7 @@ class ProductImage extends AbstractBlock {
 			$image_style .= sprintf( 'aspect-ratio:%s;', $attributes['aspectRatio'] );
 		}
 
+<<<<<<< HEAD
 		$image_id = $product->get_image_id();
 
 		return $product->get_image(
@@ -173,6 +174,14 @@ class ProductImage extends AbstractBlock {
 				'data-testid' => 'product-image',
 				'style'       => $image_style,
 				'title'       => $image_id ? get_the_title( $image_id ) : '',
+=======
+		return $product->get_image(
+			$image_size,
+			array(
+				'alt'         => $product->get_title(),
+				'data-testid' => 'product-image',
+				'style'       => $image_style,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			)
 		);
 	}
@@ -205,11 +214,16 @@ class ProductImage extends AbstractBlock {
 		}
 		$parsed_attributes = $this->parse_attributes( $attributes );
 
+<<<<<<< HEAD
 		$classes_and_styles = StyleAttributesUtils::get_classes_and_styles_by_attributes( $attributes, array(), array( 'extra_classes' ) );
+=======
+		$classes_and_styles = StyleAttributesUtils::get_classes_and_styles_by_attributes( $attributes );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		$post_id = isset( $block->context['postId'] ) ? $block->context['postId'] : '';
 		$product = wc_get_product( $post_id );
 
+<<<<<<< HEAD
 		$classes = implode(
 			' ',
 			array_filter(
@@ -233,6 +247,15 @@ class ProductImage extends AbstractBlock {
 					%2$s
 				</div>',
 				$wrapper_attributes,
+=======
+		if ( $product ) {
+			return sprintf(
+				'<div class="wc-block-components-product-image wc-block-grid__product-image %1$s" style="%2$s">
+					%3$s
+				</div>',
+				esc_attr( $classes_and_styles['classes'] ),
+				esc_attr( $classes_and_styles['styles'] ),
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				$this->render_anchor(
 					$product,
 					$this->render_on_sale_badge( $product, $parsed_attributes ),

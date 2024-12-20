@@ -68,6 +68,7 @@ class WC_Tracks {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get role-related details.
 	 *
 	 * @param WP_User $user The user object.
@@ -83,6 +84,8 @@ class WC_Tracks {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Record an event in Tracks - this is the preferred way to record events from PHP.
 	 * Note: the event request won't be made if $properties has a member called `error`.
 	 *
@@ -145,8 +148,13 @@ class WC_Tracks {
 
 		$server_details = self::get_server_details();
 		$blog_details   = self::get_blog_details( $user->ID );
+<<<<<<< HEAD
 		$role_details   = self::get_role_details( $user );
 
 		return array_merge( $properties, $data, $server_details, $identity, $blog_details, $role_details );
+=======
+
+		return array_merge( $properties, $data, $server_details, $identity, $blog_details );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 }

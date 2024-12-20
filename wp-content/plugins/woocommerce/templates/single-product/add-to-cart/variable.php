@@ -12,7 +12,11 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
+<<<<<<< HEAD
  * @version 9.5.0
+=======
+ * @version 6.1.0
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -31,7 +35,11 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
 		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'This product is currently out of stock and unavailable.', 'woocommerce' ) ) ); ?></p>
 	<?php else : ?>
+<<<<<<< HEAD
 		<table class="variations" role="presentation">
+=======
+		<table class="variations" cellspacing="0" role="presentation">
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			<tbody>
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 					<tr>
@@ -45,6 +53,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 										'product'   => $product,
 									)
 								);
+<<<<<<< HEAD
 							?>
 						</td>
 					</tr>
@@ -59,13 +68,19 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							 * @param string  $button The reset variation button HTML.
 							 */
 							echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<button class="reset_variations"  aria-label="' . esc_html__( 'Clear options', 'woocommerce' ) . '">' . esc_html__( 'Clear', 'woocommerce' ) . '</button>' ) ) : '';
+=======
+								echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 							?>
 						</td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
+<<<<<<< HEAD
 		<div class="reset_variations_alert screen-reader-text" role="alert" aria-live="polite" aria-relevant="all"></div>
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		<?php do_action( 'woocommerce_after_variations_table' ); ?>
 
 		<div class="single_variation_wrap">

@@ -17,7 +17,11 @@ class InflectorAggregate implements InflectorAggregateInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function add(string $type, ?callable $callback = null) : Inflector
+=======
+    public function add(string $type, callable $callback = null) : Inflector
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $inflector          = new Inflector($type, $callback);
         $this->inflectors[] = $inflector;

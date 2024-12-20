@@ -83,6 +83,10 @@ class Init {
 				'Automattic\WooCommerce\Admin\API\OnboardingThemes',
 				'Automattic\WooCommerce\Admin\API\OnboardingPlugins',
 				'Automattic\WooCommerce\Admin\API\OnboardingProducts',
+<<<<<<< HEAD
+=======
+				'Automattic\WooCommerce\Admin\API\NavigationFavorites',
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				'Automattic\WooCommerce\Admin\API\MobileAppMagicLink',
 				'Automattic\WooCommerce\Admin\API\ShippingPartnerSuggestions',
 				'Automattic\WooCommerce\Admin\API\AI\StoreTitle',

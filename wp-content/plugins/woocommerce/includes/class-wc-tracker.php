@@ -139,8 +139,12 @@ class WC_Tracker {
 	 * @return array
 	 */
 	public static function get_tracking_data() {
+<<<<<<< HEAD
 		$data       = array();
 		$start_time = microtime( true );
+=======
+		$data = array();
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		// General site info.
 		$data['url']      = home_url();
@@ -180,10 +184,13 @@ class WC_Tracker {
 		$data['orders']     = self::get_orders();
 		$data['reviews']    = self::get_review_counts();
 		$data['categories'] = self::get_category_counts();
+<<<<<<< HEAD
 		$data['brands']     = self::get_brands_counts();
 
 		// Get order snapshot.
 		$data['order_snapshot'] = self::get_order_snapshot();
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		// Payment gateway info.
 		$data['gateways'] = self::get_active_payment_gateways();
@@ -226,12 +233,16 @@ class WC_Tracker {
 		 *
 		 * @since 2.3.0
 		 */
+<<<<<<< HEAD
 		$data = apply_filters( 'woocommerce_tracker_data', $data );
 
 		// Total seconds taken to generate snapshot (including filtered data).
 		$data['snapshot_generation_time'] = microtime( true ) - $start_time;
 
 		return $data;
+=======
+		return apply_filters( 'woocommerce_tracker_data', $data );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	}
 
 	/**
@@ -626,7 +637,11 @@ class WC_Tracker {
 		// Sort keys by length and then by characters within the same length keys.
 		usort(
 			$keys,
+<<<<<<< HEAD
 			function ( $a, $b ) {
+=======
+			function( $a, $b ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				if ( strlen( $a ) === strlen( $b ) ) {
 					return strcmp( $a, $b );
 				}
@@ -728,7 +743,11 @@ class WC_Tracker {
 			// Convert into an associative array with a combination of currency and gateway as key.
 			array_reduce(
 				$orders_and_gateway_details,
+<<<<<<< HEAD
 				function ( $result, $item ) {
+=======
+				function( $result, $item ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					$item->gateway = preg_replace( '/\s+/', ' ', $item->gateway );
 
 					// Introduce currency as a prefix for the key.
@@ -817,7 +836,11 @@ class WC_Tracker {
 			// Convert into an associative array with the origin as key.
 			array_reduce(
 				$orders_origin,
+<<<<<<< HEAD
 				function ( $result, $item ) {
+=======
+				function( $result, $item ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					$key = $item->origin;
 
 					$result[ $key ] = $item;
@@ -893,6 +916,7 @@ class WC_Tracker {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the number of product brands.
 	 *
 	 * @return int
@@ -905,6 +929,8 @@ class WC_Tracker {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Get a list of all active payment gateways.
 	 *
 	 * @return array
@@ -954,7 +980,11 @@ class WC_Tracker {
 		$all_features     = FeaturesUtil::get_features( true, true );
 		$enabled_features = array_filter(
 			$all_features,
+<<<<<<< HEAD
 			function ( $feature ) {
+=======
+			function( $feature ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				return $feature['is_enabled'];
 			}
 		);
@@ -983,7 +1013,10 @@ class WC_Tracker {
 			'calc_taxes'                            => get_option( 'woocommerce_calc_taxes' ),
 			'coupons_enabled'                       => get_option( 'woocommerce_enable_coupons' ),
 			'guest_checkout'                        => get_option( 'woocommerce_enable_guest_checkout' ),
+<<<<<<< HEAD
 			'delayed_account_creation'              => get_option( 'woocommerce_enable_delayed_account_creation' ),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			'checkout_login_reminder'               => get_option( 'woocommerce_enable_checkout_login_reminder' ),
 			'secure_checkout'                       => get_option( 'woocommerce_force_ssl_checkout' ),
 			'enable_signup_and_login_from_checkout' => get_option( 'woocommerce_enable_signup_and_login_from_checkout' ),
@@ -1192,6 +1225,7 @@ class WC_Tracker {
 	public static function get_woocommerce_mobile_usage() {
 		return get_option( 'woocommerce_mobile_app_usage' );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Map legacy order meta keys to a column name.
@@ -1427,4 +1461,6 @@ class WC_Tracker {
 			'last_20_orders'  => $last_20,
 		);
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

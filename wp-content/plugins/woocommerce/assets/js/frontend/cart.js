@@ -268,6 +268,7 @@ jQuery( function ( $ ) {
 		/**
 		 * Toggle Shipping Calculator panel
 		 */
+<<<<<<< HEAD
 		toggle_shipping: function ( event ) {
 			var $target = $( event.currentTarget );
 
@@ -281,6 +282,10 @@ jQuery( function ( $ ) {
 				}, 0 );
 			} );
 			
+=======
+		toggle_shipping: function () {
+			$( '.shipping-calculator-form' ).slideToggle( 'slow' );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			$( 'select.country_to_state, input.country_to_state' ).trigger(
 				'change'
 			);

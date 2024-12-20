@@ -103,10 +103,13 @@ class SingleProduct extends AbstractBlock {
 			$result[] = $block['blockName'];
 		}
 
+<<<<<<< HEAD
 		if ( 'woocommerce/product-template' === $block['blockName'] || 'core/post-template' === $block['blockName'] ) {
 			return $result;
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		if ( isset( $block['innerBlocks'] ) ) {
 			foreach ( $block['innerBlocks'] as $inner_block ) {
 				$this->extract_single_product_inner_block_names( $inner_block, $result );

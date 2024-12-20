@@ -192,7 +192,11 @@ class ServiceAccountCredentials extends CredentialsLoader implements
      *     @type string $token_type
      * }
      */
+<<<<<<< HEAD
     public function fetchAuthToken(?callable $httpHandler = null)
+=======
+    public function fetchAuthToken(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if ($this->useSelfSignedJwt()) {
             $jwtCreds = $this->createJwtAccessCredentials();
@@ -242,7 +246,11 @@ class ServiceAccountCredentials extends CredentialsLoader implements
      * @param callable $httpHandler Not used by this credentials type.
      * @return string|null
      */
+<<<<<<< HEAD
     public function getProjectId(?callable $httpHandler = null)
+=======
+    public function getProjectId(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return $this->projectId;
     }
@@ -258,7 +266,11 @@ class ServiceAccountCredentials extends CredentialsLoader implements
     public function updateMetadata(
         $metadata,
         $authUri = null,
+<<<<<<< HEAD
         ?callable $httpHandler = null
+=======
+        callable $httpHandler = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         // scope exists. use oauth implementation
         if (!$this->useSelfSignedJwt()) {
@@ -319,7 +331,11 @@ class ServiceAccountCredentials extends CredentialsLoader implements
      * @param callable $httpHandler Not used by this credentials type.
      * @return string
      */
+<<<<<<< HEAD
     public function getClientName(?callable $httpHandler = null)
+=======
+    public function getClientName(callable $httpHandler = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         return $this->auth->getIssuer();
     }

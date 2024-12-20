@@ -30,7 +30,11 @@ class Composer
      */
     public static function cleanup(
         Event $event,
+<<<<<<< HEAD
         ?Filesystem $filesystem = null
+=======
+        Filesystem $filesystem = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         $composer = $event->getComposer();
         $extra = $composer->getPackage()->getExtra();

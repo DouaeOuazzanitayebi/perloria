@@ -110,9 +110,14 @@ class ProductSaleBadge extends AbstractBlock {
 			return null;
 		}
 
+<<<<<<< HEAD
 		$classes_and_styles = StyleAttributesUtils::get_classes_and_styles_by_attributes( $attributes, array(), array( 'extra_classes' ) );
 
 		$classname = StyleAttributesUtils::get_classes_by_attributes( $attributes, array( 'extra_classes' ) );
+=======
+		$classes_and_styles = StyleAttributesUtils::get_classes_and_styles_by_attributes( $attributes );
+		$classname          = isset( $attributes['className'] ) ? $attributes['className'] : '';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 		$align = isset( $attributes['align'] ) ? $attributes['align'] : '';
 

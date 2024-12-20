@@ -259,6 +259,7 @@ class FeaturesController {
 					'is_legacy'          => false,
 					'is_experimental'    => true,
 				),
+<<<<<<< HEAD
 				'email_improvements'    => array(
 					'name'        => __( 'Email improvements', 'woocommerce' ),
 					'description' => __(
@@ -267,6 +268,8 @@ class FeaturesController {
 					),
 					'disable_ui'  => true,
 				),
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			);
 
 			foreach ( $legacy_features as $slug => $definition ) {
@@ -554,7 +557,11 @@ class FeaturesController {
 	 *
 	 * @return bool True if 'woocommerce_init' has run or is running, false otherwise.
 	 */
+<<<<<<< HEAD
 	private function verify_did_woocommerce_init( ?string $function_name = null ): bool {
+=======
+	private function verify_did_woocommerce_init( string $function_name = null ): bool {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		if ( ! $this->proxy->call_function( 'did_action', 'woocommerce_init' ) &&
 			! $this->proxy->call_function( 'doing_action', 'woocommerce_init' ) ) {
 			if ( ! is_null( $function_name ) ) {
@@ -874,6 +881,10 @@ class FeaturesController {
 		}
 
 		if ( ! $this->is_legacy_feature( $feature_id ) && ! $disabled && $this->verify_did_woocommerce_init() ) {
+<<<<<<< HEAD
+=======
+			$disabled                = ! $this->feature_is_enabled( $feature_id );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			$plugin_info_for_feature = $this->get_compatible_plugins_for_feature( $feature_id, true );
 			$desc_tip                = $this->plugin_util->generate_incompatible_plugin_feature_warning( $feature_id, $plugin_info_for_feature );
 		}

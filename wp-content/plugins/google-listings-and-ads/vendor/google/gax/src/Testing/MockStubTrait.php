@@ -52,7 +52,11 @@ trait MockStubTrait
     private $callObjects = [];
     private $deserialize;
 
+<<<<<<< HEAD
     public function __construct(?callable $deserialize = null)
+=======
+    public function __construct(callable $deserialize = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $this->deserialize = $deserialize;
     }
@@ -196,7 +200,11 @@ trait MockStubTrait
      * @param \Google\Protobuf\Internal\Message $response
      * @param stdClass $status
      */
+<<<<<<< HEAD
     public function addResponse($response, ?stdClass $status = null)
+=======
+    public function addResponse($response, stdClass $status = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if (!$this->deserialize && $response) {
             $this->deserialize = [get_class($response), 'decode'];
@@ -263,7 +271,11 @@ trait MockStubTrait
      * @param callable $deserialize
      * @return static An instance of the current class type.
      */
+<<<<<<< HEAD
     public static function create($responseObject, ?stdClass $status = null, ?callable $deserialize = null)
+=======
+    public static function create($responseObject, stdClass $status = null, callable $deserialize = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $stub = new static($deserialize); // @phpstan-ignore-line
         $stub->addResponse($responseObject, $status);
@@ -277,7 +289,11 @@ trait MockStubTrait
      * @param stdClass $finalStatus
      * @return static An instance of the current class type.
      */
+<<<<<<< HEAD
     public static function createWithResponseSequence(array $sequence, ?callable $deserialize = null, ?stdClass $finalStatus = null)
+=======
+    public static function createWithResponseSequence(array $sequence, callable $deserialize = null, stdClass $finalStatus = null)
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $stub = new static($deserialize); // @phpstan-ignore-line
         foreach ($sequence as $elem) {

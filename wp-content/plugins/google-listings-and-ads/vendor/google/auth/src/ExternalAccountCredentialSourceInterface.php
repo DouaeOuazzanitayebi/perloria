@@ -19,5 +19,9 @@ namespace Automattic\WooCommerce\GoogleListingsAndAds\Vendor\Google\Auth;
 
 interface ExternalAccountCredentialSourceInterface
 {
+<<<<<<< HEAD
     public function fetchSubjectToken(?callable $httpHandler = null): string;
+=======
+    public function fetchSubjectToken(callable $httpHandler = null): string;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

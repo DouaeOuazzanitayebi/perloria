@@ -473,7 +473,11 @@ abstract class Strings
         // return str_replace(['+', '/'], ['-', '_'], self::base64_encode($data));
 
         return function_exists('sodium_bin2base64') ?
+<<<<<<< HEAD
             sodium_bin2base64($data, SODIUM_BASE64_VARIANT_URLSAFE_NO_PADDING) :
+=======
+            sodium_bin2base64($data, SODIUM_BASE64_VARIANT_URLSAFE) :
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             Base64UrlSafe::encode($data);
     }
 

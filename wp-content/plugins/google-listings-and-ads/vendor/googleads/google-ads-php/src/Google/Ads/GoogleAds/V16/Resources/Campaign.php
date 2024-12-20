@@ -279,10 +279,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $frequency_caps;
     /**
+<<<<<<< HEAD
      * Output only. Brand Safety setting at the individual campaign level. Allows
      * for selecting an inventory type to show your ads on content that is the
      * right fit for your brand. See
      * https://support.google.com/google-ads/answer/7515513.
+=======
+     * Output only. 3-Tier Brand Safety setting for the campaign.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * Generated from protobuf field <code>.google.ads.googleads.v16.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -521,10 +525,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type array<\Google\Ads\GoogleAds\V16\Common\FrequencyCapEntry>|\Google\Protobuf\Internal\RepeatedField $frequency_caps
      *           A list that limits how often each user will see this campaign's ads.
      *     @type int $video_brand_safety_suitability
+<<<<<<< HEAD
      *           Output only. Brand Safety setting at the individual campaign level. Allows
      *           for selecting an inventory type to show your ads on content that is the
      *           right fit for your brand. See
      *           https://support.google.com/google-ads/answer/7515513.
+=======
+     *           Output only. 3-Tier Brand Safety setting for the campaign.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *     @type \Google\Ads\GoogleAds\V16\Resources\Campaign\VanityPharma $vanity_pharma
      *           Describes how unbranded pharma ads will be displayed.
      *     @type \Google\Ads\GoogleAds\V16\Resources\Campaign\SelectiveOptimization $selective_optimization
@@ -1898,10 +1906,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+<<<<<<< HEAD
      * Output only. Brand Safety setting at the individual campaign level. Allows
      * for selecting an inventory type to show your ads on content that is the
      * right fit for your brand. See
      * https://support.google.com/google-ads/answer/7515513.
+=======
+     * Output only. 3-Tier Brand Safety setting for the campaign.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * Generated from protobuf field <code>.google.ads.googleads.v16.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -1912,10 +1924,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+<<<<<<< HEAD
      * Output only. Brand Safety setting at the individual campaign level. Allows
      * for selecting an inventory type to show your ads on content that is the
      * right fit for your brand. See
      * https://support.google.com/google-ads/answer/7515513.
+=======
+     * Output only. 3-Tier Brand Safety setting for the campaign.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *
      * Generated from protobuf field <code>.google.ads.googleads.v16.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var

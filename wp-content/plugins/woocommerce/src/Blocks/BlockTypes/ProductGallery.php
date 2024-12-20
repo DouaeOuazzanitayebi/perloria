@@ -3,7 +3,10 @@ namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
 use Automattic\WooCommerce\Blocks\Utils\BlockTemplateUtils;
 use Automattic\WooCommerce\Blocks\Utils\ProductGalleryUtils;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Blocks\Utils\StyleAttributesUtils;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
 /**
  * ProductGallery class.
@@ -126,7 +129,11 @@ class ProductGallery extends AbstractBlock {
 		}
 
 		$number_of_thumbnails           = $block->attributes['thumbnailsNumberOfThumbnails'] ?? 0;
+<<<<<<< HEAD
 		$classname                      = StyleAttributesUtils::get_classes_by_attributes( $attributes, array( 'extra_classes' ) );
+=======
+		$classname                      = $attributes['className'] ?? '';
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$dialog                         = isset( $attributes['mode'] ) && 'full' !== $attributes['mode'] ? $this->render_dialog() : '';
 		$product_gallery_first_image    = ProductGalleryUtils::get_product_gallery_image_ids( $product, 1 );
 		$product_gallery_first_image_id = reset( $product_gallery_first_image );

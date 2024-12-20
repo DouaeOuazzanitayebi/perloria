@@ -238,6 +238,11 @@ class Settings {
 
 		$settings['features'] = $this->get_features();
 
+<<<<<<< HEAD
+=======
+		$settings['isWooPayEligible'] = WCPayPromotionInit::is_woopay_eligible();
+
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$has_gutenberg     = is_plugin_active( 'gutenberg/gutenberg.php' );
 		$gutenberg_version = '';
 		if ( $has_gutenberg ) {

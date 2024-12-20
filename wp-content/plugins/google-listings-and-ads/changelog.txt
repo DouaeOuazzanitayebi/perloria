@@ -1,5 +1,6 @@
 *** Google for WooCommerce Changelog ***
 
+<<<<<<< HEAD
 = 2.9.3 - 2024-12-18 =
 * Dev - Eliminate the duplicate functions used to group shipping time data.
 * Dev - Improve E2E tests for related products.
@@ -13,6 +14,10 @@
 
 = 2.9.2 - 2024-12-11 =
 * Dev - Centralize frontend images to the dedicated directory.
+=======
+= 2.9.2 - 2024-12-11 =
+* Dev - Centralize frontend end images to the dedicated directory.
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 * Fix - Ensure coupon brand restrictions are uploaded to Google Merchant Center.
 * Fix - Initial php 8.4 compatibility.
 * Fix - Prevent Warning when Saving a Variation if YOAST is activated.

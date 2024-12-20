@@ -74,6 +74,7 @@ abstract class EvalBarrett extends Base
             return $func;
         }
 
+<<<<<<< HEAD
         $correctionNeeded = false;
         if ($m_length & 1) {
             $correctionNeeded = true;
@@ -82,6 +83,8 @@ abstract class EvalBarrett extends Base
             $m_length++;
         }
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $lhs = new $class();
         $lhs_value = &$lhs->value;
 
@@ -107,11 +110,15 @@ abstract class EvalBarrett extends Base
 
         $cutoff = count($m) + (count($m) >> 1);
 
+<<<<<<< HEAD
         $code = $correctionNeeded ?
             'array_unshift($n, 0);' :
             '';
 
         $code .= '
+=======
+        $code = '
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             if (count($n) > ' . (2 * count($m)) . ') {
                 $lhs = new ' . $class . '();
                 $rhs = new ' . $class . '();
@@ -153,10 +160,13 @@ abstract class EvalBarrett extends Base
 
         $code .= self::generateInlineCompare($m, 'temp', $subcode);
 
+<<<<<<< HEAD
         if ($correctionNeeded) {
             $code .= 'array_shift($temp);';
         }
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         $code .= 'return $temp;';
 
         eval('$func = function ($n) { ' . $code . '};');

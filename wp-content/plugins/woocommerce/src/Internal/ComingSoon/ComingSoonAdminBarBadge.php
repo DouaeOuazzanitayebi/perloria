@@ -18,6 +18,7 @@ class ComingSoonAdminBarBadge {
 	 * @internal
 	 */
 	final public function init() {
+<<<<<<< HEAD
 		add_action( 'init', array( $this, 'init_hooks' ) );
 	}
 
@@ -32,6 +33,8 @@ class ComingSoonAdminBarBadge {
 			return;
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		add_action( 'admin_bar_menu', array( $this, 'site_visibility_badge' ), 31 );
 		add_action( 'wp_head', array( $this, 'output_css' ) );
 		add_action( 'admin_head', array( $this, 'output_css' ) );

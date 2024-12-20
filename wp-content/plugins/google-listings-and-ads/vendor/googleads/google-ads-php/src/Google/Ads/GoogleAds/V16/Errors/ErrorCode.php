@@ -51,8 +51,11 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           An error with a Campaign Budget mutate.
      *     @type int $campaign_error
      *           An error with a Campaign mutate.
+<<<<<<< HEAD
      *     @type int $video_campaign_error
      *           An error with a Video Campaign mutate.
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      *     @type int $authentication_error
      *           Indicates failure to properly authenticate user.
      *     @type int $ad_group_criterion_customizer_error
@@ -769,6 +772,7 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+<<<<<<< HEAD
      * An error with a Video Campaign mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v16.errors.VideoCampaignErrorEnum.VideoCampaignError video_campaign_error = 182;</code>
@@ -800,6 +804,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Indicates failure to properly authenticate user.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v16.errors.AuthenticationErrorEnum.AuthenticationError authentication_error = 17;</code>

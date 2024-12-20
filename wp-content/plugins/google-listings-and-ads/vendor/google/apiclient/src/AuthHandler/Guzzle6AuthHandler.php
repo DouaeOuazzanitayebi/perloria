@@ -20,7 +20,11 @@ class Guzzle6AuthHandler
     protected $cache;
     protected $cacheConfig;
 
+<<<<<<< HEAD
     public function __construct(?CacheItemPoolInterface $cache = null, array $cacheConfig = [])
+=======
+    public function __construct(CacheItemPoolInterface $cache = null, array $cacheConfig = [])
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         $this->cache = $cache;
         $this->cacheConfig = $cacheConfig;
@@ -29,7 +33,11 @@ class Guzzle6AuthHandler
     public function attachCredentials(
         ClientInterface $http,
         CredentialsLoader $credentials,
+<<<<<<< HEAD
         ?callable $tokenCallback = null
+=======
+        callable $tokenCallback = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         // use the provided cache
         if ($this->cache) {
@@ -46,7 +54,11 @@ class Guzzle6AuthHandler
     public function attachCredentialsCache(
         ClientInterface $http,
         FetchAuthTokenCache $credentials,
+<<<<<<< HEAD
         ?callable $tokenCallback = null
+=======
+        callable $tokenCallback = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         // if we end up needing to make an HTTP request to retrieve credentials, we
         // can use our existing one, but we need to throw exceptions so the error

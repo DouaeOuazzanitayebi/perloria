@@ -77,7 +77,11 @@ class GrpcTransport extends BaseStub implements TransportInterface
      *        extends {@see Grpc\Interceptor}.
      * @throws Exception
      */
+<<<<<<< HEAD
     public function __construct(string $hostname, array $opts, ?Channel $channel = null, array $interceptors = [])
+=======
+    public function __construct(string $hostname, array $opts, Channel $channel = null, array $interceptors = [])
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         if ($interceptors) {
             $channel = Interceptor::intercept(

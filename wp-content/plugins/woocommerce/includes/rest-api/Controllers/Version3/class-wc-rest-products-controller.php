@@ -8,7 +8,10 @@
  * @since   2.6.0
  */
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareRestControllerTrait;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Automattic\WooCommerce\Utilities\I18nUtil;
 
 defined( 'ABSPATH' ) || exit;
@@ -21,8 +24,11 @@ defined( 'ABSPATH' ) || exit;
  */
 class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 
+<<<<<<< HEAD
 	use CogsAwareRestControllerTrait;
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	/**
 	 * Endpoint namespace.
 	 *
@@ -898,10 +904,13 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 			}
 		}
 
+<<<<<<< HEAD
 		if ( $this->cogs_is_enabled() ) {
 			$this->set_cogs_info_in_product_object( $request, $product );
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		/**
 		 * Filters an object before it is inserted via the REST API.
 		 *
@@ -1566,10 +1575,13 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 			);
 		}
 
+<<<<<<< HEAD
 		if ( $this->cogs_is_enabled() ) {
 			$schema = $this->add_cogs_related_product_schema( $schema, false );
 		}
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		return $this->add_additional_fields_schema( $schema );
 	}
 
@@ -1758,6 +1770,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 
 		return parent::get_items( $request );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Core function to prepare a single product output for response
@@ -1777,4 +1790,6 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 
 		return $data;
 	}
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 }

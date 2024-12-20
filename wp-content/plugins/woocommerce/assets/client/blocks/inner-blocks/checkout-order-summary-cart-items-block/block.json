@@ -16,10 +16,13 @@
 			"type": "string",
 			"default": ""
 		},
+<<<<<<< HEAD
 		"disableProductDescriptions": {
 			"type": "boolean",
 			"default": false
 		},
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		"lock": {
 			"type": "object",
 			"default": {
@@ -28,8 +31,18 @@
 			}
 		}
 	},
+<<<<<<< HEAD
 	"parent": [ "woocommerce/checkout-order-summary-block" ],
 	"textdomain": "woocommerce",
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3
 }
+=======
+	"parent": [
+		"woocommerce/checkout-order-summary-block"
+	],
+	"textdomain": "woocommerce",
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3
+}
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90

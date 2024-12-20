@@ -32,6 +32,10 @@ use Google\Ads\GoogleAds\V16\Services\PromoteCampaignDraftRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+<<<<<<< HEAD
+=======
+use Google\ApiCore\LongRunning\OperationsClient;
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PagedListResponse;
 use Google\ApiCore\ResourceHelperTrait;
@@ -39,7 +43,10 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+<<<<<<< HEAD
 use Google\LongRunning\Client\OperationsClient;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use Google\LongRunning\Operation;
 use GuzzleHttp\Promise\PromiseInterface;
 
@@ -58,7 +65,11 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @method PromiseInterface mutateCampaignDraftsAsync(MutateCampaignDraftsRequest $request, array $optionalArgs = [])
  * @method PromiseInterface promoteCampaignDraftAsync(PromoteCampaignDraftRequest $request, array $optionalArgs = [])
  */
+<<<<<<< HEAD
 class CampaignDraftServiceClient
+=======
+final class CampaignDraftServiceClient
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 {
     use GapicClientTrait, GoogleAdsGapicClientTrait {
         GoogleAdsGapicClientTrait::modifyClientOptions insteadof GapicClientTrait;
@@ -142,6 +153,7 @@ class CampaignDraftServiceClient
     }
 
     /**
+<<<<<<< HEAD
      * Create the default operation client for the service.
      *
      * @param array $options ClientOptions for the client.
@@ -161,6 +173,8 @@ class CampaignDraftServiceClient
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Formats a string containing the fully-qualified path to represent a campaign
      * resource.
      *

@@ -192,10 +192,13 @@ class JsonFormatter extends NormalizerFormatter
                 return $data;
             }
 
+<<<<<<< HEAD
             if (\get_class($data) === '__PHP_Incomplete_Class') {
                 return new \ArrayObject($data);
             }
 
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
             if (method_exists($data, '__toString')) {
                 return $data->__toString();
             }

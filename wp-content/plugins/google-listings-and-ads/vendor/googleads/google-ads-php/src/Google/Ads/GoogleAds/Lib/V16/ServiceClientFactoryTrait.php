@@ -129,9 +129,12 @@ trait ServiceClientFactoryTrait
         if (!empty($this->getTransport())) {
             $clientOptions += [self::$TRANSPORT_KEY => $this->getTransport()];
         }
+<<<<<<< HEAD
         if (!empty($this->getHttpHandler())) {
             $clientOptions['transportConfig']['rest']['httpHandler'] = $this->getHttpHandler();
         }
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         if (
             self::getGrpcDependencyStatus()
             && (!$this->getGrpcChannelIsSecure() || !empty($this->getGrpcChannelCredential()))

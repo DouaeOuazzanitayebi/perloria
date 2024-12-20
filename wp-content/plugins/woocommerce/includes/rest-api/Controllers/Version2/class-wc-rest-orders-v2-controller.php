@@ -276,7 +276,11 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 			$order_item_name   = $data['name'];
 			$data['meta_data'] = array_filter(
 				$data['meta_data'],
+<<<<<<< HEAD
 				function ( $meta ) use ( $product, $order_item_name ) {
+=======
+				function( $meta ) use ( $product, $order_item_name ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 					$display_value = wp_kses_post( rawurldecode( (string) $meta->value ) );
 
 					// Skip items with values already in the product details area of the product name.
@@ -537,8 +541,18 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 	 * @return WP_REST_Response
 	 */
 	public function prepare_object_for_response( $object, $request ) {
+<<<<<<< HEAD
 		$data     = $this->prepare_object_for_response_core( $object, $request );
 		$response = rest_ensure_response( $data );
+=======
+		$this->request       = $request;
+		$this->request['dp'] = is_null( $this->request['dp'] ) ? wc_get_price_decimals() : absint( $this->request['dp'] );
+		$request['context']  = ! empty( $request['context'] ) ? $request['context'] : 'view';
+		$data                = $this->get_formatted_item_data( $object );
+		$data                = $this->add_additional_fields_to_object( $data, $request );
+		$data                = $this->filter_response_by_context( $data, $request['context'] );
+		$response            = rest_ensure_response( $data );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		$response->add_links( $this->prepare_links( $object, $request ) );
 
 		/**
@@ -557,6 +571,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Core method to prepare a single order object for response
 	 * (doesn't fire hooks, execute rest_ensure_response, or add links).
 	 *
@@ -577,6 +592,8 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 	}
 
 	/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * Prepare links for the request.
 	 *
 	 * @param WC_Data         $object  Object data.

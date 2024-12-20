@@ -1001,7 +1001,10 @@ function wc_format_postcode( $postcode, $country ) {
 			break;
 		case 'PR':
 		case 'US':
+<<<<<<< HEAD
 		case 'MN':
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			$postcode = rtrim( substr_replace( $postcode, '-', 5, 0 ), '-' );
 			break;
 		case 'NL':
@@ -1231,7 +1234,11 @@ if ( ! function_exists( 'wc_make_numeric_postcode' ) ) {
 		$letters_to_numbers = array_flip( $letters_to_numbers );
 		$numeric_postcode   = '';
 
+<<<<<<< HEAD
 		for ( $i = 0; $i < $postcode_length; $i++ ) {
+=======
+		for ( $i = 0; $i < $postcode_length; $i ++ ) {
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			if ( is_numeric( $postcode[ $i ] ) ) {
 				$numeric_postcode .= str_pad( $postcode[ $i ], 2, '0', STR_PAD_LEFT );
 			} elseif ( isset( $letters_to_numbers[ $postcode[ $i ] ] ) ) {

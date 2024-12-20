@@ -35,9 +35,12 @@ class BlockTemplatesController {
 	/**
 	 * Renders the `core/template-part` block on the server.
 	 *
+<<<<<<< HEAD
 	 * This is done because the core handling for template parts only supports templates from the current theme, not
 	 * from a plugin.
 	 *
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 	 * @param array $attributes The block attributes.
 	 * @return string The render.
 	 */
@@ -46,6 +49,7 @@ class BlockTemplatesController {
 			$template_part = get_block_template( $attributes['theme'] . '//' . $attributes['slug'], 'wp_template_part' );
 
 			if ( $template_part && ! empty( $template_part->content ) ) {
+<<<<<<< HEAD
 				$content = do_blocks( $template_part->content );
 
 				if ( empty( $attributes['tagName'] ) || tag_escape( $attributes['tagName'] ) !== $attributes['tagName'] ) {
@@ -56,6 +60,9 @@ class BlockTemplatesController {
 				$wrapper_attributes = get_block_wrapper_attributes();
 
 				return "<$html_tag $wrapper_attributes>" . str_replace( ']]>', ']]&gt;', $content ) . "</$html_tag>";
+=======
+				return do_blocks( $template_part->content );
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 			}
 		}
 		return function_exists( '\gutenberg_render_block_core_template_part' ) ? \gutenberg_render_block_core_template_part( $attributes ) : \render_block_core_template_part( $attributes );

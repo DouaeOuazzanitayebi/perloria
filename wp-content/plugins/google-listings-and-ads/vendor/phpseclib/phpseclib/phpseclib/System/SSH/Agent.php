@@ -33,7 +33,10 @@
 namespace phpseclib3\System\SSH;
 
 use phpseclib3\Common\Functions\Strings;
+<<<<<<< HEAD
 use phpseclib3\Crypt\Common\PublicKey;
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 use phpseclib3\Crypt\PublicKeyLoader;
 use phpseclib3\Crypt\RSA;
 use phpseclib3\Exception\BadConfigurationException;
@@ -111,8 +114,13 @@ class Agent
     /**
      * Default Constructor
      *
+<<<<<<< HEAD
      * @return Agent
      * @throws BadConfigurationException if SSH_AUTH_SOCK cannot be found
+=======
+     * @return \phpseclib3\System\SSH\Agent
+     * @throws \phpseclib3\Exception\BadConfigurationException if SSH_AUTH_SOCK cannot be found
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @throws \RuntimeException on connection errors
      */
     public function __construct($address = null)
@@ -193,8 +201,12 @@ class Agent
             if (isset($key)) {
                 $identity = (new Identity($this->fsock))
                     ->withPublicKey($key)
+<<<<<<< HEAD
                     ->withPublicKeyBlob($key_blob)
                     ->withComment($comment);
+=======
+                    ->withPublicKeyBlob($key_blob);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
                 $identities[] = $identity;
                 unset($key);
             }
@@ -204,6 +216,7 @@ class Agent
     }
 
     /**
+<<<<<<< HEAD
      * Returns the SSH Agent identity matching a given public key or null if no identity is found
      *
      * @return ?Identity
@@ -222,6 +235,8 @@ class Agent
     }
 
     /**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * Signal that agent forwarding should
      * be requested when a channel is opened
      *
@@ -237,7 +252,11 @@ class Agent
     /**
      * Request agent forwarding of remote server
      *
+<<<<<<< HEAD
      * @param SSH2 $ssh
+=======
+     * @param \phpseclib3\Net\SSH2 $ssh
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @return bool
      */
     private function request_forwarding(SSH2 $ssh)
@@ -258,7 +277,11 @@ class Agent
      * open to give the SSH Agent an opportunity
      * to take further action. i.e. request agent forwarding
      *
+<<<<<<< HEAD
      * @param SSH2 $ssh
+=======
+     * @param \phpseclib3\Net\SSH2 $ssh
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      */
     public function registerChannelOpen(SSH2 $ssh)
     {

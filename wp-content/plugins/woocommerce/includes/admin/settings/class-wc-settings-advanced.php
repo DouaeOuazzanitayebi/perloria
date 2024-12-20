@@ -354,7 +354,11 @@ class WC_Settings_Advanced extends WC_Settings_Page {
 					'type'          => 'checkbox',
 					'checkboxgroup' => 'start',
 					'default'       => 'no',
+<<<<<<< HEAD
 					'autoload'      => true,
+=======
+					'autoload'      => false,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 				),
 				array(
 					'type' => 'sectionend',

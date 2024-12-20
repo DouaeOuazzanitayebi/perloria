@@ -28,7 +28,11 @@ interface FetchAuthTokenInterface
      * @param callable $httpHandler callback which delivers psr7 request
      * @return array<mixed> a hash of auth tokens
      */
+<<<<<<< HEAD
     public function fetchAuthToken(?callable $httpHandler = null);
+=======
+    public function fetchAuthToken(callable $httpHandler = null);
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 
     /**
      * Obtains a key that can used to cache the results of #fetchAuthToken.

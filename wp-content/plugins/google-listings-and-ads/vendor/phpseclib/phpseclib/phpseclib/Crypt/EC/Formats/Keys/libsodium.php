@@ -81,7 +81,11 @@ abstract class libsodium
     /**
      * Convert an EC public key to the appropriate format
      *
+<<<<<<< HEAD
      * @param Ed25519 $curve
+=======
+     * @param \phpseclib3\Crypt\EC\Curves\Ed25519 $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param \phpseclib3\Math\Common\FiniteField\Integer[] $publicKey
      * @return string
      */
@@ -93,8 +97,13 @@ abstract class libsodium
     /**
      * Convert a private key to the appropriate format.
      *
+<<<<<<< HEAD
      * @param BigInteger $privateKey
      * @param Ed25519 $curve
+=======
+     * @param \phpseclib3\Math\BigInteger $privateKey
+     * @param \phpseclib3\Crypt\EC\Curves\Ed25519 $curve
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
      * @param \phpseclib3\Math\Common\FiniteField\Integer[] $publicKey
      * @param string $secret optional
      * @param string $password optional

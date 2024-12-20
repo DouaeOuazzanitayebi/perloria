@@ -85,6 +85,7 @@ if ( ! class_exists( 'WC_Settings_Page', false ) ) :
 		}
 
 		/**
+<<<<<<< HEAD
 		 * Get page settings data to populate the settings editor.
 		 *
 		 * @param array $pages The settings array where we'll add data.
@@ -121,6 +122,8 @@ if ( ! class_exists( 'WC_Settings_Page', false ) ) :
 		}
 
 		/**
+=======
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
 		 * Get settings array for the default section.
 		 *
 		 * External settings classes (registered via 'woocommerce_get_settings_pages' filter)

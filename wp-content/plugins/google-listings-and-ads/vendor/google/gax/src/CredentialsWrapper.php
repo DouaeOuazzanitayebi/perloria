@@ -77,7 +77,11 @@ class CredentialsWrapper implements ProjectIdProviderInterface
      */
     public function __construct(
         FetchAuthTokenInterface $credentialsFetcher,
+<<<<<<< HEAD
         ?callable $authHttpHandler = null,
+=======
+        callable $authHttpHandler = null,
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
         string $universeDomain = GetUniverseDomainInterface::DEFAULT_UNIVERSE_DOMAIN
     ) {
         $this->credentialsFetcher = $credentialsFetcher;
@@ -203,7 +207,11 @@ class CredentialsWrapper implements ProjectIdProviderInterface
         return null;
     }
 
+<<<<<<< HEAD
     public function getProjectId(?callable $httpHandler = null): ?string
+=======
+    public function getProjectId(callable $httpHandler = null): ?string
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     {
         // Ensure that FetchAuthTokenCache does not throw an exception
         if ($this->credentialsFetcher instanceof FetchAuthTokenCache
@@ -313,12 +321,21 @@ class CredentialsWrapper implements ProjectIdProviderInterface
      * @throws ValidationException
      */
     private static function buildApplicationDefaultCredentials(
+<<<<<<< HEAD
         ?array $scopes = null,
         ?callable $authHttpHandler = null,
         ?array $authCacheOptions = null,
         ?CacheItemPoolInterface $authCache = null,
         $quotaProject = null,
         ?array $defaultScopes = null
+=======
+        array $scopes = null,
+        callable $authHttpHandler = null,
+        array $authCacheOptions = null,
+        CacheItemPoolInterface $authCache = null,
+        $quotaProject = null,
+        array $defaultScopes = null
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     ) {
         try {
             return ApplicationDefaultCredentials::getCredentials(

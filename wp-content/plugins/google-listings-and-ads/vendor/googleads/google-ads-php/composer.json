@@ -6,7 +6,11 @@
     "php": ">=7.4",
     "google/gax": "^1.19.1",
     "grpc/grpc": "^1.36.0",
+<<<<<<< HEAD
     "google/protobuf": "^3.21.5 || ^4.26",
+=======
+    "google/protobuf": "^3.21.5",
+>>>>>>> 8d244dd10d2e32e461d508a54a2cfd79fc236c90
     "monolog/monolog": "^1.26 || ^2.0 || ^3.0"
   },
   "require-dev": {
